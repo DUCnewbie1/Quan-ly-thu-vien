@@ -1,0 +1,36 @@
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\BLL.dll
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\BLL.pdb
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\DAL.dll
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\EntityFramework.dll
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\DAL.pdb
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\DAL.dll.config
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\EntityFramework.xml
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.dll
+C:\Users\PC\source\repos\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\BLL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\BLL.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\DAL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\EntityFramework.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\DAL.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\DAL.dll.config
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\bin\Debug\EntityFramework.xml
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.CopyComplete
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\WindowsFormsApp2\WindowsFormsApp2\BLL\obj\Debug\BLL.pdb
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\BLL.dll
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\BLL.pdb
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\DAL.dll
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\EntityFramework.dll
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\DAL.pdb
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\DAL.dll.config
+D:\Download\QLTV\WindowsFormsApp2\BLL\bin\Debug\EntityFramework.xml
+D:\Download\QLTV\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Download\QLTV\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Download\QLTV\WindowsFormsApp2\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Download\QLTV\WindowsFormsApp2\BLL\obj\Debug\BLL.dll
+D:\Download\QLTV\WindowsFormsApp2\BLL\obj\Debug\BLL.pdb
