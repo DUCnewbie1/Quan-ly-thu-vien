@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp2
 {
@@ -19,9 +20,9 @@ namespace WindowsFormsApp2
         public QuanLyNXB()
         {
             InitializeComponent();
-            LoadNXBDataGrid();
+            LoadDataGrid();
         }
-        private void LoadNXBDataGrid()
+        private void LoadDataGrid()
         {
             Model1 context = new Model1();
             var NXBList = context.NhaXuatBan.ToList();
@@ -54,7 +55,10 @@ namespace WindowsFormsApp2
                 return;
             }
             string maNXB = txt_MaNXB.Text.Trim();
-
+            string tenNXB = txt_TenNXB.Text;
+            string diaChi = txt_DiaChi.Text;
+            string email = txt_Email.Text;
+            string sdt = txt_SDT.Text;
             if (int.TryParse(maNXB, out int number))
             {
                 string DinhDangSo = number.ToString("D2");
@@ -70,29 +74,35 @@ namespace WindowsFormsApp2
                     return;
                 }
             }
-            //string maNXBId;
-            //if (txt_MaNXBtxt_MaNXB.Set<T>()XBId))
-            //{
-            //    if (dal.KiemTraMa(maNXBId))
-            //    {
-            //        MessageBox.Show("Mã sách đã tồn tại trong cơ sở dữ liệu.");
-            //        return;
-            //    }
-            //}
-            string tenNXB = txt_TenNXB.Text;
-            string diaChi = txt_DiaChi.Text;
-            string email = txt_Email.Text;
-            string sdt = txt_SDT.Text;
 
-            NhaXuatBan nxb = new NhaXuatBan
+            if (txt_SDT.Text.Length != 10)
             {
-                MaNXB = maNXB,
-                TenNXB = tenNXB,
-                DiaChi = diaChi,
-                Email = email,
-                Sdt = sdt
-            };
-            dal.Them(nxb);
+                MessageBox.Show($"Số điện thoại phải có đúng 10 số! (kí tự hiện tại: " +
+                                $"{txt_SDT.Text.Length})");
+                return;
+            }
+            using (Model1 context = new Model1())
+            {
+                var existingReader = context.NhaXuatBan.FirstOrDefault(dg => dg.MaNXB == maNXB);
+                if (existingReader != null)
+                {
+                    MessageBox.Show("Mã nhà xuất bản đã tồn tại. Vui lòng nhập mã nhà xuất bản khác.", "Lỗi");
+                    return;
+                }
+
+                NhaXuatBan nxb = new NhaXuatBan
+                {
+                    MaNXB = maNXB,
+                    TenNXB = tenNXB,
+                    DiaChi = diaChi,
+                    Sdt = sdt,
+                    Email = email
+                };
+                Class1<NhaXuatBan> nxbDataAccess = new Class1<NhaXuatBan>();
+                nxbDataAccess.Them(nxb);
+                MessageBox.Show("Thêm Thành công", "Thông báo");
+                LoadDataGrid();
+            }
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -107,36 +117,62 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà xuất bản.");
                 return;
             }
+            string maNXB = txt_MaNXB.Text;
             string tenNXB = txt_TenNXB.Text;
             string diaChi = txt_DiaChi.Text;
             string email = txt_Email.Text;
             string sdt = txt_SDT.Text;
+
+            if (txt_SDT.Text.Length != 10)
+            {
+                MessageBox.Show($"Số điện thoại phải có đúng 10 số! (kí tự hiện tại: " +
+                                $"{txt_SDT.Text.Length})");
+                return;
+            }
+
+            using (Model1 context = new Model1())
+            {
+
+                NhaXuatBan nxb = new NhaXuatBan
+                {
+                    MaNXB = maNXB,
+                    TenNXB = tenNXB,
+                    DiaChi = diaChi,
+                    Sdt = sdt,
+                    Email = email
+                };
+                Class1<NhaXuatBan> nxbDataAccess = new Class1<NhaXuatBan>();
+                nxbDataAccess.Sua(nxb);
+                MessageBox.Show("Sửa Thành công", "Thông báo");
+                LoadDataGrid();
+            }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            string maSach = txt_MaNXB.Text;
+            string maNXB = txt_MaNXB.Text.Trim();
+            Class1<NhaXuatBan> nxbDataAccess = new Class1<NhaXuatBan>();
+            NhaXuatBan nxbBiXoa = nxbDataAccess.TimSachTheoMa(maNXB);
 
-            if (!string.IsNullOrEmpty(maSach))
+            if (nxbBiXoa != null)
             {
-                NhaXuatBan nxbXoa = dal.TimSachTheoMa(maSach);
-                dal.Xoa(nxbXoa);
-
-                    MessageBox.Show("Xóa sách thành công!");
-                    txt_MaNXB.Text = "";
-                    txt_TenNXB.Text = "";
-                    txt_DiaChi.Text = "";
-                    txt_Email.Text = "";
-                    txt_SDT.Text = "";
-                    LoadNXBDataGrid();
-                //else
-                //{
-                //    MessageBox.Show("Không thể xóa nhà xuất bản. Mã nhà xuất bản không tồn tại!");
-                //}
+                var confirmResult = MessageBox.Show($"Nhà xuất bản {txt_TenNXB.Text} sẽ bị xóa!",
+                                                     "Xác nhận xóa!!",
+                                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    nxbDataAccess.Xoa(nxbBiXoa);
+                    MessageBox.Show("Xóa thành công. ", "Thông báo");
+                    LoadDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Không xóa được nhà xuất bản này.", "Thông báo");
+                }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập mã nhà xuất bản để xóa.");
+                MessageBox.Show("Không tìm thấy nhà xuất bản có mã " + maNXB + "để xóa.", "Thông báo");
             }
         }
         private void dgvNXB_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -156,6 +192,80 @@ namespace WindowsFormsApp2
                 txt_Email.Text = email;
                 txt_SDT.Text = sdt;
             }
+        }
+        private void txtTenNXB_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_TenNXB.Text, "[^A-Za-zÀ-ỹ ]"))
+            {
+                MessageBox.Show("Chỉ được nhập chữ.");
+                if (txt_TenNXB.Text.Length > 0)
+                {
+                    txt_TenNXB.Text = txt_TenNXB.Text.Substring(0, txt_TenNXB.Text.Length - 1);
+                    txt_TenNXB.SelectionStart = txt_TenNXB.Text.Length;
+                }
+            }
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_SDT.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Chỉ được nhập số.");
+                if (txt_SDT.Text.Length > 0)
+                {
+                    txt_SDT.Text = txt_SDT.Text.Substring(0, txt_SDT.Text.Length - 1);
+                    txt_SDT.SelectionStart = txt_SDT.Text.Length;
+                }
+            }
+        }
+        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLySach formQuanLySach = new QuanLySach();
+            formQuanLySach.ShowDialog();
+        }
+
+        private void quảnLýĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyDocGia formQuanLyDocGia = new QuanLyDocGia();
+            formQuanLyDocGia.ShowDialog();
+        }
+
+        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
+            formQuanLyNhanVien.ShowDialog();
+        }
+
+        private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timKiemSach formTimKiemSach = new timKiemSach();
+            formTimKiemSach.ShowDialog();
+        }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.Show();
+            this.Close();
+        }
+
+        private void quảnLýNhàXuấtBảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txt_MaNXB.Text = string.Empty;
+            txt_TenNXB.Text = string.Empty;
+            txt_DiaChi.Text = string.Empty;
+            txt_Email.Text = string.Empty;
+            txt_SDT.Text = string.Empty;
+        }
+
+        private void lậpPhiếuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LapPhieuMuon lpm = new LapPhieuMuon();
+            lpm.ShowDialog();
         }
     }
 }

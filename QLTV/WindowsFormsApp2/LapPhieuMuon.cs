@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
@@ -33,7 +34,7 @@ namespace WindowsFormsApp2
         {
             using (Model1 context = new Model1())
             {
-                var reader = context.TheDocGia.ToList();
+                var reader = context.DocGia.ToList();
                 cbDocGia.DataSource = reader;
                 // cbDocGia.DisplayMember = "MaTacGia";
                 cbDocGia.ValueMember = "MaDocGia";
@@ -98,7 +99,7 @@ namespace WindowsFormsApp2
             }
 
             string maTheDocGia = string.Empty;
-            using (var context = new Model1())
+            using (Model1 context = new Model1())
             {
                 bool maPhieuDaTonTai = context.PhieuMuon.Any(pm => pm.MaPM == maPhieu);
 
@@ -108,29 +109,12 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
+
                     maTheDocGia = context.TheDocGia
-                            .Where(dg => dg.MaDocGia == maDocGia)
-                            .Select(dg => dg.MaThe)
+                        .Where(dg => dg.MaDocGia == maDocGia)
+                        .Select(dg => dg.MaThe)
                         .FirstOrDefault();
 
-                    var chiTietPhieuMuon = context.PhieuMuon.FirstOrDefault(pm => pm.MaPM == txtMaPhieu.Text);
-                    List<string> selectedBooks = new List<string>();
-                    for (int i = 0; i < listBook.Items.Count; i++)
-                    {
-                        if (listBook.GetSelected(i))
-                        {
-                            selectedBooks.Add(listBook.Items[i].ToString());
-                        }
-                    }
-                    foreach (var tenSach in selectedBooks)
-                    {
-                        var sach = context.Sach.FirstOrDefault(s => s.TenSach == tenSach);
-                        if (sach != null)
-                        {
-                            chiTietPhieuMuon.Sach.Add(sach);
-                        }
-                    }
-                    context.SaveChanges();
                     PhieuMuon phieuMuon = new PhieuMuon
                     {
                         MaPM = maPhieu,
@@ -141,14 +125,22 @@ namespace WindowsFormsApp2
                         MaNV = maNhanVien,
                         SoLuong = danhSachSachDaChon.Count
                     };
-
                     Class1<PhieuMuon> classPhieuMuon = new Class1<PhieuMuon>();
                     classPhieuMuon.Them(phieuMuon);
-                    context.SaveChanges();
+                    using (Model1 dbcontext = new Model1())
+                    {
+                        foreach (Sach selectedBook in danhSachSachDaChon)
+                        {
+                            string insertQuery = "INSERT INTO ChiTietPhieuMuon (MaPM, MaSach) VALUES (@MaPM, @MaSach)";
+                            dbcontext.Database.ExecuteSqlCommand(insertQuery,
+                                new SqlParameter("MaPM", maPhieu),
+                                new SqlParameter("MaSach", selectedBook.MaSach)
+                            );
+                        }
+                    }
                     LoadDataGrid();
                 }
             }
         }
     }
 }
-
