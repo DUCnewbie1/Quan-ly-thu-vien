@@ -59,7 +59,6 @@
     <Compile Include="Models\PhieuPhat.cs" />
     <Compile Include="Models\PhieuTra.cs" />
     <Compile Include="Models\Sach.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\TacGia.cs" />
     <Compile Include="Models\TaiKhoan.cs" />
     <Compile Include="Models\TheDocGia.cs" />

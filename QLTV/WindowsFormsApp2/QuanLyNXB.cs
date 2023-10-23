@@ -59,20 +59,13 @@ namespace WindowsFormsApp2
             string diaChi = txt_DiaChi.Text;
             string email = txt_Email.Text;
             string sdt = txt_SDT.Text;
-            if (int.TryParse(maNXB, out int number))
+            if (!maNXB.StartsWith("TG"))
             {
-                string DinhDangSo = number.ToString("D2");
-
-                string input = "NXB" + DinhDangSo;
-                txt_MaNXB.Text = input;
+                maNXB = "NXB" + maNXB;
             }
-            else
+            if (System.Text.RegularExpressions.Regex.IsMatch(maNXB, @"^TG[1-9]$"))
             {
-                if (!txt_MaNXB.Text.StartsWith("NXB"))
-                {
-                    MessageBox.Show("Cấu trúc mã không hợp lệ");
-                    return;
-                }
+                maNXB = "NXB0" + maNXB.Substring(2);
             }
 
             if (txt_SDT.Text.Length != 10)
@@ -123,6 +116,15 @@ namespace WindowsFormsApp2
             string email = txt_Email.Text;
             string sdt = txt_SDT.Text;
 
+            if (!maNXB.StartsWith("NXB"))
+            {
+                maNXB = "NXB" + maNXB;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(maNXB, @"^TG[1-9]$"))
+            {
+                maNXB = "NXB" + maNXB.Substring(2);
+            }
+
             if (txt_SDT.Text.Length != 10)
             {
                 MessageBox.Show($"Số điện thoại phải có đúng 10 số! (kí tự hiện tại: " +
@@ -152,11 +154,19 @@ namespace WindowsFormsApp2
         {
             string maNXB = txt_MaNXB.Text.Trim();
             Class1<NhaXuatBan> nxbDataAccess = new Class1<NhaXuatBan>();
-            NhaXuatBan nxbBiXoa = nxbDataAccess.TimSachTheoMa(maNXB);
 
+            if (!maNXB.StartsWith("NXB"))
+            {
+                maNXB = "NXB" + maNXB;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(maNXB, @"^TG[1-9]$"))
+            {
+                maNXB = "NXB" + maNXB.Substring(2);
+            }
+            NhaXuatBan nxbBiXoa = nxbDataAccess.TimSachTheoMa(maNXB);
             if (nxbBiXoa != null)
             {
-                var confirmResult = MessageBox.Show($"Nhà xuất bản {txt_TenNXB.Text} sẽ bị xóa!",
+                var confirmResult = MessageBox.Show($"Nhà xuất bản {txt_MaNXB.Text} {txt_TenNXB.Text} sẽ bị xóa!",
                                                      "Xác nhận xóa!!",
                                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)

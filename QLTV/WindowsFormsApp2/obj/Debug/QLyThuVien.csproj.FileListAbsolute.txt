@@ -164,3 +164,7 @@ C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNXB.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuMuon.resources
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuTra.resources
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyTacGia.resources
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ChamCong.resources
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TheDocGia.resources

@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Class1
+    public static class Class1
     {
+        private static string _taiKhoan;
+
+        public static void GhiNhanTaiKhoan(string taiKhoan)
+        {
+            _taiKhoan = taiKhoan;
+        }
+        public static string LayTaiKhoan()
+        {
+            return _taiKhoan;
+        }
     }
 }

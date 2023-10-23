@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +94,30 @@ namespace WindowsFormsApp2
         {
             LapPhieuMuon lpm = new LapPhieuMuon();
             lpm.ShowDialog();
+        }
+
+        private void quảnLýTácGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyTacGia tg = new QuanLyTacGia();
+            tg.ShowDialog();
+        }
+
+        private void chấmcôngtoolStripMenuItem(object sender, EventArgs e)
+        {
+            ChamCong cc = new ChamCong();
+            cc.ShowDialog();
+        }
+
+        private void quảnLýThẻĐọcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TheDocGia dg = new TheDocGia();
+            dg.ShowDialog();
+        }
+
+        private void lậpPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LapPhieuTra pt = new LapPhieuTra();
+            pt.ShowDialog();   
         }
     }
 }

@@ -19,7 +19,6 @@ namespace DAL.Models
         public virtual DbSet<PhieuPhat> PhieuPhat { get; set; }
         public virtual DbSet<PhieuTra> PhieuTra { get; set; }
         public virtual DbSet<Sach> Sach { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagram { get; set; }
         public virtual DbSet<TacGia> TacGia { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
         public virtual DbSet<TheDocGia> TheDocGia { get; set; }
@@ -39,7 +38,7 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<DocGia>()
-                .HasMany(e => e.TheDocGia)
+                .HasMany(e => e.TheDocGias)
                 .WithRequired(e => e.DocGia)
                 .WillCascadeOnDelete(false);
 
@@ -95,12 +94,12 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<PhieuMuon>()
-                .HasMany(e => e.Sach)
-                .WithMany(e => e.PhieuMuon)
+                .HasMany(e => e.Saches)
+                .WithMany(e => e.PhieuMuons)
                 .Map(m => m.ToTable("ChiTietPhieuMuon").MapLeftKey("MaPM").MapRightKey("MaSach"));
 
             modelBuilder.Entity<PhieuMuon>()
-                .HasMany(e => e.PhieuTra)
+                .HasMany(e => e.PhieuTras)
                 .WithMany(e => e.PhieuMuons)
                 .Map(m => m.ToTable("ChiTietPhieuTra").MapLeftKey("MaPM").MapRightKey("MaPT"));
 

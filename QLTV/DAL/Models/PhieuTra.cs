@@ -26,7 +26,9 @@ namespace DAL.Models
         [StringLength(250)]
         public string GhiChu { get; set; }
 
-        public bool TinhTrangSach { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string TinhTrangSach { get; set; }
 
         [Required]
         [StringLength(10)]

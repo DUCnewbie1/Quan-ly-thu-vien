@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics.Tracing;
 using System.Configuration;
+using BLL;
 
 namespace WindowsFormsApp2
 {
@@ -56,8 +57,8 @@ namespace WindowsFormsApp2
                             if (data.Read())
                             {
                                 int userId = data.GetInt32(0); // Lấy user id từ cột "id" trong kết quả truy vấn
-                                //Home home = new Home(userId); // Truyền user id vào Form1
-                                Home home = new Home(); // Truyền user id vào Form1
+                                Class1.GhiNhanTaiKhoan(tk);
+                                Home home = new Home(userId); // Truyền user id vào Form1
                                 home.Show();
                                 this.Hide();
                             }

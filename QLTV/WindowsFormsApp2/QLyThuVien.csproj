@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChamCong.designer.cs">
+      <DependentUpon>ChamCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +112,27 @@
     <Compile Include="QuanLySach.Designer.cs">
       <DependentUpon>QuanLySach.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyTacGia.Designer.cs">
+      <DependentUpon>QuanLyTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TheDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheDocGia.designer.cs">
+      <DependentUpon>TheDocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="timKiemSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="timKiemSach.Designer.cs">
       <DependentUpon>timKiemSach.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChamCong.resx">
+      <DependentUpon>ChamCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySach.resx">
       <DependentUpon>QuanLySach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyTacGia.resx">
+      <DependentUpon>QuanLyTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheDocGia.resx">
+      <DependentUpon>TheDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="timKiemSach.resx">
       <DependentUpon>timKiemSach.cs</DependentUpon>
@@ -242,6 +269,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\publishing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChamCong.xml" />
+    <None Include="Resources\library-card.png" />
+    <None Include="Resources\cheque.png" />
+    <None Include="Resources\return.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
