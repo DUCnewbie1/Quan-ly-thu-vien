@@ -40,7 +40,7 @@ namespace WindowsFormsApp2
             this.DangKi = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Llbl_QuenMK = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -153,18 +153,19 @@ namespace WindowsFormsApp2
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // linkLabel1
+            // Llbl_QuenMK
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Llbl_QuenMK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(118, 154);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 13);
-            this.linkLabel1.TabIndex = 10;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Quên mật khẩu?";
+            this.Llbl_QuenMK.AutoSize = true;
+            this.Llbl_QuenMK.Location = new System.Drawing.Point(118, 154);
+            this.Llbl_QuenMK.Name = "Llbl_QuenMK";
+            this.Llbl_QuenMK.Size = new System.Drawing.Size(86, 13);
+            this.Llbl_QuenMK.TabIndex = 10;
+            this.Llbl_QuenMK.TabStop = true;
+            this.Llbl_QuenMK.Text = "Quên mật khẩu?";
+            this.Llbl_QuenMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Llbl_QuenMK_LinkClicked);
             // 
             // panel1
             // 
@@ -175,7 +176,7 @@ namespace WindowsFormsApp2
             this.panel1.Controls.Add(this.Thoat);
             this.panel1.Controls.Add(this.DN);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.Llbl_QuenMK);
             this.panel1.Controls.Add(this.DangKi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.checkBox1);
@@ -215,7 +216,7 @@ namespace WindowsFormsApp2
         private Button DangKi;
         private Label label3;
         private CheckBox checkBox1;
-        private LinkLabel linkLabel1;
+        private LinkLabel Llbl_QuenMK;
         private Panel panel1;
     }
 }

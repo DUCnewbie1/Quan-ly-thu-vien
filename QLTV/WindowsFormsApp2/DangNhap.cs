@@ -57,7 +57,7 @@ namespace WindowsFormsApp2
                             if (data.Read())
                             {
                                 int userId = data.GetInt32(0); // Lấy user id từ cột "id" trong kết quả truy vấn
-                                Class1.GhiNhanTaiKhoan(tk);
+                                XuLy.GhiNhanTaiKhoan(tk);
                                 Home home = new Home(userId); // Truyền user id vào Form1
                                 home.Show();
                                 this.Hide();
@@ -148,12 +148,12 @@ namespace WindowsFormsApp2
         {
 
         }
+
         // quên mật khẩu 
-        //private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //    CheckEmail CE = new CheckEmail();
-        //    CE.Show();
-        //    this.Hide();
-        //}
+        private void Llbl_QuenMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            QuenMatKhau mk = new QuenMatKhau();
+            mk.Show();
+        }
     }
 }

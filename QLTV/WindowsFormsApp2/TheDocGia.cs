@@ -80,6 +80,12 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Thẻ đọc giả đã tồn tại. Vui lòng nhập mã thẻ đọc giả khác.", "Lỗi");
                     return;
                 }
+                //var existingReader = context.DocGia.FirstOrDefault(dg => dg.MaDocGia == maDG);
+                //if (existingReader != null)
+                //{
+                //    MessageBox.Show("Đọc giả này đã đăng ký thẻ. Vui lòng nhập mã đọc giả khác.", "Lỗi");
+                //    return;
+                //}
 
                 DAL.Models.TheDocGia newReadersCard = new DAL.Models.TheDocGia
                 {

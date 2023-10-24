@@ -1,80 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ChamCong>
   <Row>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <Time>02:37</Time>
-  </Row>
-  <Row>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <Time>02:41</Time>
-  </Row>
-  <Row>
-    <Name>Hai</Name>
-    <Ca>Chiều</Ca>
-    <Time>02:42</Time>
-  </Row>
-  <Row>
-    <Name>Hai</Name>
-    <Ca>Chiều</Ca>
-    <Time>02:46</Time>
-  </Row>
-  <Row>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <Time>02:47</Time>
-  </Row>
-  <Row>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <Time>02:48</Time>
-  </Row>
-  <Row>
-    <Name>Hai</Name>
-    <Ca>Chiều</Ca>
-    <Time>02:56</Time>
-    <Date>23/10/2023</Date>
-  </Row>
-  <Row>
-    <Date>23/10/2023</Date>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <Time>02:57</Time>
-  </Row>
-  <Row>
     <Date>23/10/2023</Date>
     <Name>Hai</Name>
     <Ca>Chiều</Ca>
-    <Time>03:05</Time>
-  </Row>
-  <Row>
-    <Date>23/10/2023</Date>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <FromTime>03:07</FromTime>
-  </Row>
-  <Row>
-    <Date>23/10/2023</Date>
-    <Name>Hai</Name>
-    <Ca>Sáng </Ca>
-    <FromTime>03:08</FromTime>
-  </Row>
-  <Row>
-    <Date>23/10/2023</Date>
-    <Name>Hai</Name>
-    <Ca>Chiều</Ca>
-    <FromTime>03:19</FromTime>
-    <ToTime>03:19</ToTime>
-    <ToTime>03:21</ToTime>
-    <ToTime>03:22</ToTime>
-    <ToTime>03:23</ToTime>
-  </Row>
-  <Row>
-    <Date>23/10/2023</Date>
-    <Name>Hai</Name>
-    <Ca>Sáng</Ca>
-    <FromTime>03:31</FromTime>
-    <ToTime>03:32</ToTime>
+    <FromTime>21:11</FromTime>
+    <ToTime>21:12</ToTime>
+    <ToTime>21:12</ToTime>
   </Row>
 </ChamCong>

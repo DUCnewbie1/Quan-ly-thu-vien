@@ -25,7 +25,6 @@ namespace DAL.Models
         [Column(TypeName = "date")]
         public DateTime NgayHetHan { get; set; }
 
-        [Required]
         [StringLength(10)]
         public string MaDocGia { get; set; }
 

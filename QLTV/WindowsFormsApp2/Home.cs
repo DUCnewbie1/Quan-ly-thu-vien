@@ -20,14 +20,6 @@ namespace WindowsFormsApp2
             this.userId = userId;
             InitializeComponent();
             CenterToScreen();
-            wplayer.URL = "LMT.mp3";
-            wplayer.settings.autoStart = true;
-            wplayer.settings.setMode("loop", true);
-        }
-        public Home()
-        {
-            InitializeComponent();
-            CenterToScreen();
             //wplayer.URL = "LMT.mp3";
             //wplayer.settings.autoStart = true;
             //wplayer.settings.setMode("loop", true);

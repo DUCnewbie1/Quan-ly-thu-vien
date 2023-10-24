@@ -79,7 +79,7 @@ namespace WindowsFormsApp2
                 dgvPhieuMuon.Rows[index].Cells[2].Value = item.NgayTra;
                 dgvPhieuMuon.Rows[index].Cells[3].Value = item.GhiChu;
                 dgvPhieuMuon.Rows[index].Cells[4].Value = item.SoLuong;
-                dgvPhieuMuon.Rows[index].Cells[5].Value = item.TheDocGia.DocGia.TenDocGia;
+                dgvPhieuMuon.Rows[index].Cells[5].Value = item.TheDocGia;
                 dgvPhieuMuon.Rows[index].Cells[6].Value = item.NhanVien.TenNV;
             }
         }
@@ -339,7 +339,8 @@ namespace WindowsFormsApp2
                     pm.NgayTra.ToString().ToLower().Contains(searchText) ||
                     pm.GhiChu.ToLower().Contains(searchText) ||
                     pm.SoLuong.ToString().ToLower().Contains(searchText) ||
-                    pm.TheDocGia.DocGia.TenDocGia.ToLower().Contains(searchText) ||
+                    //Tam thoi bo, sua gap !!!!!!!!
+                    //pm.TheDocGia.MaDocGia.TenDocGia.ToLower().Contains(searchText) ||
                     pm.NhanVien.TenNV.ToLower().Contains(searchText)
                 ).ToList();
                 BindGrid(filteredList);

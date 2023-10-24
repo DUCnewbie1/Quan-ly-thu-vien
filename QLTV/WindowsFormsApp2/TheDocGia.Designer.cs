@@ -60,9 +60,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTheDG = new System.Windows.Forms.DataGridView();
             this.maThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayLapThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTheDG)).BeginInit();
@@ -240,7 +240,7 @@
             this.panel1.Controls.Add(this.btnDeleteDG);
             this.panel1.Controls.Add(this.btnDangKy);
             this.panel1.Location = new System.Drawing.Point(2, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 127);
             this.panel1.TabIndex = 12;
@@ -248,7 +248,7 @@
             // dtpkNgayHetHan
             // 
             this.dtpkNgayHetHan.Location = new System.Drawing.Point(408, 83);
-            this.dtpkNgayHetHan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpkNgayHetHan.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkNgayHetHan.Name = "dtpkNgayHetHan";
             this.dtpkNgayHetHan.Size = new System.Drawing.Size(177, 20);
             this.dtpkNgayHetHan.TabIndex = 21;
@@ -256,7 +256,7 @@
             // dtpkNgayLap
             // 
             this.dtpkNgayLap.Location = new System.Drawing.Point(408, 32);
-            this.dtpkNgayLap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpkNgayLap.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkNgayLap.Name = "dtpkNgayLap";
             this.dtpkNgayLap.Size = new System.Drawing.Size(177, 20);
             this.dtpkNgayLap.TabIndex = 20;
@@ -294,7 +294,7 @@
             // txtMaDG
             // 
             this.txtMaDG.Location = new System.Drawing.Point(82, 83);
-            this.txtMaDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaDG.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.Size = new System.Drawing.Size(186, 20);
             this.txtMaDG.TabIndex = 14;
@@ -302,7 +302,7 @@
             // txtMaThe
             // 
             this.txtMaThe.Location = new System.Drawing.Point(82, 32);
-            this.txtMaThe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaThe.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaThe.Name = "txtMaThe";
             this.txtMaThe.Size = new System.Drawing.Size(186, 20);
             this.txtMaThe.TabIndex = 9;
@@ -320,7 +320,7 @@
             // btnExitDG
             // 
             this.btnExitDG.Location = new System.Drawing.Point(617, 72);
-            this.btnExitDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExitDG.Margin = new System.Windows.Forms.Padding(2);
             this.btnExitDG.Name = "btnExitDG";
             this.btnExitDG.Size = new System.Drawing.Size(137, 27);
             this.btnExitDG.TabIndex = 4;
@@ -331,7 +331,7 @@
             // btnDeleteDG
             // 
             this.btnDeleteDG.Location = new System.Drawing.Point(693, 32);
-            this.btnDeleteDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteDG.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteDG.Name = "btnDeleteDG";
             this.btnDeleteDG.Size = new System.Drawing.Size(61, 27);
             this.btnDeleteDG.TabIndex = 2;
@@ -342,7 +342,7 @@
             // btnDangKy
             // 
             this.btnDangKy.Location = new System.Drawing.Point(617, 32);
-            this.btnDangKy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(61, 27);
             this.btnDangKy.TabIndex = 0;
@@ -368,11 +368,11 @@
             this.dgvTheDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTheDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maThe,
+            this.MaDG,
             this.ngayLapThe,
-            this.ngayHetHan,
-            this.MaDG});
+            this.ngayHetHan});
             this.dgvTheDG.Location = new System.Drawing.Point(0, 224);
-            this.dgvTheDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTheDG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTheDG.Name = "dgvTheDG";
             this.dgvTheDG.RowHeadersWidth = 62;
             this.dgvTheDG.RowTemplate.Height = 28;
@@ -386,6 +386,12 @@
             this.maThe.MinimumWidth = 8;
             this.maThe.Name = "maThe";
             // 
+            // MaDG
+            // 
+            this.MaDG.HeaderText = "Mã Đọc Giả";
+            this.MaDG.MinimumWidth = 8;
+            this.MaDG.Name = "MaDG";
+            // 
             // ngayLapThe
             // 
             this.ngayLapThe.HeaderText = "Ngày Lập";
@@ -398,12 +404,6 @@
             this.ngayHetHan.MinimumWidth = 8;
             this.ngayHetHan.Name = "ngayHetHan";
             // 
-            // MaDG
-            // 
-            this.MaDG.HeaderText = "Mã Đọc Giả";
-            this.MaDG.MinimumWidth = 8;
-            this.MaDG.Name = "MaDG";
-            // 
             // TheDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +415,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TheDocGia";
             this.Text = "TheDocGia";
             this.Load += new System.EventHandler(this.frmTheDocGia_Load);
@@ -463,8 +463,8 @@
         private System.Windows.Forms.DateTimePicker dtpkNgayHetHan;
         private System.Windows.Forms.DateTimePicker dtpkNgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn maThe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayLapThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayHetHan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
     }
 }

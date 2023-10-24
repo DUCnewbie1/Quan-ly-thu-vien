@@ -34,16 +34,13 @@ namespace DAL
             context.Set<T>().Remove(entity);
             context.SaveChanges();
         }
-        //public static bool KiemTraMa(string ma)
-        //{
-        //    using (var context = new Model1())
-        //    {
-        //        return !context.Set<T>().Any(s => s.Equals() == ma);
-        //    }
-        //}
         public T TimSachTheoMa(string maSach)
         {
             return context.Set<T>().Find(maSach);
+        }
+        public TheDocGia TimTheDocGiaTheoMaDocGia(string maDocGia)
+        {
+            return context.Set<TheDocGia>().FirstOrDefault(e => e.MaDocGia == maDocGia);
         }
     }
 }

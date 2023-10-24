@@ -12,8 +12,6 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Xml.Linq;
-using System.Security.AccessControl;
-using System.Security.Principal;
 
 namespace WindowsFormsApp2
 {
@@ -26,6 +24,26 @@ namespace WindowsFormsApp2
             // Đặt giá trị mặc định của ComboBox là không hiển thị gì
             cmbCa.Text = "";
         }
+
+        //private void LoadDataFromXml(string path)
+        //{
+        //    // Tạo một đối tượng XDocument để load dữ liệu từ file XML
+        //    XDocument doc = XDocument.Load(path);
+
+        //    // Sử dụng LINQ để truy vấn dữ liệu từ file XML
+        //    var query = from row in doc.Descendants("Row")
+        //                select new
+        //                {
+        //                    Date = (string)row.Element("Date"),
+        //                    Name = (string)row.Element("Name"),
+        //                    Ca = (string)row.Element("Ca"),
+        //                    FromTime = (string)row.Element("FromTime")
+        //                };
+
+        //    // Đổ dữ liệu vào DataGridView
+        //    dgvChamCong.DataSource = query.ToList();
+        //}
+
 
         private bool isChamCong = false;
 
@@ -51,14 +69,9 @@ namespace WindowsFormsApp2
                 row.Cells[2].Value = DateTime.Now.ToString("HH:mm");
 
                 // Ghi thông tin vào file XML
-                string xmlFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ChamCong.xml");
-                //Nếu như trong document không tồn tại ChamCong.xml thì sẽ tạo file đó
-                if (!File.Exists(xmlFilePath))
-                {
-                    XDocument doc = new XDocument(new XElement("ChamCong"));
-                    doc.Save(xmlFilePath);
-                }
-                AppendToXml(xmlFilePath, dgvChamCong, dtpToday.Value);
+                string path = @"E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\ChamCong.xml";
+                //"E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\ChamCong.xml"
+                AppendToXml(path, dgvChamCong, dtpToday.Value);
 
                 MessageBox.Show("Chấm công thành công!");
 
@@ -69,30 +82,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show($"Lỗi là: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static void CreateWithFullAccess(string targetDirectory)
-        {
-            try
-            {
-                if (!Directory.Exists(targetDirectory))
-                {
-                    Directory.CreateDirectory(targetDirectory);
-                }
-                DirectoryInfo info = new DirectoryInfo(targetDirectory);
-                SecurityIdentifier allUsersSid =
-                new SecurityIdentifier(WellKnownSidType.LocalServiceSid,
-                null);
-                DirectorySecurity security = info.GetAccessControl();
-                security.AddAccessRule(
-                new FileSystemAccessRule(allUsersSid,
-                FileSystemRights.FullControl,
-                AccessControlType.Allow));
-                info.SetAccessControl(security);
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.ToString());
-            }
-        }
+
         private void AppendToXml(string path, DataGridView dgv, DateTime date)
         {
             XmlDocument doc = new XmlDocument();
@@ -136,7 +126,7 @@ namespace WindowsFormsApp2
 
         public void ChamCong_Load(object sender, EventArgs e)
         {
-            string taiKhoan = Class1.LayTaiKhoan();
+            string taiKhoan = BLL.XuLy.LayTaiKhoan();
             txtNameCc.Text = taiKhoan;
         }
         // Đức chỉ cho hiển thị combox là sáng khi từ 3 đến 12 giờ, từ 13 đên 17h hiển thị là chiều
@@ -154,10 +144,45 @@ namespace WindowsFormsApp2
                 cmbCa.Items.Add("Sáng");
             }
             // Nếu giờ hiện tại từ 13 đến 17, chỉ cho phép chọn "Chiều"
-            else if (hour >= 13 && hour <= 17)
+            else if (hour >= 13 && hour <= 24)
             {
                 cmbCa.Items.Add("Chiều");
             }
         }
+
+        private void btnTKe_Click(object sender, EventArgs e)
+        {
+            // Đường dẫn đến file ChamCong.xml
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ChamCong.xml");
+            //Nếu như không có ChamCong.xml thì sẽ tạo ChamCong.xml
+            if (!File.Exists(path))
+            {
+                XDocument doc = new XDocument(new XElement("ChamCong"));
+                doc.Save(path);
+            }
+            // Gọi hàm LoadDataFromXml để đổ dữ liệu vào dgvTKe
+            LoadDataFromXml(path, dgvTke);
+        }
+
+        private void LoadDataFromXml(string path, DataGridView dgv)
+        {
+            // Tạo một đối tượng XDocument để load dữ liệu từ file XML
+            XDocument doc = XDocument.Load(path);
+
+            // Sử dụng LINQ để truy vấn dữ liệu từ file XML
+            var query = from row in doc.Descendants("Row")
+                        select new
+                        {
+                            Date = (string)row.Element("Date"),
+                            Name = (string)row.Element("Name"),
+                            Ca = (string)row.Element("Ca"),
+                            FromTime = (string)row.Element("FromTime"),
+                            ToTime = (string)row.Element("ToTime")
+                        };
+
+            // Đổ dữ liệu vào DataGridView
+            dgv.DataSource = query.ToList();
+        }
+
     }
 }

@@ -39,10 +39,14 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTKe = new System.Windows.Forms.Button();
             this.btnThoatCc = new System.Windows.Forms.Button();
             this.dtpToday = new System.Windows.Forms.DateTimePicker();
+            this.dgvTke = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTke)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,7 +93,6 @@
             // 
             // cmbCa
             // 
-            this.cmbCa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCa.FormattingEnabled = true;
             this.cmbCa.Items.AddRange(new object[] {
             "Sáng ",
@@ -100,6 +103,7 @@
             this.cmbCa.Size = new System.Drawing.Size(170, 21);
             this.cmbCa.TabIndex = 4;
             this.cmbCa.DropDown += new System.EventHandler(this.cmbCa_DropDown);
+            this.cmbCa.Click += new System.EventHandler(this.cmbCa_DropDown);
             // 
             // label3
             // 
@@ -125,7 +129,7 @@
             this.dgvChamCong.Name = "dgvChamCong";
             this.dgvChamCong.RowHeadersWidth = 62;
             this.dgvChamCong.RowTemplate.Height = 28;
-            this.dgvChamCong.Size = new System.Drawing.Size(475, 227);
+            this.dgvChamCong.Size = new System.Drawing.Size(524, 49);
             this.dgvChamCong.TabIndex = 6;
             // 
             // Column1
@@ -148,6 +152,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnTKe);
             this.panel1.Controls.Add(this.btnThoatCc);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cmbCa);
@@ -159,6 +164,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 227);
             this.panel1.TabIndex = 7;
+            // 
+            // btnTKe
+            // 
+            this.btnTKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTKe.Location = new System.Drawing.Point(63, 172);
+            this.btnTKe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTKe.Name = "btnTKe";
+            this.btnTKe.Size = new System.Drawing.Size(84, 34);
+            this.btnTKe.TabIndex = 7;
+            this.btnTKe.Text = "Thống kê";
+            this.btnTKe.UseVisualStyleBackColor = true;
+            this.btnTKe.Click += new System.EventHandler(this.btnTKe_Click);
             // 
             // btnThoatCc
             // 
@@ -180,11 +197,35 @@
             this.dtpToday.Size = new System.Drawing.Size(259, 20);
             this.dtpToday.TabIndex = 7;
             // 
+            // dgvTke
+            // 
+            this.dgvTke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTke.Location = new System.Drawing.Point(272, 139);
+            this.dgvTke.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTke.Name = "dgvTke";
+            this.dgvTke.RowHeadersWidth = 62;
+            this.dgvTke.RowTemplate.Height = 28;
+            this.dgvTke.Size = new System.Drawing.Size(523, 133);
+            this.dgvTke.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(277, 124);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Đã châm công hôm nay";
+            // 
             // ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 292);
+            this.ClientSize = new System.Drawing.Size(803, 292);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvTke);
             this.Controls.Add(this.dtpToday);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvChamCong);
@@ -196,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTke)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +258,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button btnTKe;
+        private System.Windows.Forms.DataGridView dgvTke;
+        private System.Windows.Forms.Label label4;
     }
 }
