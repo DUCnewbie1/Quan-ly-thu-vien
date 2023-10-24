@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace WindowsFormsApp2
 {
@@ -65,17 +69,39 @@ namespace WindowsFormsApp2
 
        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
+            this.Hide();
+            DangNhap dn = new DangNhap();
+            dn.Closed += (s, args) => this.Close();
+            dn.Show();
             wplayer.controls.stop();
-            this.Close();
+            
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Ghi thông tin vào file XML
+            string toTime = DateTime.Now.ToString("HH:mm");
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ChamCong.xml");
+            AppendToTimeToXml(path, toTime);
             Application.Exit();
         }
+        public void AppendToTimeToXml(string path, string toTime)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
 
+            XmlNode root = doc.DocumentElement;
+
+            // Lấy dòng cuối cùng trong file XML
+            XmlNode lastRowNode = root.LastChild;
+
+            // Thêm ToTime vào dòng cuối cùng
+            XmlNode toTimeNode = doc.CreateElement("ToTime");
+            toTimeNode.InnerText = toTime;
+            lastRowNode.AppendChild(toTimeNode);
+
+            doc.Save(path);
+        }
         private void quảnLýNhàXuấtBảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QuanLyNXB nxb = new QuanLyNXB();

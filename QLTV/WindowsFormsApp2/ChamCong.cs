@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Xml.Linq;
+using System.Reflection;
 
 namespace WindowsFormsApp2
 {
@@ -69,8 +70,12 @@ namespace WindowsFormsApp2
                 row.Cells[2].Value = DateTime.Now.ToString("HH:mm");
 
                 // Ghi thông tin vào file XML
-                string path = @"E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\ChamCong.xml";
-                //"E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\ChamCong.xml"
+                string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ChamCong.xml");
+                if (!File.Exists(path))
+                {
+                    XDocument doc = new XDocument(new XElement("ChamCong"));
+                    doc.Save(path);
+                }
                 AppendToXml(path, dgvChamCong, dtpToday.Value);
 
                 MessageBox.Show("Chấm công thành công!");

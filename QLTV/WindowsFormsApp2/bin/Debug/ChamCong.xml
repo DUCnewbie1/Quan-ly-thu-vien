@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ChamCong>
+  <Row>
+    <Date>24/10/2023</Date>
+    <Name>Khang</Name>
+    <Ca>Chiều</Ca>
+    <FromTime>19:50</FromTime>
+    <ToTime>19:50</ToTime>
+    <ToTime>19:50</ToTime>
+  </Row>
+  <Row>
+    <Date>24/10/2023</Date>
+    <Name>Khang</Name>
+    <Ca>Chiều</Ca>
+    <FromTime>19:59</FromTime>
+    <ToTime>20:00</ToTime>
+    <ToTime>20:01</ToTime>
+    <ToTime>20:02</ToTime>
+    <ToTime>20:05</ToTime>
+    <ToTime>20:23</ToTime>
+    <ToTime>20:27</ToTime>
+    <ToTime>20:27</ToTime>
+    <ToTime>20:32</ToTime>
+    <ToTime>20:32</ToTime>
+    <ToTime>20:34</ToTime>
+    <ToTime>20:34</ToTime>
+    <ToTime>20:37</ToTime>
+    <ToTime>20:45</ToTime>
+    <ToTime>20:45</ToTime>
+    <ToTime>20:47</ToTime>
+    <ToTime>20:47</ToTime>
+    <ToTime>20:49</ToTime>
+    <ToTime>20:49</ToTime>
+    <ToTime>20:51</ToTime>
+    <ToTime>20:51</ToTime>
+    <ToTime>20:53</ToTime>
+    <ToTime>20:53</ToTime>
+    <ToTime>20:55</ToTime>
+    <ToTime>20:55</ToTime>
+  </Row>
+</ChamCong>

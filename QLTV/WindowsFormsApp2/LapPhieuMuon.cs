@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -86,77 +87,83 @@ namespace WindowsFormsApp2
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            string maPhieu = txtMaPhieu.Text;
-            DateTime ngayLap = dtpkNgayLap.Value;
-            DateTime ngayTra = dtpkNgayTra.Value;
-            string ghiChu = txtGhiChu.Text;
-            string maDocGia = cbDocGia.SelectedValue.ToString();
-            string maNhanVien = cbNhanVien.SelectedValue.ToString();
-            List<Sach> danhSachSachDaChon = new List<Sach>();
-            foreach (var selectedBook in checkedListBook.CheckedItems)
+            try
             {
-                Sach sach = (Sach)selectedBook;
-                danhSachSachDaChon.Add(sach);
-            }
-
-            string maTheDocGia = string.Empty;
-            using (Model1 context = new Model1())
-            {
-                bool maPhieuDaTonTai = context.PhieuMuon.Any(pm => pm.MaPM == maPhieu);
-
-                if (maPhieuDaTonTai)
+                string maPhieu = txtMaPhieu.Text;
+                DateTime ngayLap = dtpkNgayLap.Value;
+                DateTime ngayTra = dtpkNgayTra.Value;
+                string ghiChu = txtGhiChu.Text;
+                string maDocGia = cbDocGia.SelectedValue.ToString();
+                string maNhanVien = cbNhanVien.SelectedValue.ToString();
+                List<Sach> danhSachSachDaChon = new List<Sach>();
+                foreach (var selectedBook in checkedListBook.CheckedItems)
                 {
-                    MessageBox.Show("Mã phiếu đã tồn tại trong cơ sở dữ liệu.");
+                    Sach sach = (Sach)selectedBook;
+                    danhSachSachDaChon.Add(sach);
                 }
-                else
+
+                string maTheDocGia = string.Empty;
+                using (Model1 context = new Model1())
                 {
+                    bool maPhieuDaTonTai = context.PhieuMuon.Any(pm => pm.MaPM == maPhieu);
 
-                    maTheDocGia = context.TheDocGia
-                        .Where(dg => dg.MaDocGia == maDocGia)
-                        .Select(dg => dg.MaThe)
-                        .FirstOrDefault();
+                    if (maPhieuDaTonTai)
+                    {
+                        MessageBox.Show("Mã phiếu đã tồn tại trong cơ sở dữ liệu.");
+                    }
+                    else
+                    {
 
-                    PhieuMuon phieuMuon = new PhieuMuon
-                    {
-                        MaPM = maPhieu,
-                        NgayLap = ngayLap,
-                        NgayTra = ngayTra,
-                        GhiChu = ghiChu,
-                        MaThe = maTheDocGia,
-                        MaNV = maNhanVien,
-                        SoLuong = danhSachSachDaChon.Count
-                    };
-                    Class1<PhieuMuon> classPhieuMuon = new Class1<PhieuMuon>();
-                    classPhieuMuon.Them(phieuMuon);
-                    using (Model1 dbcontext = new Model1())
-                    {
+                        maTheDocGia = context.TheDocGia
+                            .Where(dg => dg.MaDocGia == maDocGia)
+                            .Select(dg => dg.MaThe)
+                            .FirstOrDefault();
+
+                        PhieuMuon phieuMuon = new PhieuMuon
+                        {
+                            MaPM = maPhieu,
+                            NgayLap = ngayLap,
+                            NgayTra = ngayTra,
+                            GhiChu = ghiChu,
+                            MaThe = maTheDocGia,
+                            MaNV = maNhanVien,
+                            SoLuong = danhSachSachDaChon.Count
+                        };
+                        Class1<PhieuMuon> classPhieuMuon = new Class1<PhieuMuon>();
+                        classPhieuMuon.Them(phieuMuon);
+                        using (Model1 dbcontext = new Model1())
+                        {
+                            foreach (Sach selectedBook in danhSachSachDaChon)
+                            {
+                                string insertQuery = "INSERT INTO ChiTietPhieuMuon (MaPM, MaSach) VALUES (@MaPM, @MaSach)";
+                                dbcontext.Database.ExecuteSqlCommand(insertQuery,
+                                    new SqlParameter("MaPM", maPhieu),
+                                    new SqlParameter("MaSach", selectedBook.MaSach)
+                                );
+                            }
+                        }
+                        // Giảm số lượng sách trong cơ sở dữ liệu
                         foreach (Sach selectedBook in danhSachSachDaChon)
                         {
-                            string insertQuery = "INSERT INTO ChiTietPhieuMuon (MaPM, MaSach) VALUES (@MaPM, @MaSach)";
-                            dbcontext.Database.ExecuteSqlCommand(insertQuery,
-                                new SqlParameter("MaPM", maPhieu),
-                                new SqlParameter("MaSach", selectedBook.MaSach)
-                            );
+                            Sach sachInDB = context.Sach.FirstOrDefault(s => s.MaSach == selectedBook.MaSach);
+                            if (sachInDB != null)
+                            {
+                                sachInDB.SoLuong--;
+                                context.Entry(sachInDB).State = EntityState.Modified;
+                            }
                         }
+                        context.SaveChanges();
+                        LoadDataGrid();
                     }
-                    // Giảm số lượng sách trong cơ sở dữ liệu
-                    foreach (Sach selectedBook in danhSachSachDaChon)
-                    {
-                        Sach sachInDB = context.Sach.FirstOrDefault(s => s.MaSach == selectedBook.MaSach);
-                        if (sachInDB != null)
-                        {
-                            sachInDB.SoLuong--;
-                            context.Entry(sachInDB).State = EntityState.Modified;
-                        }
-                    }
-                    context.SaveChanges();
-                    LoadDataGrid();
                 }
+           
+            }
+            catch (DbEntityValidationException ex)
+            {
+                MessageBox.Show("Để mượn sách cần có thẻ đọc giả. Đọc giả này không có thẻ!");
+                return;
             }
         }
-
-
-
         private void txtMaPhieu_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (txtMaPhieu.Text.Length >= 10 && e.KeyChar != (char)Keys.Back)
@@ -167,7 +174,7 @@ namespace WindowsFormsApp2
         }
 
         private void dgvPhieuMuon_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPhieuMuon.Rows[e.RowIndex];
@@ -216,7 +223,6 @@ namespace WindowsFormsApp2
                 }
             }
         }
-
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
