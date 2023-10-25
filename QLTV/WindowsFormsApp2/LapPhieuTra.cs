@@ -15,9 +15,11 @@ namespace WindowsFormsApp2
 {
     public partial class LapPhieuTra : Form
     {
+        private Class1<PhieuTra> phieuTraManager;
         public LapPhieuTra()
         {
             InitializeComponent();
+            phieuTraManager = new Class1<PhieuTra>();
         }
 
         private void LapPhieuTra_Load(object sender, EventArgs e)
@@ -68,15 +70,14 @@ namespace WindowsFormsApp2
                     if (theDocGia != null)
                     {
                         string maThe = theDocGia.MaThe;
-                        var phieuMuons = context.PhieuMuon.Where(p => p.MaThe == maThe).ToList();
-                        cbMaPM.DataSource = phieuMuons;
-                        cbMaPM.DisplayMember = "MaPM";
-                        cbMaPM.ValueMember = "MaPM";
+                        var maPMs = phieuTraManager.GetMaPMsForMaThe(maThe);
+                        cbMaPM.DataSource = maPMs;
                         cbMaPM.SelectedIndex = -1;
                     }
                 }
             }
         }
+
         private void LoadDataGrid()
         {
             Model1 context = new Model1();
@@ -86,33 +87,29 @@ namespace WindowsFormsApp2
         private void BindGrid(List<PhieuTra> ListPhieuTra)
         {
             dgvPhieuTra.Rows.Clear();
-            foreach (var item in ListPhieuTra)
-            {
-                int index = dgvPhieuTra.Rows.Add();
-                dgvPhieuTra.Rows[index].Cells[0].Value = item.MaPT;
-                dgvPhieuTra.Rows[index].Cells[1].Value = item.NgayTra;
-                dgvPhieuTra.Rows[index].Cells[2].Value = item.GhiChu;
-                dgvPhieuTra.Rows[index].Cells[3].Value = item.TinhTrangSach;
-                dgvPhieuTra.Rows[index].Cells[4].Value = LayTenDocGiaTuMaPT(item.MaPT);
-                dgvPhieuTra.Rows[index].Cells[5].Value = item.NhanVien.TenNV;
-            }
-        }
-
-        private string LayTenDocGiaTuMaPT(string maPT)
-        {
             using (Model1 context = new Model1())
             {
-                string query = "SELECT DG.TenDocGia FROM DocGia DG " +
-                               "INNER JOIN TheDocGia TDG ON DG.MaDocGia = TDG.MaDocGia " +
-                               "INNER JOIN PhieuMuon PM ON TDG.MaThe = PM.MaThe " +
-                               "INNER JOIN ChiTietPhieuTra CPT ON PM.MaPM = CPT.MaPM " +
-                               "WHERE CPT.MaPT = @MaPT";
+                foreach (var item in ListPhieuTra)
+                {
+                    int index = dgvPhieuTra.Rows.Add();
+                    dgvPhieuTra.Rows[index].Cells[0].Value = item.MaPT;
+                    dgvPhieuTra.Rows[index].Cells[1].Value = item.NgayTra;
+                    dgvPhieuTra.Rows[index].Cells[2].Value = item.GhiChu;
+                    dgvPhieuTra.Rows[index].Cells[3].Value = item.TinhTrangSach;
+                    dgvPhieuTra.Rows[index].Cells[4].Value = phieuTraManager.LayTenDocGiaTuMaPT(item.MaPT);
+                    dgvPhieuTra.Rows[index].Cells[5].Value = item.NhanVien.TenNV;
 
-                string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPT", maPT)).FirstOrDefault();
-                return tenDocGia;
+                    string query = "SELECT MaPM FROM ChiTietPhieuTra WHERE MaPT = @MaPT";
+                    SqlParameter paramMaPT = new SqlParameter("@MaPT", item.MaPT);
+                    var maPhieuMuon = context.Database.SqlQuery<string>(query, paramMaPT).FirstOrDefault();
+
+                    if (maPhieuMuon != null)
+                    {
+                        dgvPhieuTra.Rows[index].Cells[6].Value = maPhieuMuon;
+                    }
+                }
             }
         }
-
 
         private void cbMaPM_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -120,21 +117,14 @@ namespace WindowsFormsApp2
             if (selectedMaPM != null)
             {
                 string maPM = selectedMaPM.ToString();
-                using (Model1 context = new Model1())
+                var bookNames = phieuTraManager.GetBookNamesForMaPM(maPM);
+                checkedListBook.Items.Clear();
+                foreach (var bookName in bookNames)
                 {
-                    string sqlQuery = "SELECT S.TenSach FROM Sach S " +
-                                      "INNER JOIN ChiTietPhieuMuon CT ON S.MaSach = CT.MaSach " +
-                                      "WHERE CT.MaPM = @MaPM";
-                    var bookNames = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaPM", maPM));
-                    checkedListBook.Items.Clear();
-                    foreach (var bookName in bookNames)
-                    {
-                        checkedListBook.Items.Add(bookName);
-                    }
+                    checkedListBook.Items.Add(bookName);
                 }
             }
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMaPhieu.Text) || cbDocGia.SelectedIndex == -1 || cbNhanVien.SelectedIndex == -1)
@@ -161,7 +151,6 @@ namespace WindowsFormsApp2
                         return;
                     }
          
-
                     PhieuTra phieuTra = new PhieuTra
                     {
                         MaPT = maPhieu,
@@ -175,6 +164,17 @@ namespace WindowsFormsApp2
                     classPhieuTra.Them(phieuTra);
                     string insertQuery = "INSERT INTO ChiTietPhieuTra (MaPT, MaPM) VALUES (@MaPT, (SELECT TOP 1 MaPM FROM PhieuMuon WHERE MaPM = @MaPM))";
                     dbcontext.Database.ExecuteSqlCommand(insertQuery, new SqlParameter("@MaPT", maPhieu), new SqlParameter("@MaPM", maPhieuMuon));
+                    // Cập nhật thông tin sách đã trả
+                    foreach (var item in checkedListBook.CheckedItems)
+                    {
+                        string tenSach = item.ToString();
+                        var sach = dbcontext.Sach.FirstOrDefault(s => s.TenSach == tenSach);
+
+                        if (sach != null)
+                        {
+                            sach.SoLuong += 1;
+                        }
+                    }
                     MessageBox.Show("Thêm mới thành công");
                     dbcontext.SaveChanges();
                 }
@@ -185,6 +185,7 @@ namespace WindowsFormsApp2
                 cbNhanVien.SelectedIndex = -1;
                 txtGhiChu.Text = string.Empty;
                 cbTinhTrang.SelectedIndex = -1;
+                checkedListBook.Items.Clear();
 
                 LoadDataGrid();
             }
@@ -207,16 +208,42 @@ namespace WindowsFormsApp2
                     pt.NgayTra.ToString().ToLower().Contains(searchText) ||
                     pt.GhiChu.ToLower().Contains(searchText) ||
                     pt.TinhTrangSach.ToString().ToLower().Contains(searchText) ||
-                    LayTenDocGiaTuMaPT(pt.MaPT).ToLower().Contains(searchText) ||
+                    phieuTraManager.LayTenDocGiaTuMaPT(pt.MaPT).ToLower().Contains(searchText) ||
                     pt.NhanVien.TenNV.ToLower().Contains(searchText)
                 ).ToList();
                 BindGrid(filteredList);
             }
         }
-
-        private void BtnSua_Click(object sender, EventArgs e)
+        private void dgvPhieuTra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvPhieuTra.Rows[e.RowIndex];
+                string maPT = row.Cells[0].Value.ToString();
+                string maPhieuMuon = row.Cells[6].Value.ToString();
+                txtMaPhieu.Text = maPT;
+                dtpkNgayTra.Value = (DateTime)row.Cells[1].Value;
+                txtGhiChu.Text = row.Cells[2].Value.ToString();
+                cbTinhTrang.Text = row.Cells[3].Value.ToString();
+                string tenDocGia = row.Cells[4].Value.ToString();
+                string tenNhanVien = row.Cells[5].Value.ToString();
+                string maDocGia = phieuTraManager.GetMaDocGiaTuTenDocGia(tenDocGia);
+                cbDocGia.SelectedValue = maDocGia;
+                cbNhanVien.SelectedIndex = cbNhanVien.FindStringExact(tenNhanVien);
+                string maPM = phieuTraManager.GetMaPMTuMaPT(maPT);
+                cbMaPM.Text = maPhieuMuon;
+                var selectedMaPM = cbMaPM.Text;
+                if (selectedMaPM != null)
+                {
+                    maPM = selectedMaPM.ToString();
+                    var bookNames = phieuTraManager.GetBookNamesForMaPM(maPM);
+                    checkedListBook.Items.Clear();
+                    foreach (var bookName in bookNames)
+                    {
+                        checkedListBook.Items.Add(bookName);
+                    }
+                }
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ namespace WindowsFormsApp2
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DN = new System.Windows.Forms.Button();
-            this.DangKi = new System.Windows.Forms.Button();
+            this.btn_DangKy = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Llbl_QuenMK = new System.Windows.Forms.LinkLabel();
@@ -115,16 +115,17 @@ namespace WindowsFormsApp2
             this.DN.UseVisualStyleBackColor = true;
             this.DN.Click += new System.EventHandler(this.DN_Click);
             // 
-            // DangKi
+            // btn_DangKy
             // 
-            this.DangKi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DangKi.Location = new System.Drawing.Point(237, 168);
-            this.DangKi.Name = "DangKi";
-            this.DangKi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DangKi.Size = new System.Drawing.Size(93, 32);
-            this.DangKi.TabIndex = 7;
-            this.DangKi.Text = "Đăng ký ngay";
-            this.DangKi.UseVisualStyleBackColor = true;
+            this.btn_DangKy.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_DangKy.Location = new System.Drawing.Point(237, 168);
+            this.btn_DangKy.Name = "btn_DangKy";
+            this.btn_DangKy.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_DangKy.Size = new System.Drawing.Size(93, 32);
+            this.btn_DangKy.TabIndex = 7;
+            this.btn_DangKy.Text = "Đăng ký ngay";
+            this.btn_DangKy.UseVisualStyleBackColor = true;
+            this.btn_DangKy.Click += new System.EventHandler(this.btn_DangKy_Click);
             // 
             // label3
             // 
@@ -177,7 +178,7 @@ namespace WindowsFormsApp2
             this.panel1.Controls.Add(this.DN);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.Llbl_QuenMK);
-            this.panel1.Controls.Add(this.DangKi);
+            this.panel1.Controls.Add(this.btn_DangKy);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.txt_MK);
@@ -213,7 +214,7 @@ namespace WindowsFormsApp2
         private Label label1;
         private Label label2;
         private Button DN;
-        private Button DangKi;
+        private Button btn_DangKy;
         private Label label3;
         private CheckBox checkBox1;
         private LinkLabel Llbl_QuenMK;

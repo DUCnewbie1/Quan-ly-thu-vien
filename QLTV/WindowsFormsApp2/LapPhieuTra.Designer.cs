@@ -49,15 +49,16 @@
             this.dtpkNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPhieuTra = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuTra)).BeginInit();
             this.SuspendLayout();
@@ -110,11 +111,9 @@
             this.cbTinhTrang.FormattingEnabled = true;
             this.cbTinhTrang.Items.AddRange(new object[] {
             "Quá hạn trả sách",
-            "Mất sách",
-            "Hỏng sách",
-            "Chưa trả sách",
             "Trả thiếu sách",
-            "Sách bẩn"});
+            "Trả đủ sách",
+            ""});
             this.cbTinhTrang.Location = new System.Drawing.Point(113, 404);
             this.cbTinhTrang.Name = "cbTinhTrang";
             this.cbTinhTrang.Size = new System.Drawing.Size(200, 21);
@@ -204,7 +203,6 @@
             this.cbDocGia.Name = "cbDocGia";
             this.cbDocGia.Size = new System.Drawing.Size(200, 21);
             this.cbDocGia.TabIndex = 27;
-            this.cbDocGia.SelectedIndexChanged += new System.EventHandler(this.cbDocGia_SelectedIndexChanged);
             // 
             // cbNhanVien
             // 
@@ -266,43 +264,13 @@
             this.GhiChu,
             this.TinhTrangSach,
             this.TenDocGia,
-            this.TenNV});
+            this.TenNV,
+            this.MaPM});
             this.dgvPhieuTra.Location = new System.Drawing.Point(360, 68);
             this.dgvPhieuTra.Name = "dgvPhieuTra";
             this.dgvPhieuTra.Size = new System.Drawing.Size(641, 410);
             this.dgvPhieuTra.TabIndex = 33;
-            // 
-            // MaPT
-            // 
-            this.MaPT.HeaderText = "Mã Phiếu Trả";
-            this.MaPT.Name = "MaPT";
-            // 
-            // NgayTra
-            // 
-            this.NgayTra.HeaderText = "Ngày Trả";
-            this.NgayTra.Name = "NgayTra";
-            this.NgayTra.Width = 99;
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.Name = "GhiChu";
-            // 
-            // TinhTrangSach
-            // 
-            this.TinhTrangSach.HeaderText = "Tình Trạng Sách";
-            this.TinhTrangSach.Name = "TinhTrangSach";
-            // 
-            // TenDocGia
-            // 
-            this.TenDocGia.HeaderText = "Tên Đọc Giả";
-            this.TenDocGia.Name = "TenDocGia";
-            this.TenDocGia.Width = 99;
-            // 
-            // TenNV
-            // 
-            this.TenNV.HeaderText = "Tên Nhân Viên";
-            this.TenNV.Name = "TenNV";
+            this.dgvPhieuTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuTra_CellClick);
             // 
             // label1
             // 
@@ -322,7 +290,6 @@
             this.BtnSua.TabIndex = 36;
             this.BtnSua.Text = "Sửa ";
             this.BtnSua.UseVisualStyleBackColor = true;
-            this.BtnSua.Click += new System.EventHandler(this.BtnSua_Click);
             // 
             // btnThem
             // 
@@ -333,6 +300,45 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // MaPT
+            // 
+            this.MaPT.HeaderText = "Mã Phiếu Trả";
+            this.MaPT.Name = "MaPT";
+            // 
+            // NgayTra
+            // 
+            this.NgayTra.HeaderText = "Ngày Trả";
+            this.NgayTra.Name = "NgayTra";
+            this.NgayTra.Width = 99;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.Name = "GhiChu";
+            // 
+            // TinhTrangSach
+            // 
+            this.TinhTrangSach.HeaderText = "Tình Trạng";
+            this.TinhTrangSach.Name = "TinhTrangSach";
+            // 
+            // TenDocGia
+            // 
+            this.TenDocGia.HeaderText = "Tên Đọc Giả";
+            this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.Width = 99;
+            // 
+            // TenNV
+            // 
+            this.TenNV.HeaderText = "Tên Nhân Viên";
+            this.TenNV.Name = "TenNV";
+            // 
+            // MaPM
+            // 
+            this.MaPM.HeaderText = "Mã Phiếu Mượn";
+            this.MaPM.Name = "MaPM";
+            this.MaPM.Visible = false;
+            this.MaPM.Width = 85;
             // 
             // LapPhieuTra
             // 
@@ -389,5 +395,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPM;
     }
 }

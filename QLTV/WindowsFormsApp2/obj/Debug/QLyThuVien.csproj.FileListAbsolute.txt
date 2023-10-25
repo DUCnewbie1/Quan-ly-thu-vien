@@ -169,3 +169,4 @@ C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyTac
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ChamCong.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TheDocGia.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuenMatKhau.resources
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.DangKy.resources

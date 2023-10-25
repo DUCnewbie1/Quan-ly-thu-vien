@@ -60,6 +60,12 @@
     <Compile Include="ChamCong.designer.cs">
       <DependentUpon>ChamCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="ChamCong.resx">
       <DependentUpon>ChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -284,6 +293,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChamCong.xml" />
+    <Content Include="Resources\SignIn_Background.JPG" />
     <None Include="Resources\library-card.png" />
     <None Include="Resources\cheque.png" />
     <None Include="Resources\return.png" />

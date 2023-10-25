@@ -14,7 +14,9 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp2
 {
@@ -89,6 +91,13 @@ namespace WindowsFormsApp2
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtMaPhieu.Text) || 
+                    string.IsNullOrWhiteSpace(cbDocGia.SelectedValue.ToString()) ||
+                    string.IsNullOrWhiteSpace(cbNhanVien.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("Vui lòng nhập đủ thông tin trước khi thêm phiếu mượn", "Thông báo");
+                    return;
+                }
                 string maPhieu = txtMaPhieu.Text;
                 DateTime ngayLap = dtpkNgayLap.Value;
                 DateTime ngayTra = dtpkNgayTra.Value;
@@ -101,7 +110,11 @@ namespace WindowsFormsApp2
                     Sach sach = (Sach)selectedBook;
                     danhSachSachDaChon.Add(sach);
                 }
-
+                if (danhSachSachDaChon.Count == 0)
+                {
+                    MessageBox.Show("Chưa chọn sách mượn, mời kiểm tra lại", "Thông báo");
+                    return;
+                }
                 string maTheDocGia = string.Empty;
                 using (Model1 context = new Model1())
                 {
@@ -156,7 +169,6 @@ namespace WindowsFormsApp2
                         LoadDataGrid();
                     }
                 }
-           
             }
             catch (DbEntityValidationException ex)
             {
@@ -345,8 +357,7 @@ namespace WindowsFormsApp2
                     pm.NgayTra.ToString().ToLower().Contains(searchText) ||
                     pm.GhiChu.ToLower().Contains(searchText) ||
                     pm.SoLuong.ToString().ToLower().Contains(searchText) ||
-                    //Tam thoi bo, sua gap !!!!!!!!
-                    //pm.TheDocGia.MaDocGia.TenDocGia.ToLower().Contains(searchText) ||
+                    pm.TheDocGia.DocGia.TenDocGia.ToLower().Contains(searchText) ||
                     pm.NhanVien.TenNV.ToLower().Contains(searchText)
                 ).ToList();
                 BindGrid(filteredList);

@@ -253,6 +253,16 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SignIn_Background {
+            get {
+                object obj = ResourceManager.GetObject("SignIn_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap system2 {
             get {
                 object obj = ResourceManager.GetObject("system2", resourceCulture);

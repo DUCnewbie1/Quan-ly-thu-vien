@@ -155,5 +155,11 @@ namespace WindowsFormsApp2
             QuenMatKhau mk = new QuenMatKhau();
             mk.Show();
         }
+
+        private void btn_DangKy_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy();
+            dk.Show();
+        }
     }
 }
