@@ -49,9 +49,6 @@
             this.dtpkNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPhieuTra = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +56,9 @@
             this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuTra)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +108,7 @@
             // 
             // cbTinhTrang
             // 
+            this.cbTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTinhTrang.FormattingEnabled = true;
             this.cbTinhTrang.Items.AddRange(new object[] {
             "Quá hạn trả sách",
@@ -130,6 +131,7 @@
             // 
             // cbMaPM
             // 
+            this.cbMaPM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaPM.FormattingEnabled = true;
             this.cbMaPM.Location = new System.Drawing.Point(113, 153);
             this.cbMaPM.Name = "cbMaPM";
@@ -153,6 +155,7 @@
             this.checkedListBook.Name = "checkedListBook";
             this.checkedListBook.Size = new System.Drawing.Size(200, 94);
             this.checkedListBook.TabIndex = 36;
+            this.checkedListBook.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBook_ItemCheck);
             // 
             // txtMaPhieu
             // 
@@ -198,6 +201,7 @@
             // 
             // cbDocGia
             // 
+            this.cbDocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDocGia.FormattingEnabled = true;
             this.cbDocGia.Location = new System.Drawing.Point(113, 86);
             this.cbDocGia.Name = "cbDocGia";
@@ -206,6 +210,7 @@
             // 
             // cbNhanVien
             // 
+            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhanVien.FormattingEnabled = true;
             this.cbNhanVien.Location = new System.Drawing.Point(113, 113);
             this.cbNhanVien.Name = "cbNhanVien";
@@ -244,6 +249,7 @@
             this.dtpkNgayTra.Name = "dtpkNgayTra";
             this.dtpkNgayTra.Size = new System.Drawing.Size(200, 20);
             this.dtpkNgayTra.TabIndex = 22;
+            this.dtpkNgayTra.ValueChanged += new System.EventHandler(this.dtpkNgayTra_ValueChanged);
             // 
             // label3
             // 
@@ -271,35 +277,6 @@
             this.dgvPhieuTra.Size = new System.Drawing.Size(641, 410);
             this.dgvPhieuTra.TabIndex = 33;
             this.dgvPhieuTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuTra_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(355, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 29);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "LẬP PHIẾU TRẢ";
-            // 
-            // BtnSua
-            // 
-            this.BtnSua.Location = new System.Drawing.Point(926, 503);
-            this.BtnSua.Name = "BtnSua";
-            this.BtnSua.Size = new System.Drawing.Size(75, 23);
-            this.BtnSua.TabIndex = 36;
-            this.BtnSua.Text = "Sửa ";
-            this.BtnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(812, 503);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 35;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // MaPT
             // 
@@ -339,6 +316,35 @@
             this.MaPM.Name = "MaPM";
             this.MaPM.Visible = false;
             this.MaPM.Width = 85;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(355, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 29);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "LẬP PHIẾU TRẢ";
+            // 
+            // BtnSua
+            // 
+            this.BtnSua.Location = new System.Drawing.Point(926, 503);
+            this.BtnSua.Name = "BtnSua";
+            this.BtnSua.Size = new System.Drawing.Size(75, 23);
+            this.BtnSua.TabIndex = 36;
+            this.BtnSua.Text = "Sửa ";
+            this.BtnSua.UseVisualStyleBackColor = true;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(812, 503);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 35;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // LapPhieuTra
             // 

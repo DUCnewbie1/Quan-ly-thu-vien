@@ -137,5 +137,11 @@ namespace WindowsFormsApp2
             LapPhieuTra pt = new LapPhieuTra();
             pt.ShowDialog();   
         }
+
+        private void đăngKýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy();
+            dk.ShowDialog();
+        }
     }
 }

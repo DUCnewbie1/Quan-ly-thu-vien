@@ -39,10 +39,8 @@ namespace WindowsFormsApp2
 
         private void btn_DK_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //try
-                //{
+                try
+                {
                     using (SqlConnection conn = new SqlConnection(DNKDR.ConnectionString))
                     {
                     if (txt_HoTen.Text == "" || txt_DiaChi.Text == "" || txt_Email.Text == "" ||
@@ -58,50 +56,26 @@ namespace WindowsFormsApp2
                         string tentk = txt_TenTK.Text;
                         string matkhau = txt_MK.Text;
                         string nhaplai = txt_RepeatMK.Text;
-                        string adminCode = txt_AdminPass.Text;
                         if (matkhau == nhaplai)
                         {
                             using (SqlCommand cmd = new SqlCommand())
                             {
-                                if (adminCode == "1111")
+                                NhanVien nv = new NhanVien
                                 {
-                                    NhanVien nv = new NhanVien
-                                    {
-                                        TenNV = hoTen,
-                                        Sdt = sdt,
-                                        Email = email,
-                                    };
-                                    Class1<NhanVien> classNV = new Class1<NhanVien>();
-                                    classNV.Them(nv);
-                                    TaiKhoan tk = new TaiKhoan
-                                    {
-                                        TenTK = tentk,
-                                        MatKhau = matkhau,
-                                        LoaiTK = "NHANVIEN",
-                                    };
-                                    Class1<TaiKhoan> classTK = new Class1<TaiKhoan>();
-                                    classTK.Them(tk);
-                                }
-                                else
+                                    TenNV = hoTen,
+                                    Sdt = sdt,
+                                    Email = email,
+                                };
+                                Class1<NhanVien> classNV = new Class1<NhanVien>();
+                                classNV.Them(nv);
+                                TaiKhoan tk = new TaiKhoan
                                 {
-                                    DocGia dg = new DocGia
-                                    {
-                                        TenDocGia = hoTen,
-                                        DiaChi = diaChi,
-                                        Sdt = sdt,
-                                        Email = email,
-                                    };
-                                    Class1<DocGia> classDG = new Class1<DocGia>();
-                                    classDG.Them(dg);
-                                    TaiKhoan tk = new TaiKhoan
-                                    {
-                                        TenTK = tentk,
-                                        MatKhau = matkhau,
-                                        LoaiTK = "DOCGIA",
-                                    };
-                                    Class1<TaiKhoan> classTK = new Class1<TaiKhoan>();
-                                    classTK.Them(tk);
-                                }
+                                    TenTK = tentk,
+                                    MatKhau = matkhau,
+                                    LoaiTK = "NhanVien",
+                                };
+                                Class1<TaiKhoan> classTK = new Class1<TaiKhoan>();
+                                classTK.Them(tk);
                             }
                         }
                         else
@@ -109,23 +83,11 @@ namespace WindowsFormsApp2
                             MessageBox.Show("Mật khẩu nhập lại không trùng với mật khẩu. Vui lòng kiểm tra lại ", "Thông báo");
                         }
                     }
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("Có lỗi trong quá trình đăng ký: " + ex.Message);
-                //}
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var errors in ex.EntityValidationErrors)
-                {
-                    foreach (var validationError in errors.ValidationErrors)
-                    {
-                        // get the error message 
-                        MessageBox.Show(validationError.ErrorMessage);
-                    }
                 }
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi trong quá trình đăng ký: " + ex.Message);
+                }
         }
 
         private void btn_HuyDK_Click(object sender, EventArgs e)

@@ -37,8 +37,6 @@ namespace WindowsFormsApp2
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DN = new System.Windows.Forms.Button();
-            this.btn_DangKy = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Llbl_QuenMK = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,7 +46,7 @@ namespace WindowsFormsApp2
             // Thoat
             // 
             this.Thoat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Thoat.Location = new System.Drawing.Point(238, 122);
+            this.Thoat.Location = new System.Drawing.Point(238, 133);
             this.Thoat.Name = "Thoat";
             this.Thoat.Size = new System.Drawing.Size(64, 29);
             this.Thoat.TabIndex = 1;
@@ -72,7 +70,7 @@ namespace WindowsFormsApp2
             this.txt_MK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_MK.Location = new System.Drawing.Point(121, 63);
+            this.txt_MK.Location = new System.Drawing.Point(121, 76);
             this.txt_MK.Name = "txt_MK";
             this.txt_MK.ShortcutsEnabled = false;
             this.txt_MK.Size = new System.Drawing.Size(181, 20);
@@ -98,7 +96,7 @@ namespace WindowsFormsApp2
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 70);
+            this.label2.Location = new System.Drawing.Point(60, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 5;
@@ -107,7 +105,7 @@ namespace WindowsFormsApp2
             // DN
             // 
             this.DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DN.Location = new System.Drawing.Point(121, 122);
+            this.DN.Location = new System.Drawing.Point(121, 133);
             this.DN.Name = "DN";
             this.DN.Size = new System.Drawing.Size(72, 29);
             this.DN.TabIndex = 6;
@@ -115,38 +113,13 @@ namespace WindowsFormsApp2
             this.DN.UseVisualStyleBackColor = true;
             this.DN.Click += new System.EventHandler(this.DN_Click);
             // 
-            // btn_DangKy
-            // 
-            this.btn_DangKy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_DangKy.Location = new System.Drawing.Point(237, 168);
-            this.btn_DangKy.Name = "btn_DangKy";
-            this.btn_DangKy.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_DangKy.Size = new System.Drawing.Size(93, 32);
-            this.btn_DangKy.TabIndex = 7;
-            this.btn_DangKy.Text = "Đăng ký ngay";
-            this.btn_DangKy.UseVisualStyleBackColor = true;
-            this.btn_DangKy.Click += new System.EventHandler(this.btn_DangKy_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.label3.Location = new System.Drawing.Point(102, 181);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 15);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Bạn chưa có tài khoản?";
-            // 
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(121, 99);
+            this.checkBox1.Location = new System.Drawing.Point(121, 110);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(109, 17);
             this.checkBox1.TabIndex = 9;
@@ -160,7 +133,7 @@ namespace WindowsFormsApp2
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Llbl_QuenMK.AutoSize = true;
-            this.Llbl_QuenMK.Location = new System.Drawing.Point(118, 154);
+            this.Llbl_QuenMK.Location = new System.Drawing.Point(118, 174);
             this.Llbl_QuenMK.Name = "Llbl_QuenMK";
             this.Llbl_QuenMK.Size = new System.Drawing.Size(86, 13);
             this.Llbl_QuenMK.TabIndex = 10;
@@ -176,9 +149,7 @@ namespace WindowsFormsApp2
             this.panel1.Controls.Add(this.txt_TK);
             this.panel1.Controls.Add(this.Thoat);
             this.panel1.Controls.Add(this.DN);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.Llbl_QuenMK);
-            this.panel1.Controls.Add(this.btn_DangKy);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.txt_MK);
@@ -214,8 +185,6 @@ namespace WindowsFormsApp2
         private Label label1;
         private Label label2;
         private Button DN;
-        private Button btn_DangKy;
-        private Label label3;
         private CheckBox checkBox1;
         private LinkLabel Llbl_QuenMK;
         private Panel panel1;

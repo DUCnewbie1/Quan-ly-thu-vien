@@ -51,8 +51,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btn_CreatePassword = new System.Windows.Forms.Button();
             this.btn_DK = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_AdminPass = new System.Windows.Forms.TextBox();
             this.btn_HuyDK = new System.Windows.Forms.Button();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -280,23 +278,6 @@
             this.btn_DK.UseVisualStyleBackColor = true;
             this.btn_DK.Click += new System.EventHandler(this.btn_DK_Click);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Location = new System.Drawing.Point(298, 190);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 13);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "Mã Admin";
-            // 
-            // txt_AdminPass
-            // 
-            this.txt_AdminPass.Location = new System.Drawing.Point(398, 185);
-            this.txt_AdminPass.Name = "txt_AdminPass";
-            this.txt_AdminPass.Size = new System.Drawing.Size(148, 20);
-            this.txt_AdminPass.TabIndex = 29;
-            // 
             // btn_HuyDK
             // 
             this.btn_HuyDK.Location = new System.Drawing.Point(332, 235);
@@ -327,8 +308,6 @@
             this.ClientSize = new System.Drawing.Size(735, 317);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.btn_HuyDK);
-            this.Controls.Add(this.txt_AdminPass);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.btn_DK);
             this.Controls.Add(this.btn_CreatePassword);
             this.Controls.Add(this.label14);
@@ -385,8 +364,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btn_CreatePassword;
         private System.Windows.Forms.Button btn_DK;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_AdminPass;
         private System.Windows.Forms.Button btn_HuyDK;
         private System.Windows.Forms.Label lbl_Title;
     }

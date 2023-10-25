@@ -37,7 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +58,12 @@
             this.báoCáoThốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chấmcôngtoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngKýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -125,17 +126,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Library Management";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.bg1;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1054, 414);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -144,7 +134,8 @@
             this.danhMụcToolStripMenuItem,
             this.mượnTrảSáchToolStripMenuItem,
             this.tìmKiếmToolStripMenuItem,
-            this.báoCáoThốngKêToolStripMenuItem});
+            this.báoCáoThốngKêToolStripMenuItem,
+            this.đăngKýNhânViênToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -302,7 +293,7 @@
             this.sáchToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.brrowbook;
             this.sáchToolStripMenuItem.Name = "sáchToolStripMenuItem";
             this.sáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.sáchToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.sáchToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.sáchToolStripMenuItem.Text = "Sách";
             this.sáchToolStripMenuItem.Click += new System.EventHandler(this.sáchToolStripMenuItem_Click);
             // 
@@ -311,7 +302,7 @@
             this.độcGiảToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.addhuman;
             this.độcGiảToolStripMenuItem.Name = "độcGiảToolStripMenuItem";
             this.độcGiảToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.độcGiảToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.độcGiảToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.độcGiảToolStripMenuItem.Text = "Độc giả";
             // 
             // báoCáoThốngKêToolStripMenuItem
@@ -342,6 +333,25 @@
             this.chấmcôngtoolStripMenuItem1.Text = "Chấm công";
             this.chấmcôngtoolStripMenuItem1.Click += new System.EventHandler(this.chấmcôngtoolStripMenuItem);
             // 
+            // đăngKýNhânViênToolStripMenuItem
+            // 
+            this.đăngKýNhânViênToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.add_friend;
+            this.đăngKýNhânViênToolStripMenuItem.Name = "đăngKýNhânViênToolStripMenuItem";
+            this.đăngKýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(141, 28);
+            this.đăngKýNhânViênToolStripMenuItem.Text = "Đăng ký nhân viên";
+            this.đăngKýNhânViênToolStripMenuItem.Click += new System.EventHandler(this.đăngKýNhânViênToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.bg1;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1054, 414);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,9 +371,9 @@
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +409,7 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýTácGiảToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chấmcôngtoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem quảnLýThẻĐọcGiảToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngKýNhânViênToolStripMenuItem;
     }
 }
 

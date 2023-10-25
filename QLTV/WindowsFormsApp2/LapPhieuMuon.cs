@@ -82,7 +82,7 @@ namespace WindowsFormsApp2
                 dgvPhieuMuon.Rows[index].Cells[2].Value = item.NgayTra;
                 dgvPhieuMuon.Rows[index].Cells[3].Value = item.GhiChu;
                 dgvPhieuMuon.Rows[index].Cells[4].Value = item.SoLuong;
-                dgvPhieuMuon.Rows[index].Cells[5].Value = item.TheDocGia;
+                dgvPhieuMuon.Rows[index].Cells[5].Value = item.TheDocGia.DocGia.TenDocGia;
                 dgvPhieuMuon.Rows[index].Cells[6].Value = item.NhanVien.TenNV;
             }
         }

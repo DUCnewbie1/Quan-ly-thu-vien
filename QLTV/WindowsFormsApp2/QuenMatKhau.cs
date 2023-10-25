@@ -45,15 +45,12 @@ namespace WindowsFormsApp2
                 using (SqlConnection conn = new SqlConnection(DNKDR.ConnectionString))
                 {
                     conn.Open();
-                    string selectTable = tk.LoaiTK == null ? "DocGia" : "NhanVien";
-                    string idColumn = tk.MaNV == null ? "MaDocGia" : "MaNV";
-                    string taiKhoanTable = "TaiKhoan";
 
                     // Kiểm tra xem Email có tồn tại không
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = $"SELECT COUNT(*) FROM {selectTable} WHERE Email = @Email";
+                        cmd.CommandText = $"SELECT COUNT(*) FROM NhanVien WHERE Email = @Email";
                         cmd.Parameters.AddWithValue("@Email", Email);
                         int EmailCount = Convert.ToInt32(cmd.ExecuteScalar());
                         if (EmailCount == 0)
@@ -62,7 +59,7 @@ namespace WindowsFormsApp2
                             return;
                         }
                     }
-                    string getIdQuery = $"SELECT {idColumn} FROM {selectTable} WHERE Email = @Email";
+                    string getIdQuery = $"SELECT MaNV FROM NhanVien WHERE Email = @Email";
                     string idValue;
                     
                     using (SqlCommand cmd = new SqlCommand(getIdQuery, conn))
@@ -75,8 +72,8 @@ namespace WindowsFormsApp2
                     {
                         cmd.Connection = conn;
                         cmd.CommandText = $"SELECT TenTK, MatKhau " +
-                                          $"FROM {taiKhoanTable} " +
-                                          $"WHERE {idColumn} = @Id";
+                                          $"FROM TaiKhoan " +
+                                          $"WHERE MaNV = @Id";
                         cmd.Parameters.AddWithValue("@Id", idValue);
 
                         using (SqlDataReader data = cmd.ExecuteReader())
@@ -108,8 +105,8 @@ namespace WindowsFormsApp2
 
             // Cập nhật với thông tin tài khoản Gmail mới
             smtp.UseDefaultCredentials = false;
-            message.From = new MailAddress("dungkcr17@gmail.com");
-            smtp.Credentials = new NetworkCredential("dungkcr17@gmail.com", "hdlw eego dufw urgr");
+            message.From = new MailAddress("thongbaoquanlythuvien@gmail.com");
+            smtp.Credentials = new NetworkCredential("thongbaoquanlythuvien@gmail.com", "htil dyle rglf mehl");
 
             message.To.Add(new MailAddress(emailnhap));
             message.Subject = "Xác nhận thông tin tài khoản";

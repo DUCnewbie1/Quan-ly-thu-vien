@@ -293,6 +293,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChamCong.xml" />
+    <None Include="Resources\add-friend.png" />
     <Content Include="Resources\SignIn_Background.JPG" />
     <None Include="Resources\library-card.png" />
     <None Include="Resources\cheque.png" />
