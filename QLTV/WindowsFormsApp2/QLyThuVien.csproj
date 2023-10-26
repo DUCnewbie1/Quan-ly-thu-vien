@@ -136,6 +136,12 @@
     <Compile Include="TheDocGia.designer.cs">
       <DependentUpon>TheDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="timKiemDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="timKiemDocGia.designer.cs">
+      <DependentUpon>timKiemDocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="timKiemSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TheDocGia.resx">
       <DependentUpon>TheDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="timKiemDocGia.resx">
+      <DependentUpon>timKiemDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="timKiemSach.resx">
       <DependentUpon>timKiemSach.cs</DependentUpon>
