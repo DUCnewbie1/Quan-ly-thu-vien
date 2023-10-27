@@ -4,29 +4,22 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp2
 {
     public partial class LapPhieuTra : Form
     {
         private Class1<PhieuTra> phieuTraManager;
-        private DateTime ngayTraMuon;
-        private DateTime ngayLapMuon;
         public LapPhieuTra()
         {
             InitializeComponent();
             phieuTraManager = new Class1<PhieuTra>();
-            dtpkNgayTra.ValueChanged += dtpkNgayTra_ValueChanged;
-            checkedListBook.ItemCheck += checkedListBook_ItemCheck;
         }
 
         private void LapPhieuTra_Load(object sender, EventArgs e)
@@ -117,23 +110,14 @@ namespace WindowsFormsApp2
                 }
             }
         }
- 
+
         private void cbMaPM_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedMaPM = cbMaPM.SelectedValue;
             if (selectedMaPM != null)
             {
                 string maPM = selectedMaPM.ToString();
-
-                using (Model1 context = new Model1())
-                {
-                    var phieuMuon = context.PhieuMuon
-                        .Where(pm => pm.MaPM == maPM)
-                        .FirstOrDefault();
-                    ngayTraMuon = phieuMuon.NgayTra;
-                    ngayLapMuon = phieuMuon.NgayLap;
-                }
-                    var bookNames = phieuTraManager.GetBookNamesForMaPM(maPM);
+                var bookNames = phieuTraManager.GetBookNamesForMaPM(maPM);
                 checkedListBook.Items.Clear();
                 foreach (var bookName in bookNames)
                 {
@@ -166,7 +150,7 @@ namespace WindowsFormsApp2
                         MessageBox.Show("Mã phiếu mượn không tồn tại trong bảng PhieuMuon.");
                         return;
                     }
-         
+
                     PhieuTra phieuTra = new PhieuTra
                     {
                         MaPT = maPhieu,
@@ -259,37 +243,6 @@ namespace WindowsFormsApp2
                         checkedListBook.Items.Add(bookName);
                     }
                 }
-            }
-        }
-
-        private void dtpkNgayTra_ValueChanged(object sender, EventArgs e)
-        {
-            if(dtpkNgayTra.Value < ngayLapMuon)
-            {
-                MessageBox.Show("Ngày trả không hợp lệ", "Thông báo");
-                return;
-            }
-            if (dtpkNgayTra.Value > ngayTraMuon)
-            {
-                cbTinhTrang.SelectedIndex = 0; // "Quá hạn"
-            }
-            else
-            {
-                cbTinhTrang.SelectedIndex = -1;
-            }
-        }
-
-        private void checkedListBook_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            int newCheckedCount = e.NewValue == CheckState.Checked ? checkedListBook.CheckedItems.Count + 1 
-                                                                   : checkedListBook.CheckedItems.Count - 1;
-            if (newCheckedCount == checkedListBook.Items.Count)
-            {
-                cbTinhTrang.SelectedIndex = 2; // "Trả đủ sách"
-            }
-            else
-            {
-                cbTinhTrang.SelectedIndex = 1; // "Trả thiếu sách"
             }
         }
     }

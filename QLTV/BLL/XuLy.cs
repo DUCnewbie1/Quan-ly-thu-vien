@@ -13,6 +13,7 @@ namespace BLL
         public static void GhiNhanTaiKhoan(string taiKhoan)
         {
             _taiKhoan = taiKhoan;
+            //LayTaiKhoan();
         }
         public static string LayTaiKhoan()
         {

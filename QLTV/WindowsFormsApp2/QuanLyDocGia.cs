@@ -57,7 +57,7 @@ namespace WindowsFormsApp2
 
         private void dgvQLDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow sr = dgvQLDG.Rows[e.RowIndex];
                 txtMaDG.Text = sr.Cells[0].Value.ToString().Trim();
@@ -72,7 +72,7 @@ namespace WindowsFormsApp2
         {
             string maDG = txtMaDG.Text;
             string tenDG = txtTenDG.Text;
-            string diaChi = txtDiaChi.Text; 
+            string diaChi = txtDiaChi.Text;
             string sDT = txtSDT.Text;
             string email = txtEmail.Text;
 
@@ -140,7 +140,7 @@ namespace WindowsFormsApp2
 
             using (Model1 context = new Model1())
             {
-                
+
                 DocGia newReaders = new DocGia
                 {
                     MaDocGia = maDG,
@@ -173,7 +173,7 @@ namespace WindowsFormsApp2
                                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    using (var context = new Model1()) 
+                    using (var context = new Model1())
                     {
                         string deleteTheDocGiaQuery = @"DELETE FROM TheDocGia WHERE MaDocGia = @MaDG";
 
@@ -218,7 +218,7 @@ namespace WindowsFormsApp2
         {
             TheDocGia frmTheDocGia = new TheDocGia();
             frmTheDocGia.ShowDialog();
-            
+
         }
     }
 }

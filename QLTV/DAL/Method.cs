@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using DAL.Models;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Contexts;
 
 namespace DAL
 {
@@ -101,6 +102,49 @@ namespace DAL
 
                 var maPMs = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaThe", maThe)).ToList();
                 return maPMs;
+            }
+        }
+        public List<string> GetMaPTsForMaThe(string maThe)
+        {
+            using (Model1 context = new Model1())
+            {
+                string sqlQuery = "SELECT PT.MaPT FROM PhieuTra PT " +
+                                  "JOIN ChiTietPhieuTra CPT ON PT.MaPT = CPT.MaPT " +
+                                  "JOIN PhieuMuon PM ON CPT.MaPM = PM.MaPM " +
+                                  "WHERE PM.MaThe = @MaThe " +
+                                  "AND PT.TinhTrangSach = N'Trả đủ sách'";
+
+                var maPMs = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaThe", maThe)).ToList();
+                return maPMs;
+            }
+        }
+        public string LayTenDocGiaTuMaPhat(string maPhat)
+        {
+            using (Model1 context = new Model1())
+            {
+                string query = "SELECT DG.MaDocGia FROM DocGia DG " +
+                               "INNER JOIN TheDocGia TDG ON DG.MaDocGia = TDG.MaDocGia " +
+                               "INNER JOIN PhieuMuon PM ON TDG.MaThe = PM.MaThe " +
+                               "INNER JOIN ChiTietPhieuTra CPT ON PM.MaPM = CPT.MaPM " +
+                               "INNER JOIN PhieuTra PT ON CPT.MaPT = PT.MaPT " +
+                               "INNER JOIN ChiTietPhieuPhat CPP ON PT.MaPT = CPP.MaPT " +
+                               "WHERE CPP.MaPhat = @MaPhat";
+
+                string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPhat", maPhat)).FirstOrDefault();
+                return tenDocGia;
+            }
+        }
+        public string LayTenNhanVienTuMaPhat(string maPhat)
+        {
+            using (Model1 context = new Model1())
+            {
+                string query = "SELECT NV.TenNV FROM NhanVien NV " +
+                               "INNER JOIN PhieuTra PT ON NV.MaNV = PT.MaNV " +
+                               "INNER JOIN ChiTietPhieuPhat CPP ON PT.MaPT = CPP.MaPT " +
+                               "WHERE CPP.MaPhat = @MaPhat";
+
+                string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPhat", maPhat)).FirstOrDefault();
+                return tenDocGia;
             }
         }
     }

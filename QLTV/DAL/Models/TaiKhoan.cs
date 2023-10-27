@@ -25,11 +25,6 @@ namespace DAL.Models
         [StringLength(10)]
         public string MaNV { get; set; }
 
-        [StringLength(10)]
-        public string MaDocGia { get; set; }
-
-        public virtual DocGia DocGia { get; set; }
-
         public virtual NhanVien NhanVien { get; set; }
     }
 }

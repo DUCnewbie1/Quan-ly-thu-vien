@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
         private void LoadDataGrid()
         {
             Model1 context = new Model1();
-            var ListReadersCard  = context.TheDocGia.ToList();
+            var ListReadersCard = context.TheDocGia.ToList();
             //var ListReaders = context.DocGia.ToList();
             BindGrid(ListReadersCard);
         }
@@ -74,7 +74,7 @@ namespace WindowsFormsApp2
 
             using (Model1 context = new Model1())
             {
-                var existingReaderCard  = context.TheDocGia.FirstOrDefault(dg => dg.MaThe == maThe);
+                var existingReaderCard = context.TheDocGia.FirstOrDefault(dg => dg.MaThe == maThe);
                 if (existingReaderCard != null)
                 {
                     MessageBox.Show("Thẻ đọc giả đã tồn tại. Vui lòng nhập mã thẻ đọc giả khác.", "Lỗi");

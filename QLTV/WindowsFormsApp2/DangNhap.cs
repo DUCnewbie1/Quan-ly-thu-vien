@@ -58,6 +58,9 @@ namespace WindowsFormsApp2
                             {
                                 int userId = data.GetInt32(0); // Lấy user id từ cột "id" trong kết quả truy vấn
                                 XuLy.GhiNhanTaiKhoan(tk);
+                                //Home home = new Home(userId); // Truyền user id vào Form1
+                                //  LÝ DO ĐỔI LẠI THÀNH HOME() VÌ CÁI HOME(USERID) KO CHẠY VÔ 
+                                // Lý do đổi lại thành Home(userId) là vì chỉ có id của admin mới được đăng ký nhân viên :))
                                 Home home = new Home(userId); // Truyền user id vào Form1
                                 home.Show();
                                 this.Hide();
@@ -78,8 +81,7 @@ namespace WindowsFormsApp2
 
         private void Thoat_Click(object sender, EventArgs e)
         {
-            if (DNKDR.ConfirmExit())
-                Application.ExitThread();
+            Application.ExitThread();
         }
         // Kiểm tra xem người dùng có muốn thoát chương trình hay không
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
@@ -148,9 +150,8 @@ namespace WindowsFormsApp2
         {
 
         }
-
         // quên mật khẩu 
-        private void Llbl_QuenMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             QuenMatKhau mk = new QuenMatKhau();
             mk.Show();

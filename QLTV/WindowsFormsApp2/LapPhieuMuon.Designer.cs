@@ -330,6 +330,7 @@
             this.Controls.Add(this.BtnSua);
             this.Controls.Add(this.btnThem);
             this.Name = "LapPhieuMuon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LapPhieuMuon";
             this.Load += new System.EventHandler(this.LapPhieuMuon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuMuon)).EndInit();

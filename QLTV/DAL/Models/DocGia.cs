@@ -12,7 +12,6 @@ namespace DAL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DocGia()
         {
-            TaiKhoans = new HashSet<TaiKhoan>();
             TheDocGias = new HashSet<TheDocGia>();
         }
 
@@ -35,9 +34,6 @@ namespace DAL.Models
         [Required]
         [StringLength(30)]
         public string Email { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TheDocGia> TheDocGias { get; set; }

@@ -32,6 +32,8 @@
             this.txt_MaTG = new System.Windows.Forms.TextBox();
             this.lbl_Ma = new System.Windows.Forms.Label();
             this.dgvTG = new System.Windows.Forms.DataGridView();
+            this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@
             this.độcGiảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoThốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTG)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +98,18 @@
             this.dgvTG.Size = new System.Drawing.Size(512, 281);
             this.dgvTG.TabIndex = 6;
             this.dgvTG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTG_CellClick);
+            // 
+            // MaTG
+            // 
+            this.MaTG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaTG.HeaderText = "Mã tác giả";
+            this.MaTG.Name = "MaTG";
+            // 
+            // TenTG
+            // 
+            this.TenTG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenTG.HeaderText = "Tên tác giả";
+            this.TenTG.Name = "TenTG";
             // 
             // label1
             // 
@@ -179,7 +191,7 @@
             this.đăngXuấtToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.iconexit;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -188,7 +200,7 @@
             this.thoátToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.ext;
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(175, 30);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -265,7 +277,7 @@
             this.lậpPhiếuToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.list;
             this.lậpPhiếuToolStripMenuItem.Name = "lậpPhiếuToolStripMenuItem";
             this.lậpPhiếuToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
             this.lậpPhiếuToolStripMenuItem.Text = "Lập phiếu";
             this.lậpPhiếuToolStripMenuItem.Click += new System.EventHandler(this.lậpPhiếuToolStripMenuItem_Click);
             // 
@@ -285,7 +297,7 @@
             this.sáchToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.brrowbook;
             this.sáchToolStripMenuItem.Name = "sáchToolStripMenuItem";
             this.sáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.sáchToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.sáchToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.sáchToolStripMenuItem.Text = "Sách";
             this.sáchToolStripMenuItem.Click += new System.EventHandler(this.sáchToolStripMenuItem_Click);
             // 
@@ -294,7 +306,7 @@
             this.độcGiảToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.addhuman;
             this.độcGiảToolStripMenuItem.Name = "độcGiảToolStripMenuItem";
             this.độcGiảToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.độcGiảToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.độcGiảToolStripMenuItem.Size = new System.Drawing.Size(164, 30);
             this.độcGiảToolStripMenuItem.Text = "Độc giả";
             // 
             // báoCáoThốngKêToolStripMenuItem
@@ -311,20 +323,8 @@
             this.xuấtExcelToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.excel;
             this.xuấtExcelToolStripMenuItem.Name = "xuấtExcelToolStripMenuItem";
             this.xuấtExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.xuấtExcelToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.xuấtExcelToolStripMenuItem.Size = new System.Drawing.Size(176, 30);
             this.xuấtExcelToolStripMenuItem.Text = "Xuất Excel";
-            // 
-            // MaTG
-            // 
-            this.MaTG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaTG.HeaderText = "Mã tác giả";
-            this.MaTG.Name = "MaTG";
-            // 
-            // TenTG
-            // 
-            this.TenTG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenTG.HeaderText = "Tên tác giả";
-            this.TenTG.Name = "TenTG";
             // 
             // QuanLyTacGia
             // 
@@ -342,6 +342,7 @@
             this.Controls.Add(this.txt_MaTG);
             this.Controls.Add(this.lbl_Ma);
             this.Name = "QuanLyTacGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyTacGia";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTG)).EndInit();
             this.menuStrip1.ResumeLayout(false);

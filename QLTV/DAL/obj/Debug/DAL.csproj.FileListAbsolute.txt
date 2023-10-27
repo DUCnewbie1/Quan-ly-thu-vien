@@ -46,3 +46,154 @@ C:\Users\Admin\source\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Admin\source\QLTV\DAL\bin\Debug\EntityFramework.xml
 C:\Users\Admin\source\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\source\QLTV\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\DAL.dll.config
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\DAL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\DAL.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.xml
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.pdb
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\DAL.dll.config
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\DAL.dll
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\DAL.pdb
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.dll
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.xml
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.dll
+D:\Download\Quan-ly-thu-vien\QLTV\DAL\obj\Debug\DAL.pdb
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\DAL.dll.config
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\DAL.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\DAL.pdb
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.xml
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\obj\Debug\DAL.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\obj\Debug\DAL.pdb
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\EnvDTE.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\DAL.dll.config
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\DAL.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\DAL.pdb
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\EnvDTE.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\stdole.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.xml
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\QLTV (1)\QLTV\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Download\QLTV (1)\QLTV\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Download\QLTV (1)\QLTV\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Download\QLTV (1)\QLTV\DAL\obj\Debug\DAL.dll
+D:\Download\QLTV (1)\QLTV\DAL\obj\Debug\DAL.pdb

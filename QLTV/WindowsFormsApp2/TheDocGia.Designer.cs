@@ -60,9 +60,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTheDG = new System.Windows.Forms.DataGridView();
             this.maThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayLapThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTheDG)).BeginInit();
@@ -368,9 +368,9 @@
             this.dgvTheDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTheDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maThe,
-            this.MaDG,
             this.ngayLapThe,
-            this.ngayHetHan});
+            this.ngayHetHan,
+            this.MaDG});
             this.dgvTheDG.Location = new System.Drawing.Point(0, 224);
             this.dgvTheDG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTheDG.Name = "dgvTheDG";
@@ -386,12 +386,6 @@
             this.maThe.MinimumWidth = 8;
             this.maThe.Name = "maThe";
             // 
-            // MaDG
-            // 
-            this.MaDG.HeaderText = "Mã Đọc Giả";
-            this.MaDG.MinimumWidth = 8;
-            this.MaDG.Name = "MaDG";
-            // 
             // ngayLapThe
             // 
             this.ngayLapThe.HeaderText = "Ngày Lập";
@@ -403,6 +397,12 @@
             this.ngayHetHan.HeaderText = "Ngày Hết Hạn";
             this.ngayHetHan.MinimumWidth = 8;
             this.ngayHetHan.Name = "ngayHetHan";
+            // 
+            // MaDG
+            // 
+            this.MaDG.HeaderText = "Mã Đọc Giả";
+            this.MaDG.MinimumWidth = 8;
+            this.MaDG.Name = "MaDG";
             // 
             // TheDocGia
             // 
@@ -417,6 +417,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TheDocGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TheDocGia";
             this.Load += new System.EventHandler(this.frmTheDocGia_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -463,8 +464,8 @@
         private System.Windows.Forms.DateTimePicker dtpkNgayHetHan;
         private System.Windows.Forms.DateTimePicker dtpkNgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn maThe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayLapThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayHetHan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
     }
 }

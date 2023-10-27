@@ -91,7 +91,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtMaPhieu.Text) || 
+                if (string.IsNullOrWhiteSpace(txtMaPhieu.Text) ||
                     string.IsNullOrWhiteSpace(cbDocGia.SelectedValue.ToString()) ||
                     string.IsNullOrWhiteSpace(cbNhanVien.SelectedValue.ToString()))
                 {
@@ -148,7 +148,7 @@ namespace WindowsFormsApp2
                         {
                             foreach (Sach selectedBook in danhSachSachDaChon)
                             {
-                                string insertQuery = "INSERT INTO ChiTietPhieuMuon (MaPM, MaSach) VALUES (@MaPM, @MaSach)";
+                                string insertQuery = "INSERT INTO ChiTietPhieuMuon (MaPM, MaSach, TrangThaiSach) VALUES (@MaPM, @MaSach, 0)";
                                 dbcontext.Database.ExecuteSqlCommand(insertQuery,
                                     new SqlParameter("MaPM", maPhieu),
                                     new SqlParameter("MaSach", selectedBook.MaSach)
@@ -186,7 +186,7 @@ namespace WindowsFormsApp2
         }
 
         private void dgvPhieuMuon_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPhieuMuon.Rows[e.RowIndex];

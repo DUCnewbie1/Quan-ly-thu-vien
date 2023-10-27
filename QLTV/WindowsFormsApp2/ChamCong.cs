@@ -158,13 +158,9 @@ namespace WindowsFormsApp2
         private void btnTKe_Click(object sender, EventArgs e)
         {
             // Đường dẫn đến file ChamCong.xml
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ChamCong.xml");
-            //Nếu như không có ChamCong.xml thì sẽ tạo ChamCong.xml
-            if (!File.Exists(path))
-            {
-                XDocument doc = new XDocument(new XElement("ChamCong"));
-                doc.Save(path);
-            }
+            string path = @"E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\ChamCong.xml";
+            //"E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\ChamCong.xml"
+
             // Gọi hàm LoadDataFromXml để đổ dữ liệu vào dgvTKe
             LoadDataFromXml(path, dgvTke);
         }

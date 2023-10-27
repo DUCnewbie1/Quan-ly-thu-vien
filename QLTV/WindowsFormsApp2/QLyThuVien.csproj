@@ -39,6 +39,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -63,7 +81,7 @@
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKy.Designer.cs">
+    <Compile Include="DangKy.designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs">
@@ -86,6 +104,12 @@
     <Compile Include="LapPhieuMuon.designer.cs">
       <DependentUpon>LapPhieuMuon.cs</DependentUpon>
     </Compile>
+    <Compile Include="LapPhieuPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LapPhieuPhat.designer.cs">
+      <DependentUpon>LapPhieuPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="LapPhieuTra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +118,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLTHUVIENDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTHUVIENDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,14 +156,21 @@
     <Compile Include="QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuenMatKhau.Designer.cs">
+    <Compile Include="QuenMatKhau.designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TheDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TheDocGia.designer.cs">
       <DependentUpon>TheDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKeSach.Designer.cs">
+      <DependentUpon>ThongKeSach.cs</DependentUpon>
     </Compile>
     <Compile Include="timKiemDocGia.cs">
       <SubType>Form</SubType>
@@ -162,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LapPhieuMuon.resx">
       <DependentUpon>LapPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapPhieuPhat.resx">
+      <DependentUpon>LapPhieuPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapPhieuTra.resx">
       <DependentUpon>LapPhieuTra.cs</DependentUpon>
@@ -197,6 +236,10 @@
     <EmbeddedResource Include="TheDocGia.resx">
       <DependentUpon>TheDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeSach.rdlc" />
+    <EmbeddedResource Include="ThongKeSach.resx">
+      <DependentUpon>ThongKeSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="timKiemDocGia.resx">
       <DependentUpon>timKiemDocGia.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +247,14 @@
       <DependentUpon>timKiemSach.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\KiemTraNhapChuoi.datasource" />
+    <None Include="Properties\DataSources\LapPhieuMuon.datasource" />
+    <None Include="Properties\DataSources\QuanLySach.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp2.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp2.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp2.QLTHUVIENDataSetTableAdapters.NhaXuatBanTableAdapter.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp2.QLTHUVIENDataSetTableAdapters.SachTableAdapter.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp2.QLTHUVIENDataSetTableAdapters.TacGiaTableAdapter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -218,6 +269,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLTHUVIENDataSet.xsc">
+      <DependentUpon>QLTHUVIENDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTHUVIENDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTHUVIENDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTHUVIENDataSet.xss">
+      <DependentUpon>QLTHUVIENDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\library.png" />
   </ItemGroup>
   <ItemGroup>
@@ -302,8 +364,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChamCong.xml" />
-    <None Include="Resources\add-friend.png" />
+    <None Include="Resources\bill.png" />
     <Content Include="Resources\SignIn_Background.JPG" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\SignIn_Background1.JPG" />
+    <None Include="Resources\add-friend.png" />
+    <None Include="Resources\image-1327x600.jpg" />
+    <None Include="Resources\engineering.png" />
+    <None Include="Resources\3771417.png" />
     <None Include="Resources\library-card.png" />
     <None Include="Resources\cheque.png" />
     <None Include="Resources\return.png" />

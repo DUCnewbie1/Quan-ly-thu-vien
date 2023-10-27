@@ -37,6 +37,11 @@ namespace DAL.Models
                 .Property(e => e.Email)
                 .IsFixedLength();
 
+            modelBuilder.Entity<DocGia>()
+                .HasMany(e => e.TheDocGias)
+                .WithRequired(e => e.DocGia)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<NhanVien>()
                 .Property(e => e.MaNV)
                 .IsFixedLength();
@@ -150,10 +155,6 @@ namespace DAL.Models
 
             modelBuilder.Entity<TaiKhoan>()
                 .Property(e => e.MaNV)
-                .IsFixedLength();
-
-            modelBuilder.Entity<TaiKhoan>()
-                .Property(e => e.MaDocGia)
                 .IsFixedLength();
 
             modelBuilder.Entity<TheDocGia>()
