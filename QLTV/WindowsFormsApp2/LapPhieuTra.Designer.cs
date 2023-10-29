@@ -49,8 +49,6 @@
             this.dtpkNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPhieuTra = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
             this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +56,8 @@
             this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuTra)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +131,7 @@
             // 
             // cbMaPM
             // 
+            this.cbMaPM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaPM.FormattingEnabled = true;
             this.cbMaPM.Location = new System.Drawing.Point(113, 153);
             this.cbMaPM.Name = "cbMaPM";
@@ -199,6 +200,7 @@
             // 
             // cbDocGia
             // 
+            this.cbDocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDocGia.FormattingEnabled = true;
             this.cbDocGia.Location = new System.Drawing.Point(113, 86);
             this.cbDocGia.Name = "cbDocGia";
@@ -208,6 +210,7 @@
             // 
             // cbNhanVien
             // 
+            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhanVien.FormattingEnabled = true;
             this.cbNhanVien.Location = new System.Drawing.Point(113, 113);
             this.cbNhanVien.Name = "cbNhanVien";
@@ -274,26 +277,6 @@
             this.dgvPhieuTra.TabIndex = 33;
             this.dgvPhieuTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuTra_CellClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(355, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 29);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "LẬP PHIẾU TRẢ";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(901, 487);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 23);
-            this.btnThem.TabIndex = 35;
-            this.btnThem.Text = "Lập phiếu";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // MaPT
             // 
             this.MaPT.HeaderText = "Mã Phiếu Trả";
@@ -331,6 +314,26 @@
             this.MaPM.HeaderText = "Mã Phiếu Mượn";
             this.MaPM.Name = "MaPM";
             this.MaPM.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(355, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 29);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "LẬP PHIẾU TRẢ";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(901, 487);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(100, 23);
+            this.btnThem.TabIndex = 35;
+            this.btnThem.Text = "Lập phiếu";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // LapPhieuTra
             // 

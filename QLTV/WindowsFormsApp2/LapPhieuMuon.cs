@@ -25,6 +25,7 @@ namespace WindowsFormsApp2
         public LapPhieuMuon()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void LapPhieuMuon_Load(object sender, EventArgs e)

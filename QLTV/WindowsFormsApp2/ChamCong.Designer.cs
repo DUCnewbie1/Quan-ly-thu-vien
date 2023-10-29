@@ -39,11 +39,11 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTKe = new System.Windows.Forms.Button();
             this.btnThoatCc = new System.Windows.Forms.Button();
             this.dtpToday = new System.Windows.Forms.DateTimePicker();
             this.dgvTke = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnTKe = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTke)).BeginInit();
@@ -53,7 +53,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(576, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 32);
             this.label1.TabIndex = 0;
@@ -62,29 +63,34 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 56);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(9, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.Size = new System.Drawing.Size(120, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên tài khoản";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtNameCc
             // 
-            this.txtNameCc.Location = new System.Drawing.Point(119, 53);
+            this.txtNameCc.Location = new System.Drawing.Point(132, 58);
             this.txtNameCc.Name = "txtNameCc";
             this.txtNameCc.ReadOnly = true;
-            this.txtNameCc.Size = new System.Drawing.Size(254, 26);
+            this.txtNameCc.Size = new System.Drawing.Size(282, 28);
             this.txtNameCc.TabIndex = 2;
             // 
             // btnChamCong
             // 
+            this.btnChamCong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
             this.btnChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChamCong.Location = new System.Drawing.Point(95, 189);
+            this.btnChamCong.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnChamCong.Location = new System.Drawing.Point(106, 208);
             this.btnChamCong.Name = "btnChamCong";
-            this.btnChamCong.Size = new System.Drawing.Size(126, 52);
+            this.btnChamCong.Size = new System.Drawing.Size(140, 57);
             this.btnChamCong.TabIndex = 3;
             this.btnChamCong.Text = "Chấm công";
-            this.btnChamCong.UseVisualStyleBackColor = true;
+            this.btnChamCong.UseVisualStyleBackColor = false;
             this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
             // 
             // cmbCa
@@ -93,20 +99,23 @@
             this.cmbCa.Items.AddRange(new object[] {
             "Sáng ",
             "Chiều"});
-            this.cmbCa.Location = new System.Drawing.Point(120, 126);
+            this.cmbCa.Location = new System.Drawing.Point(133, 139);
             this.cmbCa.Name = "cmbCa";
-            this.cmbCa.Size = new System.Drawing.Size(253, 28);
+            this.cmbCa.Size = new System.Drawing.Size(281, 30);
             this.cmbCa.TabIndex = 4;
             this.cmbCa.DropDown += new System.EventHandler(this.cmbCa_DropDown);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 134);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(9, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(77, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Chọn ca";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dgvChamCong
             // 
@@ -117,12 +126,13 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgvChamCong.Location = new System.Drawing.Point(407, 88);
+            this.dgvChamCong.Location = new System.Drawing.Point(452, 97);
             this.dgvChamCong.Name = "dgvChamCong";
             this.dgvChamCong.RowHeadersWidth = 62;
             this.dgvChamCong.RowTemplate.Height = 28;
-            this.dgvChamCong.Size = new System.Drawing.Size(786, 76);
+            this.dgvChamCong.Size = new System.Drawing.Size(873, 84);
             this.dgvChamCong.TabIndex = 6;
+            this.dgvChamCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChamCong_CellContentClick);
             // 
             // Column1
             // 
@@ -151,71 +161,81 @@
             this.panel1.Controls.Add(this.btnChamCong);
             this.panel1.Controls.Add(this.txtNameCc);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 88);
+            this.panel1.Location = new System.Drawing.Point(13, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 350);
+            this.panel1.Size = new System.Drawing.Size(424, 385);
             this.panel1.TabIndex = 7;
+            // 
+            // btnTKe
+            // 
+            this.btnTKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
+            this.btnTKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTKe.Location = new System.Drawing.Point(106, 292);
+            this.btnTKe.Name = "btnTKe";
+            this.btnTKe.Size = new System.Drawing.Size(140, 57);
+            this.btnTKe.TabIndex = 7;
+            this.btnTKe.Text = "Thống kê";
+            this.btnTKe.UseVisualStyleBackColor = false;
+            this.btnTKe.Click += new System.EventHandler(this.btnTKe_Click);
             // 
             // btnThoatCc
             // 
+            this.btnThoatCc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(190)))));
             this.btnThoatCc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoatCc.Location = new System.Drawing.Point(247, 189);
+            this.btnThoatCc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThoatCc.Location = new System.Drawing.Point(274, 208);
             this.btnThoatCc.Name = "btnThoatCc";
-            this.btnThoatCc.Size = new System.Drawing.Size(126, 52);
+            this.btnThoatCc.Size = new System.Drawing.Size(140, 57);
             this.btnThoatCc.TabIndex = 6;
             this.btnThoatCc.Text = "Thoát";
-            this.btnThoatCc.UseVisualStyleBackColor = true;
+            this.btnThoatCc.UseVisualStyleBackColor = false;
             this.btnThoatCc.Click += new System.EventHandler(this.btnThoatCc_Click);
             // 
             // dtpToday
             // 
-            this.dtpToday.Location = new System.Drawing.Point(212, 25);
+            this.dtpToday.Location = new System.Drawing.Point(896, 44);
             this.dtpToday.Name = "dtpToday";
-            this.dtpToday.Size = new System.Drawing.Size(387, 26);
+            this.dtpToday.Size = new System.Drawing.Size(430, 28);
             this.dtpToday.TabIndex = 7;
             // 
             // dgvTke
             // 
             this.dgvTke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTke.Location = new System.Drawing.Point(408, 214);
+            this.dgvTke.Location = new System.Drawing.Point(453, 235);
             this.dgvTke.Name = "dgvTke";
             this.dgvTke.RowHeadersWidth = 62;
             this.dgvTke.RowTemplate.Height = 28;
-            this.dgvTke.Size = new System.Drawing.Size(785, 204);
+            this.dgvTke.Size = new System.Drawing.Size(872, 224);
             this.dgvTke.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(416, 191);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(462, 210);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 20);
+            this.label4.Size = new System.Drawing.Size(198, 22);
             this.label4.TabIndex = 7;
             this.label4.Text = "Đã châm công hôm nay";
-            // 
-            // btnTKe
-            // 
-            this.btnTKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTKe.Location = new System.Drawing.Point(95, 265);
-            this.btnTKe.Name = "btnTKe";
-            this.btnTKe.Size = new System.Drawing.Size(126, 52);
-            this.btnTKe.TabIndex = 7;
-            this.btnTKe.Text = "Thống kê";
-            this.btnTKe.UseVisualStyleBackColor = true;
-            this.btnTKe.Click += new System.EventHandler(this.btnTKe_Click);
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // ChamCong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1339, 495);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvTke);
             this.Controls.Add(this.dtpToday);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvChamCong);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "ChamCong";
             this.Text = "ChamCong";
             this.Load += new System.EventHandler(this.ChamCong_Load);

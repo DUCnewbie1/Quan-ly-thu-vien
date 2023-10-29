@@ -61,14 +61,14 @@ namespace WindowsFormsApp2
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dgvQLS.Rows[e.RowIndex];
-                txtIdBook.Text = selectedRow.Cells[0].Value.ToString();
-                txtNameBook.Text = selectedRow.Cells[1].Value.ToString();
-                txtCategory.Text = selectedRow.Cells[2].Value.ToString();
-                txtYearBook.Text = selectedRow.Cells[3].Value.ToString();
-                txtPrice.Text = selectedRow.Cells[4].Value.ToString();
-                txtQuantity.Text = selectedRow.Cells[5].Value.ToString();
-                cbNXB.Text = selectedRow.Cells[6].Value.ToString(); 
-                cbTacGia.Text = selectedRow.Cells[7].Value.ToString(); 
+                txtIdBook.Text = selectedRow.Cells[0].Value.ToString().Trim();
+                txtNameBook.Text = selectedRow.Cells[1].Value.ToString().Trim();
+                txtCategory.Text = selectedRow.Cells[2].Value.ToString().Trim();
+                txtYearBook.Text = selectedRow.Cells[3].Value.ToString().Trim();
+                txtPrice.Text = selectedRow.Cells[4].Value.ToString().Trim();
+                txtQuantity.Text = selectedRow.Cells[5].Value.ToString().Trim();
+                cbNXB.Text = selectedRow.Cells[6].Value.ToString().Trim();
+                cbTacGia.Text = selectedRow.Cells[7].Value.ToString();
             }
         }
 
@@ -132,17 +132,32 @@ namespace WindowsFormsApp2
             int namXB;
             double giaSach;
             int soLuong;
-            string maNXB = cbNXB.SelectedValue?.ToString(); 
-            string maTacGia = cbTacGia.SelectedValue?.ToString(); 
+            string maNXB = cbNXB.SelectedValue?.ToString();
+            string maTacGia = cbTacGia.SelectedValue?.ToString();
 
             if (string.IsNullOrWhiteSpace(maSach) || string.IsNullOrWhiteSpace(tenSach) || string.IsNullOrWhiteSpace(theLoai) || string.IsNullOrWhiteSpace(maNXB) || string.IsNullOrWhiteSpace(maTacGia) || !int.TryParse(txtYearBook.Text, out namXB) || !double.TryParse(txtPrice.Text, out giaSach) || !int.TryParse(txtQuantity.Text, out soLuong))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin sách và nhập đúng định dạng dữ liệu.", "Lỗi");
-                return; 
+                return;
+            }
+
+            int currentYear = DateTime.Now.Year; // Lấy năm hiện tại
+
+            if (namXB > currentYear)
+            {
+                MessageBox.Show("Năm xuất bản không phù hợp", "Lỗi");
+                return;
             }
 
             using (Model1 context = new Model1())
             {
+                // Kiểm tra nếu sách đã tồn tại theo MaSach hoặc TenSach
+                if (context.Sach.Any(s => s.MaSach == maSach || s.TenSach == tenSach))
+                {
+                    MessageBox.Show("Sách đã tồn tại", "Lỗi");
+                    return;
+                }
+
                 Sach newSach = new Sach
                 {
                     MaSach = maSach,
@@ -156,10 +171,22 @@ namespace WindowsFormsApp2
                 };
 
                 Class1<Sach> sachDataAccess = new Class1<Sach>();
-                sachDataAccess.Them(newSach);
+
+                try
+                {
+                    sachDataAccess.Them(newSach);
+                    MessageBox.Show("Thêm sách thành công", "Thông báo");
+                    LoadDataGrid();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi thêm sách: " + ex.Message, "Lỗi");
+                }
             }
-            LoadDataGrid();
         }
+
+
+
 
         private void btnEditBook_Click(object sender, EventArgs e)
         {
@@ -169,13 +196,13 @@ namespace WindowsFormsApp2
             int namXB;
             double giaSach;
             int soLuong;
-            string maNXB = cbNXB.SelectedValue?.ToString(); 
-            string maTacGia = cbTacGia.SelectedValue?.ToString(); 
+            string maNXB = cbNXB.SelectedValue?.ToString();
+            string maTacGia = cbTacGia.SelectedValue?.ToString();
 
             if (string.IsNullOrWhiteSpace(maSach) || string.IsNullOrWhiteSpace(tenSach) || string.IsNullOrWhiteSpace(theLoai) || string.IsNullOrWhiteSpace(maNXB) || string.IsNullOrWhiteSpace(maTacGia) || !int.TryParse(txtYearBook.Text, out namXB) || !double.TryParse(txtPrice.Text, out giaSach) || !int.TryParse(txtQuantity.Text, out soLuong))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin sách và nhập đúng định dạng dữ liệu.", "Lỗi");
-                return; 
+                return;
             }
 
             Sach sachToEdit = new Sach
@@ -199,7 +226,7 @@ namespace WindowsFormsApp2
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
-            string maSach = txtIdBook.Text.Trim(); 
+            string maSach = txtIdBook.Text.Trim();
             Class1<Sach> sachDataAccess = new Class1<Sach>();
             Sach sachToDelete = sachDataAccess.TimSachTheoMa(maSach);
 

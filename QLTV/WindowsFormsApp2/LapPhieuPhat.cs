@@ -21,6 +21,7 @@ namespace WindowsFormsApp2
         public LapPhieuPhat()
         {
             InitializeComponent();
+            CenterToScreen();
             phieuPhatManager = new Class1<PhieuPhat>();
         }
 

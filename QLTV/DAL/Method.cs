@@ -108,13 +108,13 @@ namespace DAL
         {
             using (Model1 context = new Model1())
             {
-                string sqlQuery = "SELECT PT.MaPT FROM PhieuTra PT " +
-                                  "JOIN ChiTietPhieuTra CPT ON PT.MaPT = CPT.MaPT " +
-                                  "JOIN PhieuMuon PM ON CPT.MaPM = PM.MaPM " +
-                                  "WHERE PM.MaThe = @MaThe " +
-                                  "AND PT.TinhTrangSach = N'Trả đủ sách'";
+                string query = @"SELECT PM.MaPM FROM PhieuMuon PM
+                                 LEFT JOIN ChiTietPhieuMuon CTPM ON PM.MaPM = CTPM.MaPM
+                                 WHERE PM.MaThe = @MaThe
+                                 GROUP BY PM.MaPM 
+                                 HAVING SUM(CAST(CTPM.TrangThaiSach AS INT)) < COUNT(*)";
 
-                var maPMs = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaThe", maThe)).ToList();
+                var maPMs = context.Database.SqlQuery<string>(query, new SqlParameter("MaThe", maThe)).ToList();
                 return maPMs;
             }
         }
@@ -145,6 +145,29 @@ namespace DAL
 
                 string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPhat", maPhat)).FirstOrDefault();
                 return tenDocGia;
+            }
+        }
+        public List<string> GetTrangThaiSach(string maPM)
+        {
+            using (Model1 context = new Model1())
+            {
+                string sqlQuery = "SELECT S.TenSach FROM Sach S " +
+                                  "INNER JOIN ChiTietPhieuMuon CT ON S.MaSach = CT.MaSach " +
+                                  "WHERE CT.MaPM = @MaPM AND CT.TrangThaiSach = 1";
+
+                var bookNames = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaPM", maPM)).ToList();
+                return bookNames;
+            }
+        }
+        public void CapNhatTrangThaiSach(string maPhieuMuon, string tenSach)
+        {
+            using (Model1 context = new Model1())
+            {
+                string updateQuery = "UPDATE ChiTietPhieuMuon " +
+                                     "SET TrangThaiSach = 1 " +
+                                     "WHERE MaPM = @MaPM AND MaSach = (SELECT MaSach FROM Sach WHERE TenSach = @TenSach)";
+
+                context.Database.ExecuteSqlCommand(updateQuery, new SqlParameter("@MaPM", maPhieuMuon), new SqlParameter("@TenSach", tenSach));
             }
         }
     }

@@ -208,6 +208,7 @@
             // 
             // cbDocGia
             // 
+            this.cbDocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDocGia.FormattingEnabled = true;
             this.cbDocGia.Location = new System.Drawing.Point(113, 140);
             this.cbDocGia.Name = "cbDocGia";
@@ -216,6 +217,7 @@
             // 
             // cbNhanVien
             // 
+            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhanVien.FormattingEnabled = true;
             this.cbNhanVien.Location = new System.Drawing.Point(113, 178);
             this.cbNhanVien.Name = "cbNhanVien";

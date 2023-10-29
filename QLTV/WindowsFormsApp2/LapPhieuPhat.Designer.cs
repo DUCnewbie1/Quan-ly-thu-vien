@@ -119,6 +119,7 @@
             // 
             // cbMaPT
             // 
+            this.cbMaPT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaPT.FormattingEnabled = true;
             this.cbMaPT.Location = new System.Drawing.Point(113, 153);
             this.cbMaPT.Name = "cbMaPT";
@@ -169,6 +170,7 @@
             // 
             // cbDocGia
             // 
+            this.cbDocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDocGia.FormattingEnabled = true;
             this.cbDocGia.Location = new System.Drawing.Point(113, 86);
             this.cbDocGia.Name = "cbDocGia";
@@ -178,6 +180,7 @@
             // 
             // cbNhanVien
             // 
+            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhanVien.FormattingEnabled = true;
             this.cbNhanVien.Location = new System.Drawing.Point(113, 113);
             this.cbNhanVien.Name = "cbNhanVien";

@@ -22,6 +22,7 @@ namespace WindowsFormsApp2
         public ChamCong()
         {
             InitializeComponent();
+            CenterToScreen();
             // Đặt giá trị mặc định của ComboBox là không hiển thị gì
             cmbCa.Text = "";
         }
@@ -185,5 +186,24 @@ namespace WindowsFormsApp2
             dgv.DataSource = query.ToList();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

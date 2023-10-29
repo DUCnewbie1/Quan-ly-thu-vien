@@ -19,6 +19,7 @@ namespace WindowsFormsApp2
         public LapPhieuTra()
         {
             InitializeComponent();
+            CenterToScreen();
             phieuTraManager = new Class1<PhieuTra>();
         }
 
@@ -70,8 +71,9 @@ namespace WindowsFormsApp2
                     if (theDocGia != null)
                     {
                         string maThe = theDocGia.MaThe;
-                        var maPMs = phieuTraManager.GetMaPMsForMaThe(maThe);
+                        var maPMs = phieuTraManager.GetMaPTsForMaThe(maThe);
                         cbMaPM.DataSource = maPMs;
+                        cbMaPM.Refresh();
                         cbMaPM.SelectedIndex = -1;
                     }
                 }
@@ -236,7 +238,7 @@ namespace WindowsFormsApp2
                 if (selectedMaPM != null)
                 {
                     maPM = selectedMaPM.ToString();
-                    var bookNames = phieuTraManager.GetBookNamesForMaPM(maPM);
+                    var bookNames = phieuTraManager.GetTrangThaiSach(maPM);
                     checkedListBook.Items.Clear();
                     foreach (var bookName in bookNames)
                     {

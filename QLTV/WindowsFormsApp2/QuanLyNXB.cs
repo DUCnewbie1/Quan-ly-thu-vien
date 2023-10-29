@@ -20,6 +20,7 @@ namespace WindowsFormsApp2
         public QuanLyNXB()
         {
             InitializeComponent();
+            CenterToScreen();
             LoadDataGrid();
         }
         private void LoadDataGrid()

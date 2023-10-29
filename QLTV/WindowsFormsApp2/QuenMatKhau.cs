@@ -22,6 +22,7 @@ namespace WindowsFormsApp2
         public QuenMatKhau()
         {
             InitializeComponent();
+            CenterToScreen();
             EmailTextBoxHandler = DNKDR.EmailTextBoxHandler;
         }
 

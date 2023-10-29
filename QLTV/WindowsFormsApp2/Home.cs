@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,8 +61,21 @@ namespace WindowsFormsApp2
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
-            formQuanLyNhanVien.ShowDialog();
+            using (Model1 context = new Model1())
+            {
+                string query = "SELECT LoaiTK FROM TaiKhoan WHERE id=@userId";
+                string loaiTk = context.Database.SqlQuery<string>(query, new SqlParameter("userId", userId)).FirstOrDefault();
+                if (loaiTk != "Admin")
+                {
+                    MessageBox.Show("Chỉ có admin mới có thể quản lý nhân viên", "Thông báo");
+                }
+                else
+                {
+                    QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
+                    formQuanLyNhanVien.ShowDialog();
+                    hideSubMenu();
+                }
+            }
         }
 
         private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,12 +153,6 @@ namespace WindowsFormsApp2
             cc.ShowDialog();
         }
 
-        private void quảnLýThẻĐọcGiảToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TheDocGia dg = new TheDocGia();
-            dg.ShowDialog();
-        }
-
         private void lậpPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LapPhieuTra pt = new LapPhieuTra();
@@ -211,9 +219,21 @@ namespace WindowsFormsApp2
 
         private void btnQLNV_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
-            formQuanLyNhanVien.ShowDialog();
-            hideSubMenu();
+            using (Model1 context = new Model1())
+            {
+                string query = "SELECT LoaiTK FROM TaiKhoan WHERE id=@userId";
+                string loaiTk = context.Database.SqlQuery<string>(query, new SqlParameter("userId", userId)).FirstOrDefault();
+                if (loaiTk != "Admin")
+                {
+                    MessageBox.Show("Chỉ có admin mới có thể quản lý nhân viên", "Thông báo");
+                }
+                else
+                {
+                    QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
+                    formQuanLyNhanVien.ShowDialog();
+                    hideSubMenu();
+                }
+            }
         }
 
         private void btnQLNXB_Click(object sender, EventArgs e)
@@ -227,13 +247,6 @@ namespace WindowsFormsApp2
         {
             QuanLyTacGia tg = new QuanLyTacGia();
             tg.ShowDialog();
-            hideSubMenu();
-        }
-
-        private void btnQLThe_Click(object sender, EventArgs e)
-        {
-            TheDocGia dg = new TheDocGia();
-            dg.ShowDialog();
             hideSubMenu();
         }
 
@@ -323,6 +336,12 @@ namespace WindowsFormsApp2
         {
             ThongKeSach thongKeSach = new ThongKeSach();
             thongKeSach.ShowDialog();
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Excel ex = new Excel();
+            ex.ShowDialog();
         }
     }
 }

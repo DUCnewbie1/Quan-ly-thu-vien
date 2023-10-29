@@ -34,18 +34,31 @@ namespace WindowsFormsApp2
                 return;
             }
 
-
             List<DocGia> results = new List<DocGia>();
 
             using (Model1 context = new Model1())
             {
                 if (rbFollowName.Checked)
                 {
-                    results = context.DocGia.Where(dg => dg.TenDocGia.Contains(keyword)).ToList();
+                    foreach (var item in context.DocGia)
+                    {
+                        if (keyword == item.TenDocGia || item.TenDocGia.Contains(keyword))
+                        {
+                            results.Add(item);
+                        }
+                    }
+                    BindGrid(results);
                 }
                 else if (rbFollowIDReader.Checked)
                 {
-                    results = context.DocGia.Where(dg => dg.MaDocGia.Contains(keyword)).ToList();
+                    foreach (var item in context.DocGia)
+                    {
+                        if (keyword == item.MaDocGia || item.MaDocGia.Contains(keyword))
+                        {
+                            results.Add(item);
+                        }
+                    }
+                    BindGrid(results);
                 }
                 else
                 {
@@ -60,8 +73,30 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            dgvSReader.DataSource = results;
         }
+
+        
+        private void BindGrid(List<DocGia> results)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Mã Đọc Giả");
+            dt.Columns.Add("Tên Đọc Giả");
+            dt.Columns.Add("Địa Chỉ");
+            dt.Columns.Add("SĐT");
+            dt.Columns.Add("Email");
+            foreach (var item in results)
+            {
+                DataRow dr = dt.NewRow();
+                dr["Mã Đọc Giả"] = item.MaDocGia;
+                dr["Tên Đọc Giả"] = item.TenDocGia;
+                dr["Địa Chỉ"] = item.DiaChi;
+                dr["SĐT"] = item.Sdt;
+                dr["Email"] = item.Email;
+                dt.Rows.Add(dr);
+            }
+            dgvSReader.DataSource = dt;
+        }
+
 
         private void btnExitSReader_Click(object sender, EventArgs e)
         {

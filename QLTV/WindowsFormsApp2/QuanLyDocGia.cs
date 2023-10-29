@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.SqlServer;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -82,16 +83,18 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            if (txtSDT.Text.Length != 10)
+            if (sDT.Length != 10)
             {
-                MessageBox.Show($"Số điện thoại phải có đúng 10 số! (kí tự hiện tại: " +
-                                $"{txtSDT.Text.Length})");
-                txtSDT.Text = "";
+                MessageBox.Show("Số điện thoại gồm 10 số");
+                txtSDT.Text = ""; // Xóa nội dung textbox
                 return;
             }
 
             using (Model1 context = new Model1())
             {
+                string newMaThe = GenerateNewMaThe();
+                DateTime ngayLap = dtpkNgayLap.Value;
+                DateTime ngayHetHan = ngayLap.AddYears(10);
                 var existingReader = context.DocGia.FirstOrDefault(dg => dg.MaDocGia == maDG);
                 if (existingReader != null)
                 {
@@ -108,13 +111,41 @@ namespace WindowsFormsApp2
                     Email = email
                 };
 
-                Class1<DocGia> DocGiaDataAccess = new Class1<DocGia>();
-                DocGiaDataAccess.Them(newReaders);
-                MessageBox.Show("Thêm Thành công", "Thông báo");
+                TheDocGia newCard = new TheDocGia
+                {
+                    MaThe = newMaThe,
+                    NgayLapThe = ngayLap,
+                    NgayHetHan = ngayHetHan,
+                    MaDocGia = maDG
+                };
 
+                context.DocGia.Add(newReaders);
+                context.TheDocGia.Add(newCard);
+                context.SaveChanges();
+                MessageBox.Show("Thêm Thành công", "Thông báo");
             }
             LoadDataGrid();
         }
+
+        private string GenerateNewMaThe()
+        {
+            using (Model1 context = new Model1())
+            {
+                var maxIndex = context.TheDocGia
+                    .Select(the => the.MaThe)
+                    .Where(maThe => maThe.StartsWith("T"))
+                    .Select(maThe => maThe.Substring(1, 2))
+                    .DefaultIfEmpty("00")
+                    .Max();
+
+                int nextIndex = (int.Parse(maxIndex) + 1);
+                string newMaThe = "T" + nextIndex.ToString("D2").PadLeft(2, '0');
+                return newMaThe;
+            }
+        }
+
+
+
 
         private void btnEditDG_Click(object sender, EventArgs e)
         {
@@ -214,10 +245,18 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void btnDKThe_Click(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            TheDocGia frmTheDocGia = new TheDocGia();
-            frmTheDocGia.ShowDialog();
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

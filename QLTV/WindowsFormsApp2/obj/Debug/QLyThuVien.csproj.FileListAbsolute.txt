@@ -490,3 +490,198 @@ C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ThongKeSach.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\BLL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\DAL.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.Design.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\EnvDTE.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\stdole.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\BLL.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\DAL.pdb
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\DAL.dll.config
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.xml
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.xml
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\Interop.WMPLib.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\AxInterop.WMPLib.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.AssemblyReference.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.SuggestedBindingRedirects.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\Interop.WMPLib.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\AxInterop.WMPLib.dll
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.ResolveComReference.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ChamCong.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.DangKy.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.DangNhap.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Home.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuMuon.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuPhat.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuTra.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyDocGia.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNhanVien.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNXB.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLySach.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyTacGia.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuenMatKhau.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TheDocGia.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ThongKeSach.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.timKiemDocGia.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.timKiemSach.resources
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.GenerateResource.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.CoreCompileInputs.cache
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.CopyComplete
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMonVer2\DUNG\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\BLL.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\DAL.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EnvDTE.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\stdole.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\BLL.pdb
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\DAL.pdb
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\DAL.dll.config
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.xml
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.xml
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Interop.WMPLib.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\AxInterop.WMPLib.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.AssemblyReference.cache
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.SuggestedBindingRedirects.cache
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\Interop.WMPLib.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\AxInterop.WMPLib.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.ResolveComReference.cache
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ChamCong.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.DangKy.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.DangNhap.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Home.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuMuon.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuPhat.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuTra.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyDocGia.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNhanVien.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNXB.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLySach.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyTacGia.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuenMatKhau.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ThongKeSach.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.timKiemDocGia.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.timKiemSach.resources
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.GenerateResource.cache
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.CoreCompileInputs.cache
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.CopyComplete
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.Interfaces.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.System.Drawing.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.xml
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Excel.resources

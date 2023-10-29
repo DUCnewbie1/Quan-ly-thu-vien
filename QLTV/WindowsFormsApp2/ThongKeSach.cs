@@ -15,6 +15,7 @@ namespace WindowsFormsApp2
         public ThongKeSach()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void ThongKeSach_Load(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
         public QuanLyTacGia()
         {
             InitializeComponent();
+            CenterToScreen();
             LoadDataGrid();
         }
         private void LoadDataGrid()
