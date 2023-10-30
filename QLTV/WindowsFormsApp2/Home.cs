@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
 {
     public partial class Home : Form
     {
-        private int userId;
+        public int userId;
         WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
         
         public Home(int userId)
@@ -308,23 +308,6 @@ namespace WindowsFormsApp2
 
         #endregion thanh ben 'Thoat'
 
-        private void đăngKýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (Model1 context = new Model1())
-            {
-                string query = "SELECT LoaiTK FROM TaiKhoan WHERE id=@userId";
-                string loaiTk = context.Database.SqlQuery<string>(query, new SqlParameter("userId", userId)).FirstOrDefault();
-                if (loaiTk != "Admin")
-                {
-                    MessageBox.Show("Chỉ có admin mới có thể đăng ký nhân viên", "Thông báo");
-                }
-                else
-                {
-                    DangKy dk = new DangKy();
-                    dk.ShowDialog();
-                }
-            }
-        }
 
         private void lậpPhiếuPhạtToolStripMenuItem_Click(object sender, EventArgs e)
         {

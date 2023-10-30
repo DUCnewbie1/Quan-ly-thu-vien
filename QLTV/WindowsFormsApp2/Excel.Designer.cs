@@ -33,7 +33,7 @@
             // 
             // btn_CreateExcel
             // 
-            this.btn_CreateExcel.Location = new System.Drawing.Point(436, 180);
+            this.btn_CreateExcel.Location = new System.Drawing.Point(12, 12);
             this.btn_CreateExcel.Name = "btn_CreateExcel";
             this.btn_CreateExcel.Size = new System.Drawing.Size(75, 23);
             this.btn_CreateExcel.TabIndex = 0;

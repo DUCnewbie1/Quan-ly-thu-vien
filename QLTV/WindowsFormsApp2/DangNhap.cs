@@ -45,7 +45,8 @@ namespace WindowsFormsApp2
                         return;
                     }
 
-                    string sql = "SELECT id FROM TaiKhoan WHERE TenTK=@tk AND MatKhau=@mk";
+                    string sql = @"SELECT id FROM TaiKhoan WHERE TenTK=@tk COLLATE SQL_Latin1_General_CP1_CS_AS 
+                                   AND MatKhau=@mk COLLATE SQL_Latin1_General_CP1_CS_AS";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {

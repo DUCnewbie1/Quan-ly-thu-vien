@@ -55,7 +55,7 @@
             this.chấmcôngtoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtBáoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngKýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panellogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -79,7 +79,6 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.panelMuonTraPhat = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panellogo.SuspendLayout();
@@ -129,8 +128,7 @@
             this.danhMụcToolStripMenuItem,
             this.mượnTrảSáchToolStripMenuItem,
             this.tìmKiếmToolStripMenuItem,
-            this.báoCáoThốngKêToolStripMenuItem,
-            this.đăngKýNhânViênToolStripMenuItem});
+            this.báoCáoThốngKêToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -153,7 +151,7 @@
             this.đăngXuấtToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.iconexit;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -162,7 +160,7 @@
             this.thoátToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.ext;
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -307,7 +305,7 @@
             this.chấmcôngtoolStripMenuItem1.Name = "chấmcôngtoolStripMenuItem1";
             this.chấmcôngtoolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.chấmcôngtoolStripMenuItem1.Size = new System.Drawing.Size(218, 30);
+            this.chấmcôngtoolStripMenuItem1.Size = new System.Drawing.Size(210, 22);
             this.chấmcôngtoolStripMenuItem1.Text = "Chấm công";
             this.chấmcôngtoolStripMenuItem1.Click += new System.EventHandler(this.chấmcôngtoolStripMenuItem);
             // 
@@ -318,24 +316,24 @@
             this.excelToolStripMenuItem});
             this.xuấtBáoCáoToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.bill;
             this.xuấtBáoCáoToolStripMenuItem.Name = "xuấtBáoCáoToolStripMenuItem";
-            this.xuấtBáoCáoToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.xuấtBáoCáoToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.xuấtBáoCáoToolStripMenuItem.Text = "Xuất Báo Cáo";
             // 
             // thốngKêSáchToolStripMenuItem
             // 
             this.thốngKêSáchToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.addbook;
             this.thốngKêSáchToolStripMenuItem.Name = "thốngKêSáchToolStripMenuItem";
-            this.thốngKêSáchToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.thốngKêSáchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thốngKêSáchToolStripMenuItem.Text = "Thống Kê Sách";
             this.thốngKêSáchToolStripMenuItem.Click += new System.EventHandler(this.thốngKêSáchToolStripMenuItem_Click);
             // 
-            // đăngKýNhânViênToolStripMenuItem
+            // excelToolStripMenuItem
             // 
-            this.đăngKýNhânViênToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.add_friend;
-            this.đăngKýNhânViênToolStripMenuItem.Name = "đăngKýNhânViênToolStripMenuItem";
-            this.đăngKýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(141, 28);
-            this.đăngKýNhânViênToolStripMenuItem.Text = "Đăng ký nhân viên";
-            this.đăngKýNhânViênToolStripMenuItem.Click += new System.EventHandler(this.đăngKýNhânViênToolStripMenuItem_Click);
+            this.excelToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.excel;
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.excelToolStripMenuItem.Text = "Excel";
+            this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
             // 
             // panellogo
             // 
@@ -711,14 +709,6 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // excelToolStripMenuItem
-            // 
-            this.excelToolStripMenuItem.Image = global::WindowsFormsApp2.Properties.Resources.excel;
-            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.excelToolStripMenuItem.Text = "Excel";
-            this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,7 +789,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem đăngKýNhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xuấtBáoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêSáchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;

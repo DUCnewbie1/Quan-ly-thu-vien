@@ -1,9 +1,11 @@
 ﻿using DAL;
 using DAL.Models;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -202,5 +204,10 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void btn_DangKy_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy();
+            dk.ShowDialog();
+        }
     }
 }
