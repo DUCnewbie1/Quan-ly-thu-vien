@@ -33,7 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_TienPhat = new System.Windows.Forms.TextBox();
-            this.cbMaPT = new System.Windows.Forms.ComboBox();
+            this.cbMaPM = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaPhieu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,7 +55,6 @@
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuPhat)).BeginInit();
@@ -81,7 +80,7 @@
             // 
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txt_TienPhat);
-            this.groupBox1.Controls.Add(this.cbMaPT);
+            this.groupBox1.Controls.Add(this.cbMaPM);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaPhieu);
             this.groupBox1.Controls.Add(this.label9);
@@ -117,23 +116,23 @@
             this.txt_TienPhat.Size = new System.Drawing.Size(200, 20);
             this.txt_TienPhat.TabIndex = 41;
             // 
-            // cbMaPT
+            // cbMaPM
             // 
-            this.cbMaPT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaPT.FormattingEnabled = true;
-            this.cbMaPT.Location = new System.Drawing.Point(113, 153);
-            this.cbMaPT.Name = "cbMaPT";
-            this.cbMaPT.Size = new System.Drawing.Size(200, 21);
-            this.cbMaPT.TabIndex = 38;
+            this.cbMaPM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaPM.FormattingEnabled = true;
+            this.cbMaPM.Location = new System.Drawing.Point(113, 153);
+            this.cbMaPM.Name = "cbMaPM";
+            this.cbMaPM.Size = new System.Drawing.Size(200, 21);
+            this.cbMaPM.TabIndex = 38;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(30, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 37;
-            this.label2.Text = "Mã Phiếu Trả";
+            this.label2.Text = "Mã Phiếu Mượn";
             // 
             // txtMaPhieu
             // 
@@ -295,23 +294,13 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "LẬP PHIẾU PHẠT";
             // 
-            // BtnSua
-            // 
-            this.BtnSua.Location = new System.Drawing.Point(924, 479);
-            this.BtnSua.Name = "BtnSua";
-            this.BtnSua.Size = new System.Drawing.Size(75, 23);
-            this.BtnSua.TabIndex = 43;
-            this.BtnSua.Text = "Sửa ";
-            this.BtnSua.UseVisualStyleBackColor = true;
-            this.BtnSua.Click += new System.EventHandler(this.BtnSua_Click);
-            // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(818, 479);
+            this.btnThem.Location = new System.Drawing.Point(908, 479);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(90, 23);
             this.btnThem.TabIndex = 42;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Lập phiếu phạt";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -325,7 +314,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvPhieuPhat);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnSua);
             this.Controls.Add(this.btnThem);
             this.Name = "LapPhieuPhat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -344,7 +332,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbMaPT;
+        private System.Windows.Forms.ComboBox cbMaPM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaPhieu;
         private System.Windows.Forms.Label label9;
@@ -359,7 +347,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvPhieuPhat;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_TienPhat;

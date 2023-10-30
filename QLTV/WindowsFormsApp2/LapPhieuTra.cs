@@ -152,7 +152,12 @@ namespace WindowsFormsApp2
                         MessageBox.Show("Mã phiếu mượn không tồn tại trong bảng PhieuMuon.");
                         return;
                     }
-
+                    foreach (var item in checkedListBook.CheckedItems)
+                    {
+                        string tenSach = item.ToString();
+                        string updateQuery = "UPDATE ChiTietPhieuMuon SET TrangThaiSach = 1 WHERE MaPM = @MaPM AND MaSach = (SELECT MaSach FROM Sach WHERE TenSach = @TenSach)";
+                        dbcontext.Database.ExecuteSqlCommand(updateQuery, new SqlParameter("@MaPM", maPhieuMuon), new SqlParameter("@TenSach", tenSach));
+                    }
                     PhieuTra phieuTra = new PhieuTra
                     {
                         MaPT = maPhieu,
@@ -223,26 +228,26 @@ namespace WindowsFormsApp2
                 DataGridViewRow row = dgvPhieuTra.Rows[e.RowIndex];
                 string maPT = row.Cells[0].Value.ToString();
                 string maPhieuMuon = row.Cells[6].Value.ToString();
-                txtMaPhieu.Text = maPT;
-                dtpkNgayTra.Value = (DateTime)row.Cells[1].Value;
-                txtGhiChu.Text = row.Cells[2].Value.ToString();
-                cbTinhTrang.Text = row.Cells[3].Value.ToString();
+                txtMaPhieur.Text = maPT;
+                dtpkNgayTrar.Value = (DateTime)row.Cells[1].Value;
+                txtGhiChur.Text = row.Cells[2].Value.ToString();
+                txtTinhTrangr.Text = row.Cells[3].Value.ToString();
                 string tenDocGia = row.Cells[4].Value.ToString();
                 string tenNhanVien = row.Cells[5].Value.ToString();
                 string maDocGia = phieuTraManager.GetMaDocGiaTuTenDocGia(tenDocGia);
-                cbDocGia.SelectedValue = maDocGia;
-                cbNhanVien.SelectedIndex = cbNhanVien.FindStringExact(tenNhanVien);
+                txtDocGiar.Text = maDocGia;
+                txtNhanVienr.Text = tenNhanVien;
                 string maPM = phieuTraManager.GetMaPMTuMaPT(maPT);
-                cbMaPM.Text = maPhieuMuon;
-                var selectedMaPM = cbMaPM.Text;
+                txtMaPMr.Text = maPhieuMuon;
+                var selectedMaPM = txtMaPMr.Text;
                 if (selectedMaPM != null)
                 {
-                    maPM = selectedMaPM.ToString();
-                    var bookNames = phieuTraManager.GetTrangThaiSach(maPM);
-                    checkedListBook.Items.Clear();
+                    string maPMr = selectedMaPM.ToString();
+                    var bookNames = phieuTraManager.GetReturnedBookNamesForMaPM(maPMr);
+                    lb_Bookr.Items.Clear();
                     foreach (var bookName in bookNames)
                     {
-                        checkedListBook.Items.Add(bookName);
+                        lb_Bookr.Items.Add(bookName);
                     }
                 }
             }

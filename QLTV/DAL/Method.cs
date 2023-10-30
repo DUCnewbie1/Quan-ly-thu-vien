@@ -40,20 +40,32 @@ namespace DAL
         {
             return context.Set<T>().Find(maSach);
         }
+        //sách chưa trả
         public List<string> GetBookNamesForMaPM(string maPM)
         {
             using (Model1 context = new Model1())
             {
                 string sqlQuery = "SELECT S.TenSach FROM Sach S " +
                                   "INNER JOIN ChiTietPhieuMuon CT ON S.MaSach = CT.MaSach " +
-                                  "WHERE CT.MaPM = @MaPM";
+                                  "WHERE CT.MaPM = @MaPM AND CT.TrangThaiSach = 0";
 
                 var bookNames = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaPM", maPM)).ToList();
                 return bookNames;
             }
-
         }
+        //Sách đã trả
+        public List<string> GetReturnedBookNamesForMaPM(string maPM)
+        {
+            using (Model1 context = new Model1())
+            {
+                string sqlQuery = "SELECT S.TenSach FROM Sach S " +
+                                  "INNER JOIN ChiTietPhieuMuon CT ON S.MaSach = CT.MaSach " +
+                                  "WHERE CT.MaPM = @MaPM AND CT.TrangThaiSach = 1";
 
+                var bookNames = context.Database.SqlQuery<string>(sqlQuery, new SqlParameter("MaPM", maPM)).ToList();
+                return bookNames;
+            }
+        }
         public string GetMaPMTuMaPT(string maPT)
         {
             using (Model1 context = new Model1())
@@ -125,9 +137,7 @@ namespace DAL
                 string query = "SELECT DG.MaDocGia FROM DocGia DG " +
                                "INNER JOIN TheDocGia TDG ON DG.MaDocGia = TDG.MaDocGia " +
                                "INNER JOIN PhieuMuon PM ON TDG.MaThe = PM.MaThe " +
-                               "INNER JOIN ChiTietPhieuTra CPT ON PM.MaPM = CPT.MaPM " +
-                               "INNER JOIN PhieuTra PT ON CPT.MaPT = PT.MaPT " +
-                               "INNER JOIN ChiTietPhieuPhat CPP ON PT.MaPT = CPP.MaPT " +
+                               "INNER JOIN ChiTietPhieuPhat CPP ON PM.MaPM = CPP.MaPM " +
                                "WHERE CPP.MaPhat = @MaPhat";
 
                 string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPhat", maPhat)).FirstOrDefault();
@@ -139,8 +149,8 @@ namespace DAL
             using (Model1 context = new Model1())
             {
                 string query = "SELECT NV.TenNV FROM NhanVien NV " +
-                               "INNER JOIN PhieuTra PT ON NV.MaNV = PT.MaNV " +
-                               "INNER JOIN ChiTietPhieuPhat CPP ON PT.MaPT = CPP.MaPT " +
+                               "INNER JOIN PhieuMuon PM ON NV.MaNV = PM.MaNV " +
+                               "INNER JOIN ChiTietPhieuPhat CPP ON PM.MaPM = CPP.MaPM " +
                                "WHERE CPP.MaPhat = @MaPhat";
 
                 string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPhat", maPhat)).FirstOrDefault();

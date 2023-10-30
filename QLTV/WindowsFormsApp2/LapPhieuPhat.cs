@@ -38,14 +38,14 @@ namespace WindowsFormsApp2
                 string maPhieu = txtMaPhieu.Text;
                 DateTime ngayTra = dtpkNgayTra.Value;
                 string maDocGia = cbDocGia.SelectedValue.ToString();
-                string maPhieuTra = cbMaPT.SelectedValue.ToString();
+                string maPhieuMuon = cbMaPM.SelectedValue.ToString();
                 string maNhanVien = cbNhanVien.SelectedValue.ToString();
                 string noiDung = txtNoiDung.Text;
                 double tienPhat = double.Parse(txt_TienPhat.Text.ToString());
                 using (Model1 dbcontext = new Model1())
                 {
-                    bool maPTExists = dbcontext.PhieuTra.Any(pm => pm.MaPT == maPhieuTra);
-                    if (!maPTExists)
+                    bool maPMExists = dbcontext.PhieuMuon.Any(pm => pm.MaPM == maPhieuMuon);
+                    if (!maPMExists)
                     {
                         MessageBox.Show("Mã phiếu trả không tồn tại trong bảng PhieuTra.");
                         return;
@@ -60,15 +60,15 @@ namespace WindowsFormsApp2
 
                     Class1<PhieuPhat> classPhieuPhat = new Class1<PhieuPhat>();
                     classPhieuPhat.Them(phieuPhat);
-                    string insertQuery = "INSERT INTO ChiTietPhieuPhat (MaPhat, MaPT) VALUES (@MaPhat, (SELECT TOP 1 MaPT FROM PhieuTra WHERE MaPT = @MaPT))";
-                    dbcontext.Database.ExecuteSqlCommand(insertQuery, new SqlParameter("@MaPhat", maPhieu), new SqlParameter("@MaPT", maPhieuTra));
+                    string insertQuery = "INSERT INTO ChiTietPhieuPhat (MaPhat, MaPM) VALUES (@MaPhat, (SELECT TOP 1 MaPM FROM PhieuMuon WHERE MaPM = @MaPM))";
+                    dbcontext.Database.ExecuteSqlCommand(insertQuery, new SqlParameter("@MaPhat", maPhieu), new SqlParameter("@MaPM", maPhieuMuon));
                     MessageBox.Show("Thêm mới thành công");
                     dbcontext.SaveChanges();
                 }
 
                 txtMaPhieu.Text = string.Empty;
                 cbDocGia.SelectedIndex = -1;
-                cbMaPT.DataSource = null;
+                cbMaPM.DataSource = null;
                 cbNhanVien.SelectedIndex = -1;
                 txtNoiDung.Text = string.Empty;
                 txt_TienPhat.Text = string.Empty;
@@ -142,16 +142,11 @@ namespace WindowsFormsApp2
                     {
                         string maThe = theDocGia.MaThe;
                         var maPTs = phieuPhatManager.GetMaPTsForMaThe(maThe);
-                        cbMaPT.DataSource = maPTs;
-                        cbMaPT.SelectedIndex = -1;
+                        cbMaPM.DataSource = maPTs;
+                        cbMaPM.SelectedIndex = -1;
                     }
                 }
             }
-        }
-
-        private void BtnSua_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
