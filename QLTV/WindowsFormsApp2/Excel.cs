@@ -53,6 +53,12 @@ namespace WindowsFormsApp2
                                     dg.TenDocGia,
                                     MaPhieuMuon = pmData == null ? "" : pmData.MaPM,
                                 }).ToList();
+                    string query = "SELECT DISTINCT ctpt.MaPM FROM ChiTietPhieuTra ctpt " +
+                                   "INNER JOIN PhieuTra pt ON ctpt.MaPT = pt.MaPT " +
+                                   "INNER JOIN PHIEUMUON PM ON ctpt.MaPM = PM.MaPM " +
+                                   "WHERE MONTH(PM.NgayLap) = MONTH(GETDATE()) AND YEAR(PM.NgayLap) = YEAR(GETDATE())";
+
+                    var results = context.Database.SqlQuery<string>(query).ToList(); 
 
                     // Gửi dữ liệu vào excel
                     int row = 2;
@@ -61,7 +67,14 @@ namespace WindowsFormsApp2
                         worksheet.Cells["A" + row].Value = item.MaDocGia;
                         worksheet.Cells["B" + row].Value = item.TenDocGia;
                         worksheet.Cells["C" + row].Value = item.MaPhieuMuon;
-                        //worksheet.Cells["D" + row].Value = item.TinhTrangSach;
+                        if (results.Contains(item.MaPhieuMuon))
+                        {
+                            worksheet.Cells["D" + row].Value = "Đã trả sách";
+                        }
+                        else
+                        {
+                            worksheet.Cells["D" + row].Value = "Chưa trả sách";
+                        }
                         row++;
                     }
                     worksheet.Cells.AutoFitColumns();
@@ -77,29 +90,5 @@ namespace WindowsFormsApp2
             MessageBox.Show("Tạo file excel thành công.");
         }
 
-        private string GetTinhTrangSach(Model1 context, PhieuMuon pmData)
-        {
-            DateTime currentDate = DateTime.Now;
-
-            string query = "SELECT DISTINCT ctpt.* FROM ChiTietPhieuTra ctpt " +
-                "INNER JOIN PhieuTra pt ON ctpt.MaPT = pt.MaPT " +
-                "INNER JOIN PHIEUMUON PM ON ctpt.MaPM = PM.MaPM " +
-                "WHERE MONTH(PM.NgayLap) = MONTH(GETDATE()) AND YEAR(PM.NgayLap) = YEAR(GETDATE())";
-
-            var results = context.Database.SqlQuery<string>(query);
-
-            foreach (var result in results)
-            {
-
-            }
-                if (daTraSach)
-            {
-                return "Đã trả sách";
-            }
-            else
-            {
-                return null;
-            }
-        }
     }
 }

@@ -167,7 +167,6 @@ C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuM
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuTra.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyTacGia.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ChamCong.resources
-C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TheDocGia.resources
 E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
@@ -685,3 +684,11 @@ D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\System.Compone
 D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.xml
 D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\Download\Quan-ly-thu-vien-main\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Excel.resources
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.dll
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\EPPlus.xml
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Excel.resources

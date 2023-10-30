@@ -278,3 +278,8 @@ D:\Download\Quan-ly-thu-vien-main\QLTV\BLL\obj\Debug\BLL.csproj.CoreCompileInput
 D:\Download\Quan-ly-thu-vien-main\QLTV\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\Download\Quan-ly-thu-vien-main\QLTV\BLL\obj\Debug\BLL.dll
 D:\Download\Quan-ly-thu-vien-main\QLTV\BLL\obj\Debug\BLL.pdb
+C:\Users\Admin\source\QLTV\BLL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Admin\source\QLTV\BLL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Admin\source\QLTV\BLL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Admin\source\QLTV\BLL\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Admin\source\QLTV\BLL\bin\Debug\Microsoft.SqlServer.Types.dll

@@ -12,6 +12,7 @@ namespace DAL.Models
         {
         }
 
+        public virtual DbSet<ChiTietPhieuMuon> ChiTietPhieuMuon { get; set; }
         public virtual DbSet<DocGia> DocGia { get; set; }
         public virtual DbSet<NhanVien> NhanVien { get; set; }
         public virtual DbSet<NhaXuatBan> NhaXuatBan { get; set; }
@@ -25,6 +26,14 @@ namespace DAL.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ChiTietPhieuMuon>()
+                .Property(e => e.MaPM)
+                .IsFixedLength();
+
+            modelBuilder.Entity<ChiTietPhieuMuon>()
+                .Property(e => e.MaSach)
+                .IsFixedLength();
+
             modelBuilder.Entity<DocGia>()
                 .Property(e => e.MaDocGia)
                 .IsFixedLength();
@@ -94,9 +103,14 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<PhieuMuon>()
-                .HasMany(e => e.Saches)
+                .HasMany(e => e.ChiTietPhieuMuons)
+                .WithRequired(e => e.PhieuMuon)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PhieuMuon>()
+                .HasMany(e => e.PhieuPhats)
                 .WithMany(e => e.PhieuMuons)
-                .Map(m => m.ToTable("ChiTietPhieuMuon").MapLeftKey("MaPM").MapRightKey("MaSach"));
+                .Map(m => m.ToTable("ChiTietPhieuPhat").MapLeftKey("MaPM").MapRightKey("MaPhat"));
 
             modelBuilder.Entity<PhieuMuon>()
                 .HasMany(e => e.PhieuTras)
@@ -106,11 +120,6 @@ namespace DAL.Models
             modelBuilder.Entity<PhieuPhat>()
                 .Property(e => e.MaPhat)
                 .IsFixedLength();
-
-            modelBuilder.Entity<PhieuPhat>()
-                .HasMany(e => e.PhieuTras)
-                .WithMany(e => e.PhieuPhats)
-                .Map(m => m.ToTable("ChiTietPhieuPhat").MapLeftKey("MaPhat").MapRightKey("MaPT"));
 
             modelBuilder.Entity<PhieuTra>()
                 .Property(e => e.MaPT)
@@ -131,6 +140,11 @@ namespace DAL.Models
             modelBuilder.Entity<Sach>()
                 .Property(e => e.MaTacGia)
                 .IsFixedLength();
+
+            modelBuilder.Entity<Sach>()
+                .HasMany(e => e.ChiTietPhieuMuons)
+                .WithRequired(e => e.Sach)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<TacGia>()
                 .Property(e => e.MaTacGia)

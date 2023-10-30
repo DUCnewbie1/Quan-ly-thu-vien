@@ -12,7 +12,8 @@ namespace DAL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhieuMuon()
         {
-            Saches = new HashSet<Sach>();
+            ChiTietPhieuMuons = new HashSet<ChiTietPhieuMuon>();
+            PhieuPhats = new HashSet<PhieuPhat>();
             PhieuTras = new HashSet<PhieuTra>();
         }
 
@@ -39,12 +40,15 @@ namespace DAL.Models
         [StringLength(10)]
         public string MaNV { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietPhieuMuon> ChiTietPhieuMuons { get; set; }
+
         public virtual NhanVien NhanVien { get; set; }
 
         public virtual TheDocGia TheDocGia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sach> Saches { get; set; }
+        public virtual ICollection<PhieuPhat> PhieuPhats { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuTra> PhieuTras { get; set; }
