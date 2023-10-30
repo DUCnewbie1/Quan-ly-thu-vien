@@ -44,8 +44,8 @@ namespace WindowsFormsApp2
                                 join tdg in context.TheDocGia on dg.MaDocGia equals tdg.MaDocGia
                                 join pm in context.PhieuMuon on tdg.MaThe equals pm.MaThe into pmGroup
                                 from pmData in pmGroup.DefaultIfEmpty()
-                                where pmData != null && 
-                                      pmData.NgayLap.Month == DateTime.Now.Month && 
+                                where pmData != null &&
+                                      pmData.NgayLap.Month == DateTime.Now.Month &&
                                       pmData.NgayLap.Year == DateTime.Now.Year
                                 select new
                                 {
@@ -53,12 +53,13 @@ namespace WindowsFormsApp2
                                     dg.TenDocGia,
                                     MaPhieuMuon = pmData == null ? "" : pmData.MaPM,
                                 }).ToList();
+                    //Lấy mã phiếu mượn từ phiếu trả
                     string query = "SELECT DISTINCT ctpt.MaPM FROM ChiTietPhieuTra ctpt " +
                                    "INNER JOIN PhieuTra pt ON ctpt.MaPT = pt.MaPT " +
                                    "INNER JOIN PHIEUMUON PM ON ctpt.MaPM = PM.MaPM " +
                                    "WHERE MONTH(PM.NgayLap) = MONTH(GETDATE()) AND YEAR(PM.NgayLap) = YEAR(GETDATE())";
 
-                    var results = context.Database.SqlQuery<string>(query).ToList(); 
+                    var results = context.Database.SqlQuery<string>(query).ToList();
 
                     // Gửi dữ liệu vào excel
                     int row = 2;
@@ -82,7 +83,7 @@ namespace WindowsFormsApp2
                 }
 
 
-                // Save the Excel file to a specific location
+                // Lưu ở QLTV\WindowsFormsApp2\bin\Debug
                 string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ThongKeDocGia.xls");
                 package.SaveAs(path);
             }
@@ -90,5 +91,44 @@ namespace WindowsFormsApp2
             MessageBox.Show("Tạo file excel thành công.");
         }
 
+        private void btn_ChonFile_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+
+                    using (var package = new ExcelPackage(new FileInfo(filePath)))
+                    {
+                        ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; 
+
+                        int rowCount = worksheet.Dimension.Rows;
+                        int colCount = worksheet.Dimension.Columns;
+
+                        // Lấy dữ liệu từ Excel vào data grid view
+                        dgv_Excel.Rows.Clear();
+                        dgv_Excel.Columns.Clear();
+                        for (int col = 1; col <= colCount; col++)
+                        {
+                            dgv_Excel.Columns.Add(worksheet.Cells[1, col].Text, worksheet.Cells[1, col].Text);
+                        }
+
+                        for (int row = 2; row <= rowCount; row++)
+                        {
+                            DataGridViewRow dataGridViewRow = new DataGridViewRow();
+                            dataGridViewRow.CreateCells(dgv_Excel);
+                            for (int col = 1; col <= colCount; col++)
+                            {
+                                dataGridViewRow.Cells[col - 1].Value = worksheet.Cells[row, col].Text;
+                            }
+                            dgv_Excel.Rows.Add(dataGridViewRow);
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

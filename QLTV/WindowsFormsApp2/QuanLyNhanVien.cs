@@ -5,9 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,11 +35,40 @@ namespace WindowsFormsApp2
         // đổ dữ liệu lên datagirview từ cơ sở dữ liệu bảng Nhân viên
         private void LoadDataGridNV()
         {
-            Model1 context = new Model1();
-            var ListNV = context.NhanVien.ToList();
+            List<NhanVienWithTaiKhoan> ListNV = GetNhanVienData();
             BindGridNV(ListNV);
+            
         }
-        private void BindGridNV(List<NhanVien> ListNV)
+        public class NhanVienWithTaiKhoan
+        {
+            public string MaNV { get; set; }
+            public string TenNV { get; set; }
+            public string Sdt { get; set; }
+            public string Email { get; set; }
+            public string TenTK { get; set; }
+            public string MatKhau { get; set; }
+        }
+        private List<NhanVienWithTaiKhoan> GetNhanVienData()
+        {
+            using (Model1 dbContext = new Model1())
+            {
+                var query = from nv in dbContext.NhanVien
+                            join tk in dbContext.TaiKhoan on nv.MaNV equals tk.MaNV into nvtks
+                            from nvtk in nvtks.DefaultIfEmpty()
+                            select new NhanVienWithTaiKhoan
+                            {
+                                MaNV = nv.MaNV,
+                                TenNV = nv.TenNV,
+                                Sdt = nv.Sdt,
+                                Email = nv.Email,
+                                TenTK = (nvtk != null) ? nvtk.TenTK : string.Empty,
+                                MatKhau = (nvtk != null) ? nvtk.MatKhau : string.Empty
+                            };
+
+                return query.ToList();
+            }
+        }
+        private void BindGridNV(List<NhanVienWithTaiKhoan> ListNV)
         {
             dgvQLNV.Rows.Clear();
             foreach (var item in ListNV)
@@ -47,7 +78,8 @@ namespace WindowsFormsApp2
                 dgvQLNV.Rows[index].Cells[1].Value = item.TenNV;
                 dgvQLNV.Rows[index].Cells[2].Value = item.Sdt;
                 dgvQLNV.Rows[index].Cells[3].Value = item.Email;
-               
+                dgvQLNV.Rows[index].Cells[4].Value = item.TenTK;
+                dgvQLNV.Rows[index].Cells[5].Value = item.MatKhau;
             }
         }
 
@@ -65,10 +97,6 @@ namespace WindowsFormsApp2
 
         // thêm sửa xóa nhân viên---------------------------------------------------------------------------------
 
-        private void btnDeleteBook_Click(object sender, EventArgs e)
-        {
-           
-        }
         // Thêm nhân viên
         private void btnAddNV_Click(object sender, EventArgs e)
         {
