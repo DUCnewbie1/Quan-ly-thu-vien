@@ -89,7 +89,11 @@ namespace WindowsFormsApp2
                 txtSDT.Text = ""; // Xóa nội dung textbox
                 return;
             }
-
+            if (!DNKDR.EmailDung(txtEmail.Text))
+            {
+                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                return;
+            }
             using (Model1 context = new Model1())
             {
                 string newMaThe = GenerateNewMaThe();
@@ -168,7 +172,11 @@ namespace WindowsFormsApp2
                 txtSDT.Text = "";
                 return;
             }
-
+            if (!DNKDR.EmailDung(txtEmail.Text))
+            {
+                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                return;
+            }
             using (Model1 context = new Model1())
             {
 
@@ -245,19 +253,14 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            string timKiem = txtTimKiem.Text.Trim().ToUpper();
+            Model1 context = new Model1();
+            var danhSachDocGia = context.DocGia
+                .Where(dg => dg.MaDocGia.ToUpper().Contains(timKiem))
+                .ToList();
+            BindGrid(danhSachDocGia);
         }
     }
 }

@@ -20,6 +20,7 @@ namespace WindowsFormsApp2
 {
     public partial class DangKy : Form
     {
+        public event EventHandler NhanVienDaThemThanhCong;
         public DangKy()
         {
             InitializeComponent();
@@ -61,6 +62,11 @@ namespace WindowsFormsApp2
                     string tentk = txt_TenTK.Text;
                     string matkhau = txt_MK.Text;
                     string nhaplai = txt_RepeatMK.Text;
+                    if (context.TaiKhoan.Any(tk => tk.TenTK == tentk))
+                    {
+                        MessageBox.Show("Tên tài khoản đã tồn tại. Vui lòng chọn một tên tài khoản khác.", "Lỗi");
+                        return;
+                    }
                     if (matkhau == nhaplai)
                     {
                             string newMaNV = GenerateNewMaNV();
@@ -81,6 +87,7 @@ namespace WindowsFormsApp2
                                 MaNV = newMaNV,
                             };
                             MessageBox.Show("Đăng ký tài khoản nhân viên thành công", "Thông báo");
+                            NhanVienDaThemThanhCong?.Invoke(this, EventArgs.Empty);
                             txt_HoTen.Text = null;
                             txt_Email.Text = null;
                             txt_SDT.Text = null;
@@ -96,6 +103,7 @@ namespace WindowsFormsApp2
                         MessageBox.Show("Mật khẩu nhập lại không trùng với mật khẩu. Vui lòng kiểm tra lại ", "Thông báo");
                     }
                 }
+
             }
             catch (Exception ex)
             {

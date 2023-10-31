@@ -161,58 +161,9 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Không tìm thấy tác giả có mã " + maTG + "để xóa.", "Thông báo");
             }
         }
-
-        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
-            QuanLySach formQuanLySach = new QuanLySach();
-            formQuanLySach.ShowDialog();
-        }
-
-        private void quảnLýĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QuanLyDocGia formQuanLyDocGia = new QuanLyDocGia();
-            formQuanLyDocGia.ShowDialog();
-        }
-
-        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
-            formQuanLyNhanVien.ShowDialog();
-        }
-
-        private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            timKiemSach formTimKiemSach = new timKiemSach();
-            formTimKiemSach.ShowDialog();
-        }
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
-            this.Close();
-        }
-
-        private void lậpPhiếuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LapPhieuMuon lpm = new LapPhieuMuon();
-            lpm.ShowDialog();
-        }
-
-        private void quảnLýTácGiảToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            txt_MaTG.Text = string.Empty;
-            txt_TenTG.Text = string.Empty;
-        }
-
-        private void quảnLýNhàXuấtBảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LapPhieuMuon lpm = new LapPhieuMuon();
-            lpm.ShowDialog();
+            this.Hide();
         }
     }
 }

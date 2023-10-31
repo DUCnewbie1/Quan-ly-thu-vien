@@ -22,6 +22,13 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             CenterToScreen();
+            DangKy dangKyForm = new DangKy();
+            dangKyForm.NhanVienDaThemThanhCong += DangKyForm_NhanVienDaThemThanhCong;
+        }
+        private void DangKyForm_NhanVienDaThemThanhCong(object sender, EventArgs e)
+        {
+            // Cập nhật DataGridView
+            LoadDataGridNV();
         }
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
         {
@@ -194,15 +201,25 @@ namespace WindowsFormsApp2
             string manv = txtIdNV.Text.Trim();
             Class1<NhanVien> NhanVienDataAccess = new Class1<NhanVien>();
             NhanVien NhanVienToDelete = NhanVienDataAccess.TimSachTheoMa(manv);
-
             if (NhanVienToDelete != null)
             {
-                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?",
-                                                     "Xác nhận xóa!!",
-                                                     MessageBoxButtons.YesNo);
+                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận xóa!!", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
+                    // Xóa tài khoản của nhân viên trước (nếu có)
+                    using (Model1 context = new Model1())
+                    {
+                        TaiKhoan taiKhoanToDelete = context.TaiKhoan.FirstOrDefault(tk => tk.MaNV == manv);
+                        if (taiKhoanToDelete != null)
+                        {
+                            context.TaiKhoan.Remove(taiKhoanToDelete);
+                        }
+                        context.SaveChanges();
+                    }
+
+                    // Xóa nhân viên
                     NhanVienDataAccess.Xoa(NhanVienToDelete);
+
                     MessageBox.Show("Xóa thành công. ", "Thông báo");
                     LoadDataGridNV();
                 }
@@ -213,9 +230,10 @@ namespace WindowsFormsApp2
             }
             else
             {
-                MessageBox.Show("Không tìm thấy nhân viên có mã " + manv + "để xóa.", "Thông báo");
+                MessageBox.Show("Không tìm thấy nhân viên có mã " + manv + " để xóa.", "Thông báo");
             }
         }
+
 
 
         private void txtNameNV_TextChanged(object sender, EventArgs e)

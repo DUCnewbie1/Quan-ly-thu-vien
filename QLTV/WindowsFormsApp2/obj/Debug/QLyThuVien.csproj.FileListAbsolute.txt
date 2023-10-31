@@ -156,7 +156,6 @@ C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Propertie
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyDocGia.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNhanVien.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLySach.resources
-C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.timKiemSach.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.GenerateResource.cache
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.CopyComplete
@@ -248,7 +247,6 @@ D:\Download\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\obj\Debug\QLyThuVien.csproj.C
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.DangKy.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuPhat.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuenMatKhau.resources
-C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.timKiemDocGia.resources
 C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 C:\Users\PC\Documents\Zalo Received Files\QLTV (1)\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb

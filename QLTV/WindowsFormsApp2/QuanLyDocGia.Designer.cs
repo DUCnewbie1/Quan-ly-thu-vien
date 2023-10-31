@@ -54,6 +54,8 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLDG)).BeginInit();
             this.SuspendLayout();
@@ -87,34 +89,34 @@
             this.panel1.Controls.Add(this.btnDeleteDG);
             this.panel1.Controls.Add(this.btnEditDG);
             this.panel1.Controls.Add(this.btnAddDG);
-            this.panel1.Location = new System.Drawing.Point(8, 67);
+            this.panel1.Location = new System.Drawing.Point(11, 128);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(765, 165);
+            this.panel1.Size = new System.Drawing.Size(765, 134);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(301, 113);
+            this.label8.Location = new System.Drawing.Point(305, 98);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 5;
             this.label8.Text = "Ngày Lập Thẻ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // dtpkNgayLap
             // 
-            this.dtpkNgayLap.Location = new System.Drawing.Point(397, 107);
+            this.dtpkNgayLap.Location = new System.Drawing.Point(401, 92);
             this.dtpkNgayLap.Name = "dtpkNgayLap";
             this.dtpkNgayLap.Size = new System.Drawing.Size(193, 20);
             this.dtpkNgayLap.TabIndex = 17;
-            this.dtpkNgayLap.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+           // this.dtpkNgayLap.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(397, 68);
+            this.txtSDT.Location = new System.Drawing.Point(401, 53);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(193, 20);
@@ -123,7 +125,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(82, 107);
+            this.txtEmail.Location = new System.Drawing.Point(86, 92);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(186, 20);
@@ -131,7 +133,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(82, 68);
+            this.txtDiaChi.Location = new System.Drawing.Point(86, 53);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(186, 20);
@@ -140,7 +142,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 114);
+            this.label7.Location = new System.Drawing.Point(25, 99);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
@@ -150,7 +152,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(301, 75);
+            this.label6.Location = new System.Drawing.Point(305, 60);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
@@ -160,7 +162,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 75);
+            this.label5.Location = new System.Drawing.Point(25, 60);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
@@ -169,7 +171,7 @@
             // 
             // txtTenDG
             // 
-            this.txtTenDG.Location = new System.Drawing.Point(397, 26);
+            this.txtTenDG.Location = new System.Drawing.Point(401, 11);
             this.txtTenDG.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenDG.Name = "txtTenDG";
             this.txtTenDG.Size = new System.Drawing.Size(193, 20);
@@ -178,7 +180,7 @@
             // 
             // txtMaDG
             // 
-            this.txtMaDG.Location = new System.Drawing.Point(82, 26);
+            this.txtMaDG.Location = new System.Drawing.Point(86, 11);
             this.txtMaDG.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.Size = new System.Drawing.Size(186, 20);
@@ -187,7 +189,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(301, 33);
+            this.label4.Location = new System.Drawing.Point(305, 18);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
@@ -197,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 35);
+            this.label3.Location = new System.Drawing.Point(21, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
@@ -206,7 +208,7 @@
             // 
             // btnExitDG
             // 
-            this.btnExitDG.Location = new System.Drawing.Point(693, 68);
+            this.btnExitDG.Location = new System.Drawing.Point(697, 53);
             this.btnExitDG.Margin = new System.Windows.Forms.Padding(2);
             this.btnExitDG.Name = "btnExitDG";
             this.btnExitDG.Size = new System.Drawing.Size(61, 27);
@@ -217,7 +219,7 @@
             // 
             // btnDeleteDG
             // 
-            this.btnDeleteDG.Location = new System.Drawing.Point(617, 68);
+            this.btnDeleteDG.Location = new System.Drawing.Point(621, 53);
             this.btnDeleteDG.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteDG.Name = "btnDeleteDG";
             this.btnDeleteDG.Size = new System.Drawing.Size(61, 27);
@@ -228,7 +230,7 @@
             // 
             // btnEditDG
             // 
-            this.btnEditDG.Location = new System.Drawing.Point(693, 28);
+            this.btnEditDG.Location = new System.Drawing.Point(697, 13);
             this.btnEditDG.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditDG.Name = "btnEditDG";
             this.btnEditDG.Size = new System.Drawing.Size(61, 27);
@@ -239,7 +241,7 @@
             // 
             // btnAddDG
             // 
-            this.btnAddDG.Location = new System.Drawing.Point(617, 28);
+            this.btnAddDG.Location = new System.Drawing.Point(621, 13);
             this.btnAddDG.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDG.Name = "btnAddDG";
             this.btnAddDG.Size = new System.Drawing.Size(61, 27);
@@ -251,7 +253,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 52);
+            this.label2.Location = new System.Drawing.Point(11, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
@@ -269,11 +271,11 @@
             this.DiaChi,
             this.SDT,
             this.Email});
-            this.dgvQLDG.Location = new System.Drawing.Point(8, 236);
+            this.dgvQLDG.Location = new System.Drawing.Point(11, 266);
             this.dgvQLDG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQLDG.Name = "dgvQLDG";
             this.dgvQLDG.RowHeadersWidth = 62;
-            this.dgvQLDG.Size = new System.Drawing.Size(765, 368);
+            this.dgvQLDG.Size = new System.Drawing.Size(765, 281);
             this.dgvQLDG.TabIndex = 4;
             this.dgvQLDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLDG_CellClick);
             // 
@@ -307,11 +309,30 @@
             this.Email.MinimumWidth = 8;
             this.Email.Name = "Email";
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(319, 73);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(186, 20);
+            this.txtTimKiem.TabIndex = 18;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(212, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Tìm Kiếm Theo Mã ";
+            // 
             // QuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 540);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.dgvQLDG);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -357,5 +378,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpkNgayLap;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label label9;
     }
 }

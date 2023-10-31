@@ -39,13 +39,18 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.txt_TenTG = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_Exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTG)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(253, 98);
+            this.label3.Location = new System.Drawing.Point(6, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
@@ -53,7 +58,7 @@
             // 
             // txt_MaTG
             // 
-            this.txt_MaTG.Location = new System.Drawing.Point(72, 98);
+            this.txt_MaTG.Location = new System.Drawing.Point(75, 31);
             this.txt_MaTG.Multiline = true;
             this.txt_MaTG.Name = "txt_MaTG";
             this.txt_MaTG.Size = new System.Drawing.Size(140, 21);
@@ -62,7 +67,7 @@
             // lbl_Ma
             // 
             this.lbl_Ma.AutoSize = true;
-            this.lbl_Ma.Location = new System.Drawing.Point(9, 101);
+            this.lbl_Ma.Location = new System.Drawing.Point(6, 39);
             this.lbl_Ma.Name = "lbl_Ma";
             this.lbl_Ma.Size = new System.Drawing.Size(57, 13);
             this.lbl_Ma.TabIndex = 0;
@@ -75,10 +80,10 @@
             this.dgvTG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaTG,
             this.TenTG});
-            this.dgvTG.Location = new System.Drawing.Point(12, 138);
+            this.dgvTG.Location = new System.Drawing.Point(12, 203);
             this.dgvTG.Name = "dgvTG";
             this.dgvTG.RowHeadersWidth = 62;
-            this.dgvTG.Size = new System.Drawing.Size(512, 281);
+            this.dgvTG.Size = new System.Drawing.Size(536, 281);
             this.dgvTG.TabIndex = 6;
             this.dgvTG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTG_CellClick);
             // 
@@ -109,7 +114,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(199, 425);
+            this.btn_Edit.Location = new System.Drawing.Point(109, 29);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(75, 23);
             this.btn_Edit.TabIndex = 10;
@@ -119,7 +124,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(324, 425);
+            this.btn_Delete.Location = new System.Drawing.Point(6, 66);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 23);
             this.btn_Delete.TabIndex = 9;
@@ -129,7 +134,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(87, 425);
+            this.btn_Add.Location = new System.Drawing.Point(6, 29);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
             this.btn_Add.TabIndex = 8;
@@ -139,30 +144,64 @@
             // 
             // txt_TenTG
             // 
-            this.txt_TenTG.Location = new System.Drawing.Point(320, 95);
+            this.txt_TenTG.Location = new System.Drawing.Point(75, 66);
             this.txt_TenTG.Multiline = true;
             this.txt_TenTG.Name = "txt_TenTG";
             this.txt_TenTG.Size = new System.Drawing.Size(140, 21);
             this.txt_TenTG.TabIndex = 11;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_MaTG);
+            this.groupBox1.Controls.Add(this.txt_TenTG);
+            this.groupBox1.Controls.Add(this.lbl_Ma);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(12, 78);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(330, 119);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin tác giả";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_Exit);
+            this.groupBox2.Controls.Add(this.btn_Add);
+            this.groupBox2.Controls.Add(this.btn_Edit);
+            this.groupBox2.Controls.Add(this.btn_Delete);
+            this.groupBox2.Location = new System.Drawing.Point(348, 78);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 119);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chức năng";
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Location = new System.Drawing.Point(109, 66);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Exit.TabIndex = 11;
+            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
             // QuanLyTacGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 451);
-            this.Controls.Add(this.txt_TenTG);
-            this.Controls.Add(this.btn_Edit);
-            this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.btn_Add);
+            this.ClientSize = new System.Drawing.Size(560, 496);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTG);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_MaTG);
-            this.Controls.Add(this.lbl_Ma);
             this.Name = "QuanLyTacGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyTacGia";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTG)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +219,8 @@
         private System.Windows.Forms.TextBox txt_TenTG;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTG;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_Exit;
     }
 }

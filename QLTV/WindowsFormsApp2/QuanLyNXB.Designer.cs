@@ -77,7 +77,7 @@
             this.dgvNXB.Location = new System.Drawing.Point(310, 86);
             this.dgvNXB.Name = "dgvNXB";
             this.dgvNXB.RowHeadersWidth = 62;
-            this.dgvNXB.Size = new System.Drawing.Size(649, 337);
+            this.dgvNXB.Size = new System.Drawing.Size(599, 337);
             this.dgvNXB.TabIndex = 3;
             this.dgvNXB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNXB_CellClick);
             // 
@@ -147,7 +147,6 @@
             this.txt_TenNXB.Name = "txt_TenNXB";
             this.txt_TenNXB.Size = new System.Drawing.Size(173, 20);
             this.txt_TenNXB.TabIndex = 9;
-            this.txt_TenNXB.TextChanged += new System.EventHandler(this.txtTenNXB_TextChanged);
             // 
             // txt_SDT
             // 

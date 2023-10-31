@@ -78,12 +78,6 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            timKiemSach formTimKiemSach = new timKiemSach();
-            formTimKiemSach.ShowDialog();
-        }
-
        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //wplayer.controls.stop();
@@ -287,19 +281,6 @@ namespace WindowsFormsApp2
             showSubMenu(panelTimKiem);
         }
 
-        private void btnTimSach_Click(object sender, EventArgs e)
-        {
-            timKiemSach formTimKiemSach = new timKiemSach();
-            formTimKiemSach.ShowDialog();
-        }
-
-        private void btnTimDocGia_Click(object sender, EventArgs e)
-        {
-            timKiemDocGia tk = new timKiemDocGia();
-            tk.ShowDialog();
-        }
-
-
         #endregion thanh ben 'Tim Kiem'
 
         #region thanh ben 'Thoat'
@@ -329,10 +310,5 @@ namespace WindowsFormsApp2
             ex.ShowDialog();
         }
 
-        private void độcGiảToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            timKiemDocGia dg = new timKiemDocGia();
-            dg.ShowDialog();
-        }
     }
 }

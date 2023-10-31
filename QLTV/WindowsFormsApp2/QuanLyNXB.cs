@@ -137,7 +137,11 @@ namespace WindowsFormsApp2
                                 $"{txt_SDT.Text.Length})");
                 return;
             }
-
+            if (!DNKDR.EmailDung(txt_Email.Text))
+            {
+                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                return;
+            }
             using (Model1 context = new Model1())
             {
 
@@ -209,18 +213,6 @@ namespace WindowsFormsApp2
                 txt_SDT.Text = sdt;
             }
         }
-        private void txtTenNXB_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txt_TenNXB.Text, "[^A-Za-zÀ-ỹ ]"))
-            {
-                MessageBox.Show("Chỉ được nhập chữ.");
-                if (txt_TenNXB.Text.Length > 0)
-                {
-                    txt_TenNXB.Text = txt_TenNXB.Text.Substring(0, txt_TenNXB.Text.Length - 1);
-                    txt_TenNXB.SelectionStart = txt_TenNXB.Text.Length;
-                }
-            }
-        }
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
@@ -250,38 +242,6 @@ namespace WindowsFormsApp2
         {
             QuanLyNhanVien formQuanLyNhanVien = new QuanLyNhanVien();
             formQuanLyNhanVien.ShowDialog();
-        }
-
-        private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            timKiemSach formTimKiemSach = new timKiemSach();
-            formTimKiemSach.ShowDialog();
-        }
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DangNhap dangNhap = new DangNhap();
-            dangNhap.Show();
-            this.Close();
-        }
-
-        private void quảnLýNhàXuấtBảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            txt_MaNXB.Text = string.Empty;
-            txt_TenNXB.Text = string.Empty;
-            txt_DiaChi.Text = string.Empty;
-            txt_Email.Text = string.Empty;
-            txt_SDT.Text = string.Empty;
-        }
-
-        private void lậpPhiếuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LapPhieuMuon lpm = new LapPhieuMuon();
-            lpm.ShowDialog();
         }
     }
 }
