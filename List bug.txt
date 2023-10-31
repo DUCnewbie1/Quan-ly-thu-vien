@@ -1,0 +1,7 @@
+QuanLyNhanVien loaddatagrid khi thêm nv trong đk
+xóa không được
+QuanLyNXB mã bị lặp, sửa không được
+Lập phiếu mượn, thêm sách thì sẽ hiện tất cả sách trong database khi cell click, sửa lại thành là khi click vào cell thì của phiếu mượn đã lập thì chỉ hiện sách đã mượn
+Tìm kiếm sách chưa có gì hết
+Tìm kiếm đọc giả và sách hoạt động như tìm kiếm tên sách trong form quản lý sách
+data grid view trong 2 form tìm kiếm hiện sẵn dữ liệu trong database như trong 2 form quản lý

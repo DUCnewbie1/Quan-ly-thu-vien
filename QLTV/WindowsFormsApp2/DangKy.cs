@@ -43,11 +43,16 @@ namespace WindowsFormsApp2
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(DNKDR.ConnectionString))
+                using (Model1 context = new Model1())
                 {
                     if (txt_HoTen.Text == ""|| txt_Email.Text == "" ||txt_SDT.Text == "" || txt_TenTK.Text == "" || txt_MK.Text == "" || txt_RepeatMK.Text == "")
                     {
                         MessageBox.Show("Mời nhập đầy đủ thông tin", "Thông báo");
+                        return;
+                    }
+                    if(!DNKDR.EmailDung(txt_Email.Text))
+                    {
+                        MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
                         return;
                     }
                     string hoTen = txt_HoTen.Text;   
@@ -58,8 +63,6 @@ namespace WindowsFormsApp2
                     string nhaplai = txt_RepeatMK.Text;
                     if (matkhau == nhaplai)
                     {
-                        using (SqlCommand cmd = new SqlCommand())
-                        {
                             string newMaNV = GenerateNewMaNV();
                             NhanVien nv = new NhanVien
                             {
@@ -88,7 +91,6 @@ namespace WindowsFormsApp2
 
                             classTK.Them(tk);
                         }
-                    }
                     else
                     {
                         MessageBox.Show("Mật khẩu nhập lại không trùng với mật khẩu. Vui lòng kiểm tra lại ", "Thông báo");
@@ -121,6 +123,11 @@ namespace WindowsFormsApp2
         private void btn_HuyDK_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void DangKy_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

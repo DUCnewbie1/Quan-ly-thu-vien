@@ -119,7 +119,11 @@ namespace WindowsFormsApp2
                 txtPhoneNV.Text = "";
                 return;
             }
-
+            if (!DNKDR.EmailDung(txtEmailNV.Text))
+            {
+                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                return;
+            }
             using (Model1 context = new Model1())
             {
                 // Tạo một List<NhanVien>
@@ -165,6 +169,11 @@ namespace WindowsFormsApp2
                 MessageBox.Show($"Số điện thoại phải có đúng 10 số! (Kí tự hiện tại: " +
                                 $"{txtPhoneNV.Text.Length})");
                 txtPhoneNV.Text = "";
+                return;
+            }
+            if (!DNKDR.EmailDung(txtEmailNV.Text))
+            {
+                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
                 return;
             }
             NhanVien NhanVienToEdit = new NhanVien
@@ -236,6 +245,7 @@ namespace WindowsFormsApp2
         {
             DangKy dk = new DangKy();
             dk.ShowDialog();
+            LoadDataGridNV();
         }
     }
 }

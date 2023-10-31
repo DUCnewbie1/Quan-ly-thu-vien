@@ -56,7 +56,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(576, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 32);
+            this.label1.Size = new System.Drawing.Size(117, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chấm công";
             // 
@@ -67,7 +67,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(9, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(81, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên tài khoản";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -77,7 +77,7 @@
             this.txtNameCc.Location = new System.Drawing.Point(132, 58);
             this.txtNameCc.Name = "txtNameCc";
             this.txtNameCc.ReadOnly = true;
-            this.txtNameCc.Size = new System.Drawing.Size(282, 28);
+            this.txtNameCc.Size = new System.Drawing.Size(282, 21);
             this.txtNameCc.TabIndex = 2;
             // 
             // btnChamCong
@@ -95,13 +95,14 @@
             // 
             // cmbCa
             // 
+            this.cmbCa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCa.FormattingEnabled = true;
             this.cmbCa.Items.AddRange(new object[] {
             "Sáng ",
             "Chiều"});
             this.cmbCa.Location = new System.Drawing.Point(133, 139);
             this.cmbCa.Name = "cmbCa";
-            this.cmbCa.Size = new System.Drawing.Size(281, 30);
+            this.cmbCa.Size = new System.Drawing.Size(281, 23);
             this.cmbCa.TabIndex = 4;
             this.cmbCa.DropDown += new System.EventHandler(this.cmbCa_DropDown);
             // 
@@ -112,7 +113,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(9, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 22);
+            this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Chọn ca";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -196,7 +197,7 @@
             // 
             this.dtpToday.Location = new System.Drawing.Point(896, 44);
             this.dtpToday.Name = "dtpToday";
-            this.dtpToday.Size = new System.Drawing.Size(430, 28);
+            this.dtpToday.Size = new System.Drawing.Size(430, 21);
             this.dtpToday.TabIndex = 7;
             // 
             // dgvTke
@@ -217,14 +218,14 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(462, 210);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 22);
+            this.label4.Size = new System.Drawing.Size(137, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Đã châm công hôm nay";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // ChamCong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1339, 495);

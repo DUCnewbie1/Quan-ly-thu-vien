@@ -413,6 +413,7 @@
   <ItemGroup>
     <Content Include="ChamCong.xml" />
     <None Include="Resources\bill.png" />
+    <None Include="Resources\search.png" />
     <Content Include="Resources\SignIn_Background.JPG" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -99,11 +99,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(174, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 29);
+            this.label1.Size = new System.Drawing.Size(210, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "Quản lý tác giả";
             // 

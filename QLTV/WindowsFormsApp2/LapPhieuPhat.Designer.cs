@@ -47,15 +47,15 @@
             this.dtpkNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPhieuPhat = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             this.MaPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhiPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.MaPhieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuPhat)).BeginInit();
             this.SuspendLayout();
@@ -239,11 +239,32 @@
             this.PhiPhat,
             this.TenDocGia,
             this.TenNV,
-            this.MaPT});
+            this.MaPhieuMuon});
             this.dgvPhieuPhat.Location = new System.Drawing.Point(358, 63);
             this.dgvPhieuPhat.Name = "dgvPhieuPhat";
             this.dgvPhieuPhat.Size = new System.Drawing.Size(641, 410);
             this.dgvPhieuPhat.TabIndex = 40;
+            this.dgvPhieuPhat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuPhat_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(353, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 29);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "LẬP PHIẾU PHẠT";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(908, 479);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(90, 23);
+            this.btnThem.TabIndex = 42;
+            this.btnThem.Text = "Lập phiếu phạt";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // MaPP
             // 
@@ -277,32 +298,11 @@
             this.TenNV.HeaderText = "Tên Nhân Viên";
             this.TenNV.Name = "TenNV";
             // 
-            // MaPT
+            // MaPhieuMuon
             // 
-            this.MaPT.HeaderText = "Mã Phiếu Trả";
-            this.MaPT.Name = "MaPT";
-            this.MaPT.Visible = false;
-            this.MaPT.Width = 85;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 29);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "LẬP PHIẾU PHẠT";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(908, 479);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(90, 23);
-            this.btnThem.TabIndex = 42;
-            this.btnThem.Text = "Lập phiếu phạt";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.MaPhieuMuon.HeaderText = "Mã Phiếu Mượn";
+            this.MaPhieuMuon.Name = "MaPhieuMuon";
+            this.MaPhieuMuon.Visible = false;
             // 
             // LapPhieuPhat
             // 
@@ -356,6 +356,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PhiPhat;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuMuon;
     }
 }

@@ -58,7 +58,11 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Bạn chỉ được phép chấm công 1 lần!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                if(cmbCa.Text == "")
+                {
+                    MessageBox.Show("Mời chọn ca để chấm công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 // Tạo một dòng mới trong DataGridView
                 int rowIndex = dgvChamCong.Rows.Add();
 

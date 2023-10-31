@@ -219,6 +219,7 @@ namespace WindowsFormsApp2
 
             Class1<Sach> sachDataAccess = new Class1<Sach>();
             sachDataAccess.Sua(sachToEdit);
+            MessageBox.Show("Sửa sách thành công", "Thông báo");
             LoadDataGrid();
         }
 

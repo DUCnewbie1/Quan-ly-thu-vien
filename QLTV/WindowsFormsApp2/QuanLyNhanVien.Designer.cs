@@ -42,13 +42,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvQLNV = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -186,56 +186,63 @@
             this.dgvQLNV.Location = new System.Drawing.Point(3, 197);
             this.dgvQLNV.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQLNV.Name = "dgvQLNV";
+            this.dgvQLNV.ReadOnly = true;
             this.dgvQLNV.RowHeadersWidth = 62;
             this.dgvQLNV.RowTemplate.Height = 28;
             this.dgvQLNV.Size = new System.Drawing.Size(652, 231);
             this.dgvQLNV.TabIndex = 1;
             this.dgvQLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLNV_CellClick);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(241, 30);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 18);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Cập nhật nhân viên";
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Mã Nhân Viên";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên nhân viên";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "SĐT";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Email";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // TenTK
             // 
             this.TenTK.HeaderText = "Tên tài khoản";
             this.TenTK.Name = "TenTK";
+            this.TenTK.ReadOnly = true;
             // 
             // MatKhau
             // 
             this.MatKhau.HeaderText = "Mật Khẩu";
             this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(182, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(269, 32);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Cập nhật nhân viên";
             // 
             // groupBox1
             // 

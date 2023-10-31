@@ -125,6 +125,7 @@ namespace WindowsFormsApp2
                     dgvPhieuPhat.Rows[index].Cells[3].Value = item.PhiPhat;
                     dgvPhieuPhat.Rows[index].Cells[4].Value = phieuPhatManager.LayTenDocGiaTuMaPhat(item.MaPhat);
                     dgvPhieuPhat.Rows[index].Cells[5].Value = phieuPhatManager.LayTenNhanVienTuMaPhat(item.MaPhat);
+                    dgvPhieuPhat.Rows[index].Cells[6].Value = phieuPhatManager.LayMaPhieuMuonTuMaPhat(item.MaPhat);
                 }
             }
         }
@@ -146,6 +147,30 @@ namespace WindowsFormsApp2
                         cbMaPM.SelectedIndex = -1;
                     }
                 }
+            }
+        }
+
+        private void dgvPhieuPhat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvPhieuPhat.Rows[e.RowIndex];
+
+                txtMaPhieu.Text = row.Cells[0].Value.ToString();
+                dtpkNgayTra.Value = Convert.ToDateTime(row.Cells[1].Value);
+                txtNoiDung.Text = row.Cells[2].Value.ToString();
+                txt_TienPhat.Text = row.Cells[3].Value.ToString();
+                string tenDocGia = row.Cells[4].Value.ToString();
+                foreach (var item in cbDocGia.Items)
+                {
+                    if (item is DocGia docGia && docGia.TenDocGia == tenDocGia)
+                    {
+                        cbDocGia.SelectedItem = item;
+                        break;
+                    }
+                }
+                cbNhanVien.Text = row.Cells[5].Value.ToString();
+                cbMaPM.Text = row.Cells[6].Value.ToString();
             }
         }
     }

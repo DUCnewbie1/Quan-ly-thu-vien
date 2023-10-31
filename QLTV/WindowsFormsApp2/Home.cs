@@ -272,7 +272,8 @@ namespace WindowsFormsApp2
 
         private void btnPhieuPhat_Click(object sender, EventArgs e)
         {
-
+            LapPhieuPhat pp = new LapPhieuPhat();
+            pp.ShowDialog();
         }
 
 
@@ -294,7 +295,8 @@ namespace WindowsFormsApp2
 
         private void btnTimDocGia_Click(object sender, EventArgs e)
         {
-            // phien ban chua co form nay :)
+            timKiemDocGia tk = new timKiemDocGia();
+            tk.ShowDialog();
         }
 
 
@@ -325,6 +327,12 @@ namespace WindowsFormsApp2
         {
             Excel ex = new Excel();
             ex.ShowDialog();
+        }
+
+        private void độcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timKiemDocGia dg = new timKiemDocGia();
+            dg.ShowDialog();
         }
     }
 }

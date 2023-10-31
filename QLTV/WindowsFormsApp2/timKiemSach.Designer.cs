@@ -48,18 +48,20 @@
             this.panel1.Controls.Add(this.btnExitSBook);
             this.panel1.Controls.Add(this.btnSBook);
             this.panel1.Controls.Add(this.txtSBook);
-            this.panel1.Location = new System.Drawing.Point(8, 92);
+            this.panel1.Location = new System.Drawing.Point(5, 60);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(921, 132);
+            this.panel1.Size = new System.Drawing.Size(614, 86);
             this.panel1.TabIndex = 0;
             // 
             // rbFollowName
             // 
             this.rbFollowName.AutoSize = true;
             this.rbFollowName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFollowName.Location = new System.Drawing.Point(44, 82);
+            this.rbFollowName.Location = new System.Drawing.Point(29, 53);
+            this.rbFollowName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbFollowName.Name = "rbFollowName";
-            this.rbFollowName.Size = new System.Drawing.Size(148, 24);
+            this.rbFollowName.Size = new System.Drawing.Size(107, 17);
             this.rbFollowName.TabIndex = 4;
             this.rbFollowName.TabStop = true;
             this.rbFollowName.Text = "Theo tên sách";
@@ -69,9 +71,10 @@
             // 
             this.rbFollowIDBook.AutoSize = true;
             this.rbFollowIDBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFollowIDBook.Location = new System.Drawing.Point(42, 35);
+            this.rbFollowIDBook.Location = new System.Drawing.Point(28, 23);
+            this.rbFollowIDBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbFollowIDBook.Name = "rbFollowIDBook";
-            this.rbFollowIDBook.Size = new System.Drawing.Size(149, 24);
+            this.rbFollowIDBook.Size = new System.Drawing.Size(108, 17);
             this.rbFollowIDBook.TabIndex = 3;
             this.rbFollowIDBook.TabStop = true;
             this.rbFollowIDBook.Text = "Theo Mã Sách";
@@ -79,9 +82,10 @@
             // 
             // btnExitSBook
             // 
-            this.btnExitSBook.Location = new System.Drawing.Point(702, 58);
+            this.btnExitSBook.Location = new System.Drawing.Point(468, 38);
+            this.btnExitSBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExitSBook.Name = "btnExitSBook";
-            this.btnExitSBook.Size = new System.Drawing.Size(75, 32);
+            this.btnExitSBook.Size = new System.Drawing.Size(50, 21);
             this.btnExitSBook.TabIndex = 2;
             this.btnExitSBook.Text = "Thoát";
             this.btnExitSBook.UseVisualStyleBackColor = true;
@@ -89,35 +93,39 @@
             // 
             // btnSBook
             // 
-            this.btnSBook.Location = new System.Drawing.Point(606, 58);
+            this.btnSBook.Location = new System.Drawing.Point(404, 38);
+            this.btnSBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSBook.Name = "btnSBook";
-            this.btnSBook.Size = new System.Drawing.Size(75, 32);
+            this.btnSBook.Size = new System.Drawing.Size(50, 21);
             this.btnSBook.TabIndex = 1;
             this.btnSBook.Text = "Tìm";
             this.btnSBook.UseVisualStyleBackColor = true;
             // 
             // txtSBook
             // 
-            this.txtSBook.Location = new System.Drawing.Point(206, 62);
+            this.txtSBook.Location = new System.Drawing.Point(137, 40);
+            this.txtSBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSBook.Name = "txtSBook";
-            this.txtSBook.Size = new System.Drawing.Size(368, 26);
+            this.txtSBook.Size = new System.Drawing.Size(247, 20);
             this.txtSBook.TabIndex = 0;
             // 
             // dgvSBook
             // 
             this.dgvSBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSBook.Location = new System.Drawing.Point(8, 231);
+            this.dgvSBook.Location = new System.Drawing.Point(5, 150);
+            this.dgvSBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvSBook.Name = "dgvSBook";
             this.dgvSBook.RowHeadersWidth = 62;
             this.dgvSBook.RowTemplate.Height = 28;
-            this.dgvSBook.Size = new System.Drawing.Size(921, 338);
+            this.dgvSBook.Size = new System.Drawing.Size(614, 220);
             this.dgvSBook.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(314, 48);
+            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(205, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 32);
             this.label1.TabIndex = 3;
@@ -125,13 +133,14 @@
             // 
             // timKiemSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 568);
+            this.ClientSize = new System.Drawing.Size(619, 369);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSBook);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "timKiemSach";
             this.Text = "timKiemSach";
             this.panel1.ResumeLayout(false);

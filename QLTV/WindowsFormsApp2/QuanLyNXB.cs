@@ -55,6 +55,11 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà xuất bản.");
                 return;
             }
+            if (!DNKDR.EmailDung(txt_Email.Text))
+            {
+                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                return;
+            }
             string maNXB = txt_MaNXB.Text.Trim();
             string tenNXB = txt_TenNXB.Text;
             string diaChi = txt_DiaChi.Text;

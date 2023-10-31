@@ -134,7 +134,7 @@ namespace DAL
         {
             using (Model1 context = new Model1())
             {
-                string query = "SELECT DG.MaDocGia FROM DocGia DG " +
+                string query = "SELECT DG.TenDocGia FROM DocGia DG " +
                                "INNER JOIN TheDocGia TDG ON DG.MaDocGia = TDG.MaDocGia " +
                                "INNER JOIN PhieuMuon PM ON TDG.MaThe = PM.MaThe " +
                                "INNER JOIN ChiTietPhieuPhat CPP ON PM.MaPM = CPP.MaPM " +
@@ -150,6 +150,18 @@ namespace DAL
             {
                 string query = "SELECT NV.TenNV FROM NhanVien NV " +
                                "INNER JOIN PhieuMuon PM ON NV.MaNV = PM.MaNV " +
+                               "INNER JOIN ChiTietPhieuPhat CPP ON PM.MaPM = CPP.MaPM " +
+                               "WHERE CPP.MaPhat = @MaPhat";
+
+                string tenDocGia = context.Database.SqlQuery<string>(query, new SqlParameter("MaPhat", maPhat)).FirstOrDefault();
+                return tenDocGia;
+            }
+        }
+        public string LayMaPhieuMuonTuMaPhat(string maPhat)
+        {
+            using (Model1 context = new Model1())
+            {
+                string query = "SELECT PM.MaPM FROM PhieuMuon PM " +
                                "INNER JOIN ChiTietPhieuPhat CPP ON PM.MaPM = CPP.MaPM " +
                                "WHERE CPP.MaPhat = @MaPhat";
 
