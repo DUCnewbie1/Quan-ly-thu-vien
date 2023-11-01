@@ -236,125 +236,138 @@ namespace WindowsFormsApp2
                     }
                 }
             }
-        }
+        }                   
 
-        private void BtnSua_Click(object sender, EventArgs e)
+
+    private void BtnSua_Click(object sender, EventArgs e)
+    {
+        string maPhieu = txtMaPhieu.Text;
+        DateTime ngayLap = dtpkNgayLap.Value;
+        DateTime ngayTra = dtpkNgayTra.Value;
+        string ghiChu = txtGhiChu.Text;
+        string maDocGia = cbDocGia.SelectedValue.ToString();
+        string maNhanVien = cbNhanVien.SelectedValue.ToString();
+        List<Sach> danhSachSachDaChon = new List<Sach>();
+
+        using (Model1 context = new Model1())
         {
-            string maPhieu = txtMaPhieu.Text;
-            DateTime ngayLap = dtpkNgayLap.Value;
-            DateTime ngayTra = dtpkNgayTra.Value;
-            string ghiChu = txtGhiChu.Text;
-            string maDocGia = cbDocGia.SelectedValue.ToString();
-            string maNhanVien = cbNhanVien.SelectedValue.ToString();
-            List<Sach> danhSachSachDaChon = new List<Sach>();
+            var docGia = context.DocGia.FirstOrDefault(dg => dg.MaDocGia == maDocGia);
 
-            using (Model1 context = new Model1())
+            if (docGia != null)
             {
-                var docGia = context.DocGia.FirstOrDefault(dg => dg.MaDocGia == maDocGia);
+                string maTheDocGia = context.TheDocGia
+                    .Where(tdg => tdg.MaDocGia == maDocGia)
+                    .Select(tdg => tdg.MaThe)
+                    .FirstOrDefault();
 
-                if (docGia != null)
+                using (var dbContextTransaction = context.Database.BeginTransaction())
                 {
-                    string maTheDocGia = context.TheDocGia
-                        .Where(tdg => tdg.MaDocGia == maDocGia)
-                        .Select(tdg => tdg.MaThe)
-                        .FirstOrDefault();
-
-                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    try
                     {
-                        try
-                        {
-                            var phieuMuon = context.PhieuMuon.SingleOrDefault(pm => pm.MaPM == maPhieu);
+                        var phieuMuon = context.PhieuMuon.SingleOrDefault(pm => pm.MaPM == maPhieu);
 
-                            if (phieuMuon == null)
-                            {
-                                MessageBox.Show("Không tìm thấy phiếu mượn có mã phiếu: " + maPhieu);
-                                return;
-                            }
-                            //Kiểm tra checkedlistbook đã trả hết sách hay chưa
-                            if (daTraToanBoSach(maPhieu))
-                            {
-                                MessageBox.Show("Độc giả đã trả toàn bộ sách, không thể sửa nữa.");
-                                return;
-                            }
-                            ////////////////////////////////////////////////////
-                            // Lấy danh sách sách hiện tại trong chi tiết phiếu mượn
-                            var sachHienTaiQuery = @"
+                        if (phieuMuon == null)
+                        {
+                            MessageBox.Show("Không tìm thấy phiếu mượn có mã phiếu: " + maPhieu);
+                            return;
+                        }
+
+                        // Kiểm tra xem có sách nào TrangThaiSach = true hay không
+                        var trangThaiSachQuery = @"
+                            SELECT TrangThaiSach
+                            FROM ChiTietPhieuMuon
+                            WHERE MaPM = @MaPM
+                            AND TrangThaiSach = 1"; // 1 là giá trị TrangThaiSach = true
+
+                        var trangThaiSachValues = context.Database.SqlQuery<bool>(
+                            trangThaiSachQuery,
+                            new SqlParameter("MaPM", maPhieu)
+                        ).ToList();
+
+                        if (trangThaiSachValues.Any(trangThai => trangThai))
+                        {
+                            MessageBox.Show("Không thể sửa phiếu mượn vì có sách đã được trả.");
+                            return;
+                        }
+
+                        // Lấy danh sách sách hiện tại trong chi tiết phiếu mượn
+                        var sachHienTaiQuery = @"
                             SELECT Sach.*
                             FROM Sach
                             INNER JOIN ChiTietPhieuMuon ON Sach.MaSach = ChiTietPhieuMuon.MaSach
                             WHERE ChiTietPhieuMuon.MaPM = @MaPM";
-                            List<Sach> sachHienTai = context.Database.SqlQuery<Sach>(sachHienTaiQuery,
-                                new SqlParameter("MaPM", maPhieu)).ToList();
+                        List<Sach> sachHienTai = context.Database.SqlQuery<Sach>(sachHienTaiQuery,
+                            new SqlParameter("MaPM", maPhieu)).ToList();
 
-                            // Tăng SoLuong của sách hiện tại
-                            foreach (var sach in sachHienTai)
-                            {
-                                var sachToUpdate = context.Sach.SingleOrDefault(s => s.MaSach == sach.MaSach);
-                                if (sachToUpdate != null)
-                                {
-                                    sachToUpdate.SoLuong++;
-                                }
-                            }
-
-                            string deleteQuery = "DELETE FROM ChiTietPhieuMuon WHERE MaPM = @MaPM";
-                            context.Database.ExecuteSqlCommand(deleteQuery, new SqlParameter("MaPM", maPhieu));
-                            foreach (var selectedBook in checkedListBook.CheckedItems)
-                            {
-                                Sach sach = (Sach)selectedBook;
-                                danhSachSachDaChon.Add(sach);
-                                string insertQuery = @"INSERT INTO ChiTietPhieuMuon (MaPM, MaSach, TrangThaiSach)
-                                                       VALUES (@MaPM, @MaSach, @TrangThaiSach)";
-                                //Code chỉnh trạng thái sách
-                                string trangThaiSachQuery = @"SELECT TrangThaiSach FROM ChiTietPhieuMuon WHERE MaPM = @MaPM";
-                                bool TrangThaiSach = context.Database.SqlQuery<bool>(trangThaiSachQuery,
-                                    new SqlParameter("MaPM", maPhieu),
-                                    new SqlParameter("MaSach", sach.MaSach)).FirstOrDefault();
-                                ////////////////////////////
-                                context.Database.ExecuteSqlCommand(insertQuery,
-                                    new SqlParameter("MaPM", maPhieu),
-                                    new SqlParameter("MaSach", sach.MaSach),
-                                    new SqlParameter("TrangThaiSach", TrangThaiSach)
-                                );
-                                
-                                // Giảm SoLuong của sách mới
-                                var sachToUpdate = context.Sach.SingleOrDefault(s => s.MaSach == sach.MaSach);
-                                if (sachToUpdate != null)
-                                {
-                                    sachToUpdate.SoLuong--;
-                                }
-                            }
-
-                            int soLuongSachMuon = danhSachSachDaChon.Count;
-
-                            phieuMuon.NgayLap = ngayLap;
-                            phieuMuon.NgayTra = ngayTra;
-                            phieuMuon.GhiChu = ghiChu;
-                            phieuMuon.MaThe = maTheDocGia;
-                            phieuMuon.MaNV = maNhanVien;
-                            phieuMuon.SoLuong = soLuongSachMuon;
-
-                            context.SaveChanges();
-
-                            dbContextTransaction.Commit();
-
-                            MessageBox.Show("Cập nhật thông tin phiếu mượn thành công.");
-                        }
-                        catch (Exception ex)
+                        // Tăng SoLuong của sách hiện tại
+                        foreach (var sach in sachHienTai)
                         {
-                            MessageBox.Show("Lỗi: " + ex.Message);
-                            dbContextTransaction.Rollback();
+                            var sachToUpdate = context.Sach.SingleOrDefault(s => s.MaSach == sach.MaSach);
+                            if (sachToUpdate != null)
+                            {
+                                sachToUpdate.SoLuong++;
+                            }
                         }
+
+                        string deleteQuery = "DELETE FROM ChiTietPhieuMuon WHERE MaPM = @MaPM";
+                        context.Database.ExecuteSqlCommand(deleteQuery, new SqlParameter("MaPM", maPhieu));
+                        foreach (var selectedBook in checkedListBook.CheckedItems)
+                        {
+                            Sach sach = (Sach)selectedBook;
+                            danhSachSachDaChon.Add(sach);
+                            string insertQuery = @"INSERT INTO ChiTietPhieuMuon (MaPM, MaSach, TrangThaiSach)
+                                               VALUES (@MaPM, @MaSach, @TrangThaiSach)";
+                            // Code chỉnh trạng thái sách
+                            string trangThaiSach = @"SELECT TrangThaiSach FROM ChiTietPhieuMuon WHERE MaPM = @MaPM";
+                            bool TrangThaiSach = context.Database.SqlQuery<bool>(trangThaiSach,
+                                new SqlParameter("MaPM", maPhieu),
+                                new SqlParameter("MaSach", sach.MaSach)).FirstOrDefault();
+                            ////////////////////////////////////////////////////
+                            context.Database.ExecuteSqlCommand(insertQuery,
+                                new SqlParameter("MaPM", maPhieu),
+                                new SqlParameter("MaSach", sach.MaSach),
+                                new SqlParameter("TrangThaiSach", TrangThaiSach)
+                            );
+
+                            // Giảm SoLuong của sách mới
+                            var sachToUpdate = context.Sach.SingleOrDefault(s => s.MaSach == sach.MaSach);
+                            if (sachToUpdate != null)
+                            {
+                                sachToUpdate.SoLuong--;
+                            }
+                        }
+
+                        int soLuongSachMuon = danhSachSachDaChon.Count;
+
+                        phieuMuon.NgayLap = ngayLap;
+                        phieuMuon.NgayTra = ngayTra;
+                        phieuMuon.GhiChu = ghiChu;
+                        phieuMuon.MaThe = maTheDocGia;
+                        phieuMuon.MaNV = maNhanVien;
+                        phieuMuon.SoLuong = soLuongSachMuon;
+
+                        context.SaveChanges();
+
+                        dbContextTransaction.Commit();
+
+                        MessageBox.Show("Cập nhật thông tin phiếu mượn thành công.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message);
+                        dbContextTransaction.Rollback();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Giá trị MaDocGia không tồn tại trong bảng DocGia.");
-                }
             }
-            LoadDataGrid();
+            else
+            {
+                MessageBox.Show("Giá trị MaDocGia không tồn tại trong bảng DocGia.");
+            }
         }
+        LoadDataGrid();
+    }
 
-        private List<PhieuMuon> GetPhieuMuonList(Model1 context)
+    private List<PhieuMuon> GetPhieuMuonList(Model1 context)
         {
             return context.PhieuMuon.ToList();
         }
@@ -376,22 +389,6 @@ namespace WindowsFormsApp2
                     pm.NhanVien.TenNV.ToLower().Contains(searchText)
                 ).ToList();
                 BindGrid(filteredList);
-            }
-        }
-        private bool daTraToanBoSach(string maPhieu)
-        {
-            using (Model1 context = new Model1())
-            {
-                var trangThaiSachQuery = "SELECT TrangThaiSach FROM ChiTietPhieuMuon WHERE MaPM = @MaPM";
-                var trangThaiSachValues = context.Database.SqlQuery<bool>(
-                    trangThaiSachQuery,
-                    new SqlParameter("MaPM", maPhieu)
-                ).ToList();
-
-                // Nếu như All checked thì true
-                bool allChecked = trangThaiSachValues.All(trangThai => trangThai);
-
-                return allChecked;
             }
         }
     }

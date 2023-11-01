@@ -216,7 +216,7 @@ namespace WindowsFormsApp2
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txt_SDT.Text, "[^0-9]"))
+            if (Regex.IsMatch(txt_SDT.Text, "[^0-9]"))
             {
                 MessageBox.Show("Chỉ được nhập số.");
                 if (txt_SDT.Text.Length > 0)

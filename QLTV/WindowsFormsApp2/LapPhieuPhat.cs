@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -42,29 +43,33 @@ namespace WindowsFormsApp2
                 string maNhanVien = cbNhanVien.SelectedValue.ToString();
                 string noiDung = txtNoiDung.Text;
                 double tienPhat = double.Parse(txt_TienPhat.Text.ToString());
-                using (Model1 dbcontext = new Model1())
+                bool maPMTrung = context.PhieuMuon.Any(pm => pm.MaPM == maPhieuMuon);
+                if (!maPMTrung)
                 {
-                    bool maPMExists = dbcontext.PhieuMuon.Any(pm => pm.MaPM == maPhieuMuon);
-                    if (!maPMExists)
-                    {
-                        MessageBox.Show("Mã phiếu trả không tồn tại trong bảng PhieuTra.");
-                        return;
-                    }
-                    PhieuPhat phieuPhat = new PhieuPhat
-                    {
-                        MaPhat = maPhieu,
-                        NgayPhat = ngayTra,
-                        NoiDungPhat = noiDung,
-                        PhiPhat = tienPhat
-                    };
-
-                    Class1<PhieuPhat> classPhieuPhat = new Class1<PhieuPhat>();
-                    classPhieuPhat.Them(phieuPhat);
-                    string insertQuery = "INSERT INTO ChiTietPhieuPhat (MaPhat, MaPM) VALUES (@MaPhat, (SELECT TOP 1 MaPM FROM PhieuMuon WHERE MaPM = @MaPM))";
-                    dbcontext.Database.ExecuteSqlCommand(insertQuery, new SqlParameter("@MaPhat", maPhieu), new SqlParameter("@MaPM", maPhieuMuon));
-                    MessageBox.Show("Thêm mới thành công");
-                    dbcontext.SaveChanges();
+                    MessageBox.Show("Mã phiếu mượn không tồn tại. Vui lòng kiểm tra lại.");
+                    return;
                 }
+                bool maPPTrung = context.PhieuPhat.Any(pt => pt.MaPhat == maPhieu);
+                if (maPPTrung)
+                {
+                    MessageBox.Show("Mã phiếu phạt đã tồn tại. Vui lòng kiểm tra lại.");
+                    return;
+                }
+                PhieuPhat phieuPhat = new PhieuPhat
+                {
+                    MaPhat = maPhieu,
+                    NgayPhat = ngayTra,
+                    NoiDungPhat = noiDung,
+                    PhiPhat = tienPhat
+                };
+
+                Class1<PhieuPhat> classPhieuPhat = new Class1<PhieuPhat>();
+                classPhieuPhat.Them(phieuPhat);
+                string insertQuery = "INSERT INTO ChiTietPhieuPhat (MaPhat, MaPM) VALUES (@MaPhat, (SELECT TOP 1 MaPM FROM PhieuMuon WHERE MaPM = @MaPM))";
+                context.Database.ExecuteSqlCommand(insertQuery, new SqlParameter("@MaPhat", maPhieu), new SqlParameter("@MaPM", maPhieuMuon));
+                MessageBox.Show("Thêm mới thành công");
+                context.SaveChanges();
+                
 
                 txtMaPhieu.Text = string.Empty;
                 cbDocGia.SelectedIndex = -1;
@@ -171,6 +176,34 @@ namespace WindowsFormsApp2
                 }
                 cbNhanVien.Text = row.Cells[5].Value.ToString();
                 cbMaPM.Text = row.Cells[6].Value.ToString();
+            }
+        }
+
+        private void txt_TienPhat_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txt_TienPhat.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Chỉ được nhập số.");
+                if (txt_TienPhat.Text.Length > 0)
+                {
+                    txt_TienPhat.Text = txt_TienPhat.Text.Substring(0, txt_TienPhat.Text.Length - 1);
+                    txt_TienPhat.SelectionStart = txt_TienPhat.Text.Length;
+                }
+            }
+        }
+
+        private void dgvPhieuPhat_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3) 
+            {
+                if (e.Value != null)
+                {
+                    if (double.TryParse(e.Value.ToString(), out double moneyValue))
+                    {
+                        e.Value = moneyValue.ToString("#,##0"); 
+                        e.FormattingApplied = true;
+                    }
+                }
             }
         }
     }

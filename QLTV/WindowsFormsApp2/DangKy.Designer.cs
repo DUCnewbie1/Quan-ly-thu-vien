@@ -46,7 +46,6 @@
             this.txt_RepeatMK = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btn_CreatePassword = new System.Windows.Forms.Button();
             this.btn_DK = new System.Windows.Forms.Button();
             this.btn_HuyDK = new System.Windows.Forms.Button();
             this.lbl_Title = new System.Windows.Forms.Label();
@@ -68,6 +67,7 @@
             this.txt_HoTen.Name = "txt_HoTen";
             this.txt_HoTen.Size = new System.Drawing.Size(133, 20);
             this.txt_HoTen.TabIndex = 1;
+            this.txt_HoTen.TextChanged += new System.EventHandler(this.txt_HoTen_TextChanged);
             // 
             // label3
             // 
@@ -95,6 +95,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(133, 20);
             this.txt_SDT.TabIndex = 5;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_SDT_TextChanged);
             // 
             // txt_Email
             // 
@@ -226,16 +227,6 @@
             this.label14.TabIndex = 25;
             this.label14.Text = "*";
             // 
-            // btn_CreatePassword
-            // 
-            this.btn_CreatePassword.Location = new System.Drawing.Point(575, 117);
-            this.btn_CreatePassword.Name = "btn_CreatePassword";
-            this.btn_CreatePassword.Size = new System.Drawing.Size(103, 23);
-            this.btn_CreatePassword.TabIndex = 26;
-            this.btn_CreatePassword.Text = "Tạo mật khẩu";
-            this.btn_CreatePassword.UseVisualStyleBackColor = true;
-            this.btn_CreatePassword.Click += new System.EventHandler(this.btn_CreatePassword_Click);
-            // 
             // btn_DK
             // 
             this.btn_DK.Location = new System.Drawing.Point(207, 224);
@@ -277,7 +268,6 @@
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.btn_HuyDK);
             this.Controls.Add(this.btn_DK);
-            this.Controls.Add(this.btn_CreatePassword);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txt_RepeatMK);
@@ -298,7 +288,6 @@
             this.Controls.Add(this.label1);
             this.Name = "DangKy";
             this.Text = "DangKy";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DangKy_FormClosing);
             this.Load += new System.EventHandler(this.DangKy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -325,7 +314,6 @@
         private System.Windows.Forms.TextBox txt_RepeatMK;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btn_CreatePassword;
         private System.Windows.Forms.Button btn_DK;
         private System.Windows.Forms.Button btn_HuyDK;
         private System.Windows.Forms.Label lbl_Title;

@@ -146,6 +146,12 @@ namespace WindowsFormsApp2
                 string tinhTrang = cbTinhTrang.Text;
                 using (Model1 dbcontext = new Model1())
                 {
+                    bool maPTExists = context.PhieuTra.Any(pt => pt.MaPT == maPhieu);
+                    if (maPTExists)
+                    {
+                        MessageBox.Show("Mã phiếu trả đã tồn tại trong bảng PhieuTra. Vui lòng sử dụng mã phiếu trả khác.");
+                        return;
+                    }
                     bool maPMExists = dbcontext.PhieuMuon.Any(pm => pm.MaPM == maPhieuMuon);
                     if (!maPMExists)
                     {

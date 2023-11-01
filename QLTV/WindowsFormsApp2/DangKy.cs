@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -54,6 +55,12 @@ namespace WindowsFormsApp2
                     if(!DNKDR.EmailDung(txt_Email.Text))
                     {
                         MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                        return;
+                    }
+                    if (txt_SDT.Text.Length != 10)
+                    {
+                        MessageBox.Show($"Số điện thoại phải có đúng 10 số! (kí tự hiện tại: " +
+                                        $"{txt_SDT.Text.Length})");
                         return;
                     }
                     string hoTen = txt_HoTen.Text;   
@@ -133,9 +140,31 @@ namespace WindowsFormsApp2
             this.Hide();
         }
 
-        private void DangKy_FormClosing(object sender, FormClosingEventArgs e)
-        {
 
+        private void txt_HoTen_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txt_HoTen.Text, "[^A-Za-zÀ-ỹ ]"))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập chữ cái.");
+                if (txt_HoTen.Text.Length > 0)
+                {
+                    txt_HoTen.Text = txt_HoTen.Text.Substring(0, txt_HoTen.Text.Length - 1);
+                    txt_HoTen.SelectionStart = txt_HoTen.Text.Length;
+                }
+            }
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txt_SDT.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Chỉ được nhập số.");
+                if (txt_SDT.Text.Length > 0)
+                {
+                    txt_SDT.Text = txt_SDT.Text.Substring(0, txt_SDT.Text.Length - 1);
+                    txt_SDT.SelectionStart = txt_SDT.Text.Length;
+                }
+            }
         }
     }
 }
