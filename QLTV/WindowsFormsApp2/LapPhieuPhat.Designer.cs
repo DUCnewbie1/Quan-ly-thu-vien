@@ -56,6 +56,7 @@
             this.MaPhieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuPhat)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(100, 20);
             this.txtTimKiem.TabIndex = 44;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // groupBox1
             // 
@@ -297,7 +299,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(908, 479);
+            this.btnThem.Location = new System.Drawing.Point(827, 479);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(90, 23);
             this.btnThem.TabIndex = 42;
@@ -305,11 +307,22 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Location = new System.Drawing.Point(923, 479);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Exit.TabIndex = 46;
+            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
             // LapPhieuPhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 509);
+            this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.groupBox1);
@@ -358,5 +371,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuMuon;
+        private System.Windows.Forms.Button btn_Exit;
     }
 }

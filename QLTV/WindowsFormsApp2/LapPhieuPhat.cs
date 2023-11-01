@@ -206,5 +206,34 @@ namespace WindowsFormsApp2
                 }
             }
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private List<PhieuPhat> GetPhieuPhatList(Model1 context)
+        {
+            return context.PhieuPhat.ToList();
+        }
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            {
+                string searchText = txtTimKiem.Text.Trim().ToLower();
+
+                using (Model1 context = new Model1())
+                {
+                    List<PhieuPhat> ListPhieuPhat = GetPhieuPhatList(context);
+                    List<PhieuPhat> filteredList = ListPhieuPhat.Where(pp =>
+                        pp.MaPhat.ToLower().Contains(searchText) ||
+                        pp.NgayPhat.ToString().ToLower().Contains(searchText) ||
+                        pp.NoiDungPhat.ToLower().Contains(searchText) ||
+                        pp.PhiPhat.ToString().ToLower().Contains(searchText) ||
+                        phieuPhatManager.LayTenDocGiaTuMaPhat(pp.MaPhat).ToLower().Contains(searchText) ||
+                        phieuPhatManager.LayTenNhanVienTuMaPhat(pp.MaPhat).ToLower().Contains(searchText)
+                    ).ToList();
+                    BindGrid(filteredList);
+                }
+            }
+        }
     }
 }
