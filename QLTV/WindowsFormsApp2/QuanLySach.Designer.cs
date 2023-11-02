@@ -273,6 +273,7 @@
             this.dgvQLS.Location = new System.Drawing.Point(3, 233);
             this.dgvQLS.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQLS.Name = "dgvQLS";
+            this.dgvQLS.ReadOnly = true;
             this.dgvQLS.RowHeadersWidth = 62;
             this.dgvQLS.RowTemplate.Height = 28;
             this.dgvQLS.Size = new System.Drawing.Size(855, 205);
@@ -284,48 +285,56 @@
             this.MaSach.HeaderText = "Mã Sách";
             this.MaSach.MinimumWidth = 8;
             this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
             // 
             // TenSach
             // 
             this.TenSach.HeaderText = "Tên Sách";
             this.TenSach.MinimumWidth = 8;
             this.TenSach.Name = "TenSach";
+            this.TenSach.ReadOnly = true;
             // 
             // TheLoai
             // 
             this.TheLoai.HeaderText = "Thể Loại";
             this.TheLoai.MinimumWidth = 8;
             this.TheLoai.Name = "TheLoai";
+            this.TheLoai.ReadOnly = true;
             // 
             // NamXB
             // 
             this.NamXB.HeaderText = "Năm Xuất Bản";
             this.NamXB.MinimumWidth = 8;
             this.NamXB.Name = "NamXB";
+            this.NamXB.ReadOnly = true;
             // 
             // GiaSach
             // 
             this.GiaSach.HeaderText = "Giá Sách";
             this.GiaSach.MinimumWidth = 8;
             this.GiaSach.Name = "GiaSach";
+            this.GiaSach.ReadOnly = true;
             // 
             // SoLuong
             // 
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.MinimumWidth = 8;
             this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             // 
             // MaNXB
             // 
             this.MaNXB.HeaderText = "Nhà xuất bản";
             this.MaNXB.MinimumWidth = 8;
             this.MaNXB.Name = "MaNXB";
+            this.MaNXB.ReadOnly = true;
             // 
             // MaTacGia
             // 
             this.MaTacGia.HeaderText = "Tác Giả";
             this.MaTacGia.MinimumWidth = 8;
             this.MaTacGia.Name = "MaTacGia";
+            this.MaTacGia.ReadOnly = true;
             // 
             // panel1
             // 

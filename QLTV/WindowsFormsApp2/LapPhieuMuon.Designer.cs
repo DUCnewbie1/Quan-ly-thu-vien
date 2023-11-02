@@ -85,6 +85,7 @@
             this.TenNV});
             this.dgvPhieuMuon.Location = new System.Drawing.Point(359, 77);
             this.dgvPhieuMuon.Name = "dgvPhieuMuon";
+            this.dgvPhieuMuon.ReadOnly = true;
             this.dgvPhieuMuon.Size = new System.Drawing.Size(641, 410);
             this.dgvPhieuMuon.TabIndex = 8;
             this.dgvPhieuMuon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuMuon_CellClick);
@@ -93,42 +94,49 @@
             // 
             this.MaPM.HeaderText = "Mã Phiếu Mượn";
             this.MaPM.Name = "MaPM";
+            this.MaPM.ReadOnly = true;
             this.MaPM.Width = 85;
             // 
             // NgayLap
             // 
             this.NgayLap.HeaderText = "Ngày Lập";
             this.NgayLap.Name = "NgayLap";
+            this.NgayLap.ReadOnly = true;
             this.NgayLap.Width = 86;
             // 
             // NgayTra
             // 
             this.NgayTra.HeaderText = "Ngày Trả";
             this.NgayTra.Name = "NgayTra";
+            this.NgayTra.ReadOnly = true;
             this.NgayTra.Width = 85;
             // 
             // GhiChu
             // 
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
             this.GhiChu.Width = 86;
             // 
             // SoLuong
             // 
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             this.SoLuong.Width = 85;
             // 
             // TenDocGia
             // 
             this.TenDocGia.HeaderText = "Tên đọc giả";
             this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.ReadOnly = true;
             this.TenDocGia.Width = 86;
             // 
             // TenNV
             // 
             this.TenNV.HeaderText = "Tên nhân viên";
             this.TenNV.Name = "TenNV";
+            this.TenNV.ReadOnly = true;
             this.TenNV.Width = 85;
             // 
             // groupBox1

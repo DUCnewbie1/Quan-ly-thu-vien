@@ -273,6 +273,7 @@
             this.dgvQLDG.Location = new System.Drawing.Point(11, 266);
             this.dgvQLDG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQLDG.Name = "dgvQLDG";
+            this.dgvQLDG.ReadOnly = true;
             this.dgvQLDG.RowHeadersWidth = 62;
             this.dgvQLDG.Size = new System.Drawing.Size(765, 281);
             this.dgvQLDG.TabIndex = 4;
@@ -283,35 +284,41 @@
             this.MaDocGia.HeaderText = "Mã Đọc Giả";
             this.MaDocGia.MinimumWidth = 8;
             this.MaDocGia.Name = "MaDocGia";
+            this.MaDocGia.ReadOnly = true;
             // 
             // TenDocGia
             // 
             this.TenDocGia.HeaderText = "Tên Đọc Giả";
             this.TenDocGia.MinimumWidth = 8;
             this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.ReadOnly = true;
             // 
             // DiaChi
             // 
             this.DiaChi.HeaderText = "Địa Chỉ";
             this.DiaChi.MinimumWidth = 8;
             this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
             // 
             // SDT
             // 
             this.SDT.HeaderText = "SĐT";
             this.SDT.MinimumWidth = 8;
             this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 8;
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // NgayLap
             // 
             this.NgayLap.HeaderText = "NgayLap";
             this.NgayLap.Name = "NgayLap";
+            this.NgayLap.ReadOnly = true;
             this.NgayLap.Visible = false;
             // 
             // txtTimKiem

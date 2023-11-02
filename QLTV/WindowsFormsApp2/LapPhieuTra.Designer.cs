@@ -294,6 +294,7 @@
             this.MaPM});
             this.dgvPhieuTra.Location = new System.Drawing.Point(12, 329);
             this.dgvPhieuTra.Name = "dgvPhieuTra";
+            this.dgvPhieuTra.ReadOnly = true;
             this.dgvPhieuTra.Size = new System.Drawing.Size(1035, 218);
             this.dgvPhieuTra.TabIndex = 33;
             this.dgvPhieuTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuTra_CellClick);
@@ -302,36 +303,43 @@
             // 
             this.MaPT.HeaderText = "Mã Phiếu Trả";
             this.MaPT.Name = "MaPT";
+            this.MaPT.ReadOnly = true;
             // 
             // NgayTra
             // 
             this.NgayTra.HeaderText = "Ngày Trả";
             this.NgayTra.Name = "NgayTra";
+            this.NgayTra.ReadOnly = true;
             // 
             // GhiChu
             // 
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
             // 
             // TinhTrangSach
             // 
             this.TinhTrangSach.HeaderText = "Tình Trạng Sách";
             this.TinhTrangSach.Name = "TinhTrangSach";
+            this.TinhTrangSach.ReadOnly = true;
             // 
             // TenDocGia
             // 
             this.TenDocGia.HeaderText = "Tên Đọc Giả";
             this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.ReadOnly = true;
             // 
             // TenNV
             // 
             this.TenNV.HeaderText = "Tên Nhân Viên";
             this.TenNV.Name = "TenNV";
+            this.TenNV.ReadOnly = true;
             // 
             // MaPM
             // 
             this.MaPM.HeaderText = "Mã Phiếu Mượn";
             this.MaPM.Name = "MaPM";
+            this.MaPM.ReadOnly = true;
             this.MaPM.Visible = false;
             // 
             // label1

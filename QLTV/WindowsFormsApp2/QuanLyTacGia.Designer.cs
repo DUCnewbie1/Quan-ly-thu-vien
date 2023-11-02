@@ -82,6 +82,7 @@
             this.TenTG});
             this.dgvTG.Location = new System.Drawing.Point(12, 203);
             this.dgvTG.Name = "dgvTG";
+            this.dgvTG.ReadOnly = true;
             this.dgvTG.RowHeadersWidth = 62;
             this.dgvTG.Size = new System.Drawing.Size(536, 281);
             this.dgvTG.TabIndex = 6;
@@ -93,6 +94,7 @@
             this.MaTG.HeaderText = "Mã tác giả";
             this.MaTG.MinimumWidth = 8;
             this.MaTG.Name = "MaTG";
+            this.MaTG.ReadOnly = true;
             // 
             // TenTG
             // 
@@ -100,6 +102,7 @@
             this.TenTG.HeaderText = "Tên tác giả";
             this.TenTG.MinimumWidth = 8;
             this.TenTG.Name = "TenTG";
+            this.TenTG.ReadOnly = true;
             // 
             // label1
             // 

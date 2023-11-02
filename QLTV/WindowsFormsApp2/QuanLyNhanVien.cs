@@ -108,43 +108,48 @@ namespace WindowsFormsApp2
         }
 
         // Sửa xóa nhân viên---------------------------------------------------------------------------------
-
         private void btnEditNV_Click(object sender, EventArgs e)
         {
-            string manv = txtIdNV.Text;
-            string tennv = txtNameNV.Text;
-            string sdtnv = txtPhoneNV.Text;
-            string emailnv = txtEmailNV.Text;
+            using (Model1 context = new Model1())
+            {
+                string manv = txtIdNV.Text;
+                string tennv = txtNameNV.Text;
+                string sdtnv = txtPhoneNV.Text;
+                string emailnv = txtEmailNV.Text;
+                string sql = @"SELECT DangLamViec FROM NhanVien WHERE MaNV = @manv";
+                var trungTrangThai = context.Database.SqlQuery<bool?>(sql, new SqlParameter("manv", manv)).ToList();
 
-
-            if (string.IsNullOrWhiteSpace(manv) || string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdtnv) || string.IsNullOrWhiteSpace(emailnv))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin nhân viên và nhập đúng định dạng dữ liệu.", "Lỗi");
-                return;
+                if (string.IsNullOrWhiteSpace(manv) || string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdtnv) || string.IsNullOrWhiteSpace(emailnv))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin nhân viên và nhập đúng định dạng dữ liệu.", "Lỗi");
+                    return;
+                }
+                if (txtPhoneNV.Text.Length != 10)
+                {
+                    MessageBox.Show($"Số điện thoại phải có đúng 10 số! (Kí tự hiện tại: " +
+                                    $"{txtPhoneNV.Text.Length})");
+                    return;
+                }
+                if (!DNKDR.EmailDung(txtEmailNV.Text))
+                {
+                    MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
+                    return;
+                }
+                NhanVien NhanVienToEdit = new NhanVien
+                {
+                    MaNV = manv,
+                    TenNV = tennv,
+                    Sdt = sdtnv,
+                    Email = emailnv,
+                    DangLamViec = trungTrangThai.FirstOrDefault()
+                };
+                MessageBox.Show("Sửa thành công. ", "Thông báo");
+                Class1<NhanVien> NhanVienDataAccess = new Class1<NhanVien>();
+                NhanVienDataAccess.Sua(NhanVienToEdit);
+                LoadDataGridNV();
             }
-            if (txtPhoneNV.Text.Length != 10)
-            {
-                MessageBox.Show($"Số điện thoại phải có đúng 10 số! (Kí tự hiện tại: " +
-                                $"{txtPhoneNV.Text.Length})");
-                return;
-            }
-            if (!DNKDR.EmailDung(txtEmailNV.Text))
-            {
-                MessageBox.Show("Cấu trúc Email không hợp lệ, mời nhập lại");
-                return;
-            }
-            NhanVien NhanVienToEdit = new NhanVien
-            {
-                MaNV = manv,
-                TenNV = tennv,
-                Sdt = sdtnv,
-                Email = emailnv,
-            };
-            MessageBox.Show("Sửa thành công. ", "Thông báo");
-            Class1<NhanVien> NhanVienDataAccess = new Class1<NhanVien>();
-            NhanVienDataAccess.Sua(NhanVienToEdit);
-            LoadDataGridNV();
         }
+
 
         private void btnDeleteNV_Click(object sender, EventArgs e)
         {

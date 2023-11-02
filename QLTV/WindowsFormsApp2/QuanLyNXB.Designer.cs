@@ -76,6 +76,7 @@
             this.SDT});
             this.dgvNXB.Location = new System.Drawing.Point(310, 86);
             this.dgvNXB.Name = "dgvNXB";
+            this.dgvNXB.ReadOnly = true;
             this.dgvNXB.RowHeadersWidth = 62;
             this.dgvNXB.Size = new System.Drawing.Size(599, 337);
             this.dgvNXB.TabIndex = 3;
@@ -87,6 +88,7 @@
             this.MaNXB.HeaderText = "Mã NXB";
             this.MaNXB.MinimumWidth = 8;
             this.MaNXB.Name = "MaNXB";
+            this.MaNXB.ReadOnly = true;
             this.MaNXB.Width = 72;
             // 
             // TenNXB
@@ -95,6 +97,7 @@
             this.TenNXB.HeaderText = "Tên NXB";
             this.TenNXB.MinimumWidth = 8;
             this.TenNXB.Name = "TenNXB";
+            this.TenNXB.ReadOnly = true;
             this.TenNXB.Width = 76;
             // 
             // DiaChi
@@ -103,6 +106,7 @@
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.MinimumWidth = 8;
             this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
             this.DiaChi.Width = 65;
             // 
             // Email
@@ -111,6 +115,7 @@
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 8;
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             this.Email.Width = 57;
             // 
             // SDT
@@ -119,6 +124,7 @@
             this.SDT.HeaderText = "SĐT";
             this.SDT.MinimumWidth = 8;
             this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
             this.SDT.Width = 54;
             // 
             // groupBox1

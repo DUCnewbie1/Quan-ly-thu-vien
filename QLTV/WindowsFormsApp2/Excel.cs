@@ -26,69 +26,75 @@ namespace WindowsFormsApp2
 
         private void btn_CreateExcel_Click(object sender, EventArgs e)
         {
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-            using (var package = new ExcelPackage())
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            saveFileDialog.FileName = "ThongKeDocGia.xlsx"; 
+            saveFileDialog.InitialDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Tạo bảng tính
-                var worksheet = package.Workbook.Worksheets.Add("ThongKeDocGia");
+                string filePath = saveFileDialog.FileName;
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
-                // Tạo cột
-                worksheet.Cells["A1"].Value = "Mã Độc Giả";
-                worksheet.Cells["B1"].Value = "Độc Giả";
-                worksheet.Cells["C1"].Value = "Mã Phiếu Mượn";
-                worksheet.Cells["D1"].Value = "Trạng Thái";
-
-                using (Model1 context = new Model1())
+                using (var package = new ExcelPackage())
                 {
-                    var data = (from dg in context.DocGia
-                                join tdg in context.TheDocGia on dg.MaDocGia equals tdg.MaDocGia
-                                join pm in context.PhieuMuon on tdg.MaThe equals pm.MaThe into pmGroup
-                                from pmData in pmGroup.DefaultIfEmpty()
-                                where pmData != null &&
-                                      pmData.NgayLap.Month == DateTime.Now.Month &&
-                                      pmData.NgayLap.Year == DateTime.Now.Year
-                                select new
-                                {
-                                    dg.MaDocGia,
-                                    dg.TenDocGia,
-                                    MaPhieuMuon = pmData == null ? "" : pmData.MaPM,
-                                }).ToList();
-                    //Lấy mã phiếu mượn từ phiếu trả
-                    string query = "SELECT DISTINCT ctpt.MaPM FROM ChiTietPhieuTra ctpt " +
-                                   "INNER JOIN PhieuTra pt ON ctpt.MaPT = pt.MaPT " +
-                                   "INNER JOIN PHIEUMUON PM ON ctpt.MaPM = PM.MaPM " +
-                                   "WHERE MONTH(PM.NgayLap) = MONTH(GETDATE()) AND YEAR(PM.NgayLap) = YEAR(GETDATE())";
 
-                    var results = context.Database.SqlQuery<string>(query).ToList();
+                    // Tạo bảng tính
+                    var worksheet = package.Workbook.Worksheets.Add("ThongKeDocGia");
 
-                    // Gửi dữ liệu vào excel
-                    int row = 2;
-                    foreach (var item in data)
+                    // Tạo cột
+                    worksheet.Cells["A1"].Value = "Mã Độc Giả";
+                    worksheet.Cells["B1"].Value = "Độc Giả";
+                    worksheet.Cells["C1"].Value = "Mã Phiếu Mượn";
+                    worksheet.Cells["D1"].Value = "Trạng Thái";
+
+                    using (Model1 context = new Model1())
                     {
-                        worksheet.Cells["A" + row].Value = item.MaDocGia;
-                        worksheet.Cells["B" + row].Value = item.TenDocGia;
-                        worksheet.Cells["C" + row].Value = item.MaPhieuMuon;
-                        if (results.Contains(item.MaPhieuMuon))
+                        var data = (from dg in context.DocGia
+                                    join tdg in context.TheDocGia on dg.MaDocGia equals tdg.MaDocGia
+                                    join pm in context.PhieuMuon on tdg.MaThe equals pm.MaThe into pmGroup
+                                    from pmData in pmGroup.DefaultIfEmpty()
+                                    where pmData != null &&
+                                          pmData.NgayLap.Month == DateTime.Now.Month &&
+                                          pmData.NgayLap.Year == DateTime.Now.Year
+                                    select new
+                                    {
+                                        dg.MaDocGia,
+                                        dg.TenDocGia,
+                                        MaPhieuMuon = pmData == null ? "" : pmData.MaPM,
+                                    }).ToList();
+                        //Lấy mã phiếu mượn từ phiếu trả
+                        string query = "SELECT DISTINCT ctpt.MaPM FROM ChiTietPhieuTra ctpt " +
+                                       "INNER JOIN PhieuTra pt ON ctpt.MaPT = pt.MaPT " +
+                                       "INNER JOIN PHIEUMUON PM ON ctpt.MaPM = PM.MaPM " +
+                                       "WHERE MONTH(PM.NgayLap) = MONTH(GETDATE()) AND YEAR(PM.NgayLap) = YEAR(GETDATE())";
+
+                        var results = context.Database.SqlQuery<string>(query).ToList();
+
+                        // Gửi dữ liệu vào excel
+                        int row = 2;
+                        foreach (var item in data)
                         {
-                            worksheet.Cells["D" + row].Value = "Đã trả sách";
+                            worksheet.Cells["A" + row].Value = item.MaDocGia;
+                            worksheet.Cells["B" + row].Value = item.TenDocGia;
+                            worksheet.Cells["C" + row].Value = item.MaPhieuMuon;
+                            if (results.Contains(item.MaPhieuMuon))
+                            {
+                                worksheet.Cells["D" + row].Value = "Đã trả sách";
+                            }
+                            else
+                            {
+                                worksheet.Cells["D" + row].Value = "Chưa trả sách";
+                            }
+                            row++;
                         }
-                        else
-                        {
-                            worksheet.Cells["D" + row].Value = "Chưa trả sách";
-                        }
-                        row++;
+                        worksheet.Cells.AutoFitColumns();
+
                     }
-                    worksheet.Cells.AutoFitColumns();
-
+                    package.SaveAs(new FileInfo(filePath));
                 }
-
-
-                // Lưu ở QLTV\WindowsFormsApp2\bin\Debug
-                string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ThongKeDocGia.xls");
-                package.SaveAs(path);
+                MessageBox.Show("Tạo file excel thành công.");
             }
-
-            MessageBox.Show("Tạo file excel thành công.");
         }
 
         private void btn_ChonFile_Click(object sender, EventArgs e)
