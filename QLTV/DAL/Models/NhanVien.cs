@@ -12,9 +12,9 @@ namespace DAL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhanVien()
         {
-            PhieuMuons = new HashSet<PhieuMuon>();
-            PhieuTras = new HashSet<PhieuTra>();
-            TaiKhoans = new HashSet<TaiKhoan>();
+            PhieuMuon = new HashSet<PhieuMuon>();
+            PhieuTra = new HashSet<PhieuTra>();
+            TaiKhoan = new HashSet<TaiKhoan>();
         }
 
         [Key]
@@ -33,13 +33,15 @@ namespace DAL.Models
         [StringLength(30)]
         public string Email { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuMuon> PhieuMuons { get; set; }
+        public bool? DangLamViec { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuTra> PhieuTras { get; set; }
+        public virtual ICollection<PhieuMuon> PhieuMuon { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
+        public virtual ICollection<PhieuTra> PhieuTra { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TaiKhoan> TaiKhoan { get; set; }
     }
 }

@@ -54,9 +54,9 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLDG)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cập nhật thông tin đọc giả";
+            this.label1.Text = "Cập nhật thông tin độc giả";
             // 
             // panel1
             // 
@@ -308,6 +308,12 @@
             this.Email.MinimumWidth = 8;
             this.Email.Name = "Email";
             // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "NgayLap";
+            this.NgayLap.Name = "NgayLap";
+            this.NgayLap.Visible = false;
+            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(319, 73);
@@ -324,12 +330,6 @@
             this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 18;
             this.label9.Text = "Tìm Kiếm Theo Mã ";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.HeaderText = "NgayLap";
-            this.NgayLap.Name = "NgayLap";
-            this.NgayLap.Visible = false;
             // 
             // QuanLyDocGia
             // 

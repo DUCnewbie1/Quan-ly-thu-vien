@@ -181,5 +181,16 @@ namespace DAL
                 return bookNames;
             }
         }
+        public void CapNhatTrangThaiSach(string maPhieuMuon, string tenSach)
+        {
+            using (Model1 context = new Model1())
+            {
+                string updateQuery = "UPDATE ChiTietPhieuMuon " +
+                                     "SET TrangThaiSach = 1 " +
+                                     "WHERE MaPM = @MaPM AND MaSach = (SELECT MaSach FROM Sach WHERE TenSach = @TenSach)";
+
+                context.Database.ExecuteSqlCommand(updateQuery, new SqlParameter("@MaPM", maPhieuMuon), new SqlParameter("@TenSach", tenSach));
+            }
+        }
     }
 }

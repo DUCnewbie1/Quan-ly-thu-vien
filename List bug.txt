@@ -1,4 +1,0 @@
-QuanLyNhanVien loaddatagrid khi thêm nv trong đk
-xóa không được
-QuanLyNXB mã bị lặp, sửa không được
-Lập phiếu mượn, thêm sách thì sẽ hiện tất cả sách trong database khi cell click, sửa lại thành là khi click vào cell thì của phiếu mượn đã lập thì chỉ hiện sách đã mượn

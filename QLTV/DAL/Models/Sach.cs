@@ -12,7 +12,7 @@ namespace DAL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sach()
         {
-            ChiTietPhieuMuons = new HashSet<ChiTietPhieuMuon>();
+            ChiTietPhieuMuon = new HashSet<ChiTietPhieuMuon>();
         }
 
         [Key]
@@ -42,7 +42,7 @@ namespace DAL.Models
         public string MaTacGia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietPhieuMuon> ChiTietPhieuMuons { get; set; }
+        public virtual ICollection<ChiTietPhieuMuon> ChiTietPhieuMuon { get; set; }
 
         public virtual NhaXuatBan NhaXuatBan { get; set; }
 

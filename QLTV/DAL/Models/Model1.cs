@@ -47,7 +47,7 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<DocGia>()
-                .HasMany(e => e.TheDocGias)
+                .HasMany(e => e.TheDocGia)
                 .WithRequired(e => e.DocGia)
                 .WillCascadeOnDelete(false);
 
@@ -64,12 +64,12 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.PhieuMuons)
+                .HasMany(e => e.PhieuMuon)
                 .WithRequired(e => e.NhanVien)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.PhieuTras)
+                .HasMany(e => e.PhieuTra)
                 .WithRequired(e => e.NhanVien)
                 .WillCascadeOnDelete(false);
 
@@ -86,7 +86,7 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<NhaXuatBan>()
-                .HasMany(e => e.Saches)
+                .HasMany(e => e.Sach)
                 .WithRequired(e => e.NhaXuatBan)
                 .WillCascadeOnDelete(false);
 
@@ -103,18 +103,18 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<PhieuMuon>()
-                .HasMany(e => e.ChiTietPhieuMuons)
+                .HasMany(e => e.ChiTietPhieuMuon)
                 .WithRequired(e => e.PhieuMuon)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PhieuMuon>()
-                .HasMany(e => e.PhieuPhats)
-                .WithMany(e => e.PhieuMuons)
+                .HasMany(e => e.PhieuPhat)
+                .WithMany(e => e.PhieuMuon)
                 .Map(m => m.ToTable("ChiTietPhieuPhat").MapLeftKey("MaPM").MapRightKey("MaPhat"));
 
             modelBuilder.Entity<PhieuMuon>()
-                .HasMany(e => e.PhieuTras)
-                .WithMany(e => e.PhieuMuons)
+                .HasMany(e => e.PhieuTra)
+                .WithMany(e => e.PhieuMuon)
                 .Map(m => m.ToTable("ChiTietPhieuTra").MapLeftKey("MaPM").MapRightKey("MaPT"));
 
             modelBuilder.Entity<PhieuPhat>()
@@ -142,7 +142,7 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<Sach>()
-                .HasMany(e => e.ChiTietPhieuMuons)
+                .HasMany(e => e.ChiTietPhieuMuon)
                 .WithRequired(e => e.Sach)
                 .WillCascadeOnDelete(false);
 
@@ -151,7 +151,7 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<TacGia>()
-                .HasMany(e => e.Saches)
+                .HasMany(e => e.Sach)
                 .WithRequired(e => e.TacGia)
                 .WillCascadeOnDelete(false);
 
@@ -180,7 +180,7 @@ namespace DAL.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<TheDocGia>()
-                .HasMany(e => e.PhieuMuons)
+                .HasMany(e => e.PhieuMuon)
                 .WithRequired(e => e.TheDocGia)
                 .WillCascadeOnDelete(false);
         }

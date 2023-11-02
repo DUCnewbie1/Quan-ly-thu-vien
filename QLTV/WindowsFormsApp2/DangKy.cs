@@ -69,7 +69,10 @@ namespace WindowsFormsApp2
                     string tentk = txt_TenTK.Text;
                     string matkhau = txt_MK.Text;
                     string nhaplai = txt_RepeatMK.Text;
-                    if (context.TaiKhoan.Any(tk => tk.TenTK == tentk))
+                    //Lấy tên tài khoản phân biệt hoa thường
+                    string sql = @"SELECT TenTK FROM TaiKhoan WHERE TenTK = @tk COLLATE SQL_Latin1_General_CP1_CS_AS";
+                    var trungTenTK = context.Database.SqlQuery<string>(sql, new SqlParameter("tk", tentk)).ToList();
+                    if (trungTenTK.Count > 0)
                     {
                         MessageBox.Show("Tên tài khoản đã tồn tại. Vui lòng chọn một tên tài khoản khác.", "Lỗi");
                         return;
@@ -83,6 +86,7 @@ namespace WindowsFormsApp2
                                 TenNV = hoTen,
                                 Sdt = sdt,
                                 Email = email,
+                                DangLamViec = true,
                             };
                             Class1<NhanVien> classNV = new Class1<NhanVien>();
                             classNV.Them(nv);
@@ -117,6 +121,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Có lỗi trong quá trình đăng ký: " + ex.Message);
             }
         }
+
         private string GenerateNewMaNV()
         {
             using (Model1 context = new Model1())

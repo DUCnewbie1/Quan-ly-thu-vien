@@ -50,7 +50,7 @@ namespace WindowsFormsApp2
 
             using (Model1 context = new Model1())
             {
-                var Staff = context.NhanVien.ToList();
+                var Staff = context.NhanVien.Where(nv => nv.DangLamViec == true).ToList();
                 cbNhanVien.DataSource = Staff;
                 cbNhanVien.DisplayMember = "TenNV";
                 cbNhanVien.ValueMember = "MaNV";

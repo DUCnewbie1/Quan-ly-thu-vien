@@ -42,14 +42,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvQLNV = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DangLamViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -182,7 +183,8 @@
             this.Column3,
             this.Column4,
             this.TenTK,
-            this.MatKhau});
+            this.MatKhau,
+            this.DangLamViec});
             this.dgvQLNV.Location = new System.Drawing.Point(3, 197);
             this.dgvQLNV.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQLNV.Name = "dgvQLNV";
@@ -192,6 +194,38 @@
             this.dgvQLNV.Size = new System.Drawing.Size(652, 231);
             this.dgvQLNV.TabIndex = 1;
             this.dgvQLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLNV_CellClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(182, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(269, 32);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Cập nhật nhân viên";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_DangKy);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnExitNV);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnDeleteNV);
+            this.groupBox1.Controls.Add(this.txtIdNV);
+            this.groupBox1.Controls.Add(this.btnEditNV);
+            this.groupBox1.Controls.Add(this.txtNameNV);
+            this.groupBox1.Controls.Add(this.txtPhoneNV);
+            this.groupBox1.Controls.Add(this.txtEmailNV);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(8, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(635, 118);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin nhân viên";
             // 
             // Column1
             // 
@@ -233,37 +267,11 @@
             this.MatKhau.Name = "MatKhau";
             this.MatKhau.ReadOnly = true;
             // 
-            // label7
+            // DangLamViec
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(182, 20);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(269, 32);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Cập nhật nhân viên";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btn_DangKy);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnExitNV);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnDeleteNV);
-            this.groupBox1.Controls.Add(this.txtIdNV);
-            this.groupBox1.Controls.Add(this.btnEditNV);
-            this.groupBox1.Controls.Add(this.txtNameNV);
-            this.groupBox1.Controls.Add(this.txtPhoneNV);
-            this.groupBox1.Controls.Add(this.txtEmailNV);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(8, 64);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(635, 118);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin nhân viên";
+            this.DangLamViec.HeaderText = "Tình Trạng";
+            this.DangLamViec.Name = "DangLamViec";
+            this.DangLamViec.ReadOnly = true;
             // 
             // QuanLyNhanVien
             // 
@@ -302,12 +310,13 @@
         private System.Windows.Forms.DataGridView dgvQLNV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_DangKy;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DangLamViec;
     }
 }

@@ -12,9 +12,9 @@ namespace DAL.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhieuMuon()
         {
-            ChiTietPhieuMuons = new HashSet<ChiTietPhieuMuon>();
-            PhieuPhats = new HashSet<PhieuPhat>();
-            PhieuTras = new HashSet<PhieuTra>();
+            ChiTietPhieuMuon = new HashSet<ChiTietPhieuMuon>();
+            PhieuPhat = new HashSet<PhieuPhat>();
+            PhieuTra = new HashSet<PhieuTra>();
         }
 
         [Key]
@@ -41,16 +41,16 @@ namespace DAL.Models
         public string MaNV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietPhieuMuon> ChiTietPhieuMuons { get; set; }
+        public virtual ICollection<ChiTietPhieuMuon> ChiTietPhieuMuon { get; set; }
 
         public virtual NhanVien NhanVien { get; set; }
 
         public virtual TheDocGia TheDocGia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuPhat> PhieuPhats { get; set; }
+        public virtual ICollection<PhieuPhat> PhieuPhat { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuTra> PhieuTras { get; set; }
+        public virtual ICollection<PhieuTra> PhieuTra { get; set; }
     }
 }

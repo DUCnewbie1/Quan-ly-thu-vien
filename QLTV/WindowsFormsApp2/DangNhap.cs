@@ -59,9 +59,6 @@ namespace WindowsFormsApp2
                             {
                                 int userId = data.GetInt32(0); // Lấy user id từ cột "id" trong kết quả truy vấn
                                 XuLy.GhiNhanTaiKhoan(tk);
-                                //Home home = new Home(userId); // Truyền user id vào Form1
-                                //  LÝ DO ĐỔI LẠI THÀNH HOME() VÌ CÁI HOME(USERID) KO CHẠY VÔ 
-                                // Lý do đổi lại thành Home(userId) là vì chỉ có id của admin mới được đăng ký nhân viên :))
                                 Home home = new Home(userId); // Truyền user id vào Form1
                                 home.Show();
                                 this.Hide();
@@ -97,26 +94,6 @@ namespace WindowsFormsApp2
                 e.Cancel = true;
             }
         }
-        //Khi nhấn nút đăng ký
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    Dang_Ky f = new Dang_Ky();
-        //    f.Show();
-        //    this.Hide();
-        //}
-        // Đặt con trỏ chuột vào ô nhập tên tài khoản
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-            txt_TK.Select();
-        }
-        // Thực hiện đăng nhập khi ấn phím Enter trên ô nhập mật khẩu
-        private void txt_MK_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                DN_Click(sender, e);
-            }
-        }
 
         // kiểm tra nhập tên đăng nhập có quá kí tự quy định không
         private void txt_TK_TextChanged(object sender, EventArgs e)
@@ -146,16 +123,24 @@ namespace WindowsFormsApp2
         {
             txt_MK.UseSystemPasswordChar = !checkBox1.Checked;
         }
-
+        // Đặt con trỏ chuột vào ô nhập tên tài khoản
         private void DangNhap_Load_1(object sender, EventArgs e)
         {
-
+            txt_TK.Select();
         }
         // quên mật khẩu 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             QuenMatKhau mk = new QuenMatKhau();
             mk.Show();
+        }
+        // Thực hiện đăng nhập khi ấn phím Enter trên ô nhập mật khẩu
+        private void txt_MK_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                DN_Click(sender, e);
+            }
         }
     }
 }

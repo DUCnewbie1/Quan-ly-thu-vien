@@ -46,6 +46,7 @@ namespace WindowsFormsApp2
             BindGridNV(ListNV);
             
         }
+
         public class NhanVienWithTaiKhoan
         {
             public string MaNV { get; set; }
@@ -54,6 +55,7 @@ namespace WindowsFormsApp2
             public string Email { get; set; }
             public string TenTK { get; set; }
             public string MatKhau { get; set; }
+            public bool DangLamViec { get; set; }
         }
         private List<NhanVienWithTaiKhoan> GetNhanVienData()
         {
@@ -69,12 +71,14 @@ namespace WindowsFormsApp2
                                 Sdt = nv.Sdt,
                                 Email = nv.Email,
                                 TenTK = (nvtk != null) ? nvtk.TenTK : string.Empty,
-                                MatKhau = (nvtk != null) ? nvtk.MatKhau : string.Empty
+                                MatKhau = (nvtk != null) ? nvtk.MatKhau : string.Empty,
+                                DangLamViec = (nv.DangLamViec.HasValue) ? nv.DangLamViec.Value : false
                             };
 
                 return query.ToList();
             }
         }
+
         private void BindGridNV(List<NhanVienWithTaiKhoan> ListNV)
         {
             dgvQLNV.Rows.Clear();
@@ -87,6 +91,7 @@ namespace WindowsFormsApp2
                 dgvQLNV.Rows[index].Cells[3].Value = item.Email;
                 dgvQLNV.Rows[index].Cells[4].Value = item.TenTK;
                 dgvQLNV.Rows[index].Cells[5].Value = item.MatKhau;
+                dgvQLNV.Rows[index].Cells[6].Value = item.DangLamViec ? "Đang làm việc" : "Đã nghỉ làm";
             }
         }
 
@@ -98,7 +103,7 @@ namespace WindowsFormsApp2
                 txtIdNV.Text = selectedRow.Cells[0].Value.ToString().Trim();
                 txtNameNV.Text = selectedRow.Cells[1].Value.ToString().Trim();
                 txtPhoneNV.Text = selectedRow.Cells[2].Value.ToString().Trim();
-                txtEmailNV.Text = selectedRow.Cells[3].Value.ToString().Trim();
+                txtEmailNV.Text = selectedRow.Cells[3].Value.ToString().Trim();          
             }
         }
 
@@ -135,7 +140,7 @@ namespace WindowsFormsApp2
                 Sdt = sdtnv,
                 Email = emailnv,
             };
-            MessageBox.Show("Thêm thành công. ", "Thông báo");
+            MessageBox.Show("Sửa thành công. ", "Thông báo");
             Class1<NhanVien> NhanVienDataAccess = new Class1<NhanVien>();
             NhanVienDataAccess.Sua(NhanVienToEdit);
             LoadDataGridNV();
@@ -143,43 +148,70 @@ namespace WindowsFormsApp2
 
         private void btnDeleteNV_Click(object sender, EventArgs e)
         {
-            string manv = txtIdNV.Text.Trim();
+            string maNV = txtIdNV.Text.Trim();
             Class1<NhanVien> NhanVienDataAccess = new Class1<NhanVien>();
-            NhanVien NhanVienToDelete = NhanVienDataAccess.TimSachTheoMa(manv);
+            NhanVien NhanVienToDelete = NhanVienDataAccess.TimSachTheoMa(maNV);
+
             if (NhanVienToDelete != null)
             {
-                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận xóa!!", MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                using (Model1 context = new Model1())
                 {
-                    // Xóa tài khoản của nhân viên trước (nếu có)
-                    using (Model1 context = new Model1())
+                    bool? dangLamViec = NhanVienToDelete.DangLamViec;
+
+                    if (dangLamViec.HasValue && dangLamViec.Value)
                     {
-                        TaiKhoan taiKhoanToDelete = context.TaiKhoan.FirstOrDefault(tk => tk.MaNV == manv);
-                        if (taiKhoanToDelete != null)
+                        var confirmResult = MessageBox.Show("Nhân viên này đang làm việc. Bạn có chắc chắn muốn xóa nhân viên này không? (Nếu xóa, nhân viên này sẽ ngừng làm việc.)", "Xác nhận xóa!!", MessageBoxButtons.YesNo);
+
+                        if (confirmResult == DialogResult.Yes)
                         {
-                            context.TaiKhoan.Remove(taiKhoanToDelete);
+                            TaiKhoan taiKhoanToDelete = context.TaiKhoan.FirstOrDefault(tk => tk.MaNV == maNV);
+                            if (taiKhoanToDelete != null)
+                            {
+                                context.TaiKhoan.Remove(taiKhoanToDelete);
+                            }
+
+                            // Sử dụng truy vấn để cập nhật trạng thái làm việc của nhân viên thành false
+                            string updateQuery = "UPDATE NhanVien SET DangLamViec = 0 WHERE MaNV = @MaNV";
+                            context.Database.ExecuteSqlCommand(updateQuery, new SqlParameter("@MaNV", maNV));
+                            context.SaveChanges();
+                            MessageBox.Show("Xóa thành công. Nhân viên này đã ngừng làm việc.", "Thông báo");
+                            LoadDataGridNV();
                         }
-                        context.SaveChanges();
+                        else
+                        {
+                            MessageBox.Show("Nhân viên không được xóa.", "Thông báo");
+                        }
                     }
+                    else
+                    {
+                        var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận xóa!!", MessageBoxButtons.YesNo);
 
-                    // Xóa nhân viên
-                    NhanVienDataAccess.Xoa(NhanVienToDelete);
+                        if (confirmResult == DialogResult.Yes)
+                        {
+                            // Xóa tài khoản của nhân viên trước (nếu có)
+                            TaiKhoan taiKhoanToDelete = context.TaiKhoan.FirstOrDefault(tk => tk.MaNV == maNV);
+                            if (taiKhoanToDelete != null)
+                            {
+                                context.TaiKhoan.Remove(taiKhoanToDelete);
+                            }
 
-                    MessageBox.Show("Xóa thành công. ", "Thông báo");
-                    LoadDataGridNV();
-                }
-                else
-                {
-                    MessageBox.Show("Nhân viên không được xóa.", "Thông báo");
+                            NhanVienDataAccess.Xoa(NhanVienToDelete);
+
+                            MessageBox.Show("Xóa thành công. ", "Thông báo");
+                            LoadDataGridNV();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nhân viên không được xóa.", "Thông báo");
+                        }
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Không tìm thấy nhân viên có mã " + manv + " để xóa.", "Thông báo");
+                MessageBox.Show("Không tìm thấy nhân viên có mã " + maNV + " để xóa.", "Thông báo");
             }
         }
-
-
 
         private void txtNameNV_TextChanged(object sender, EventArgs e)
         {

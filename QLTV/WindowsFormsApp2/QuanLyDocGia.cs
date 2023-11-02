@@ -55,7 +55,7 @@ namespace WindowsFormsApp2
                 dgvQLDG.Rows[index].Cells[2].Value = item.DiaChi;
                 dgvQLDG.Rows[index].Cells[3].Value = item.Sdt;
                 dgvQLDG.Rows[index].Cells[4].Value = item.Email;
-                dgvQLDG.Rows[index].Cells[5].Value = item.TheDocGias.FirstOrDefault()?.NgayLapThe.ToString("dd/MM/yyyy");
+                dgvQLDG.Rows[index].Cells[5].Value = item.TheDocGia.FirstOrDefault()?.NgayLapThe.ToString("dd/MM/yyyy");
             }
         }
 
@@ -207,32 +207,47 @@ namespace WindowsFormsApp2
 
             if (docGiaToDelete != null)
             {
-                DAL.Models.TheDocGia theDocGiaToDelete = TheDocGiaDataAccess.TimSachTheoMa(maDG);
+                bool docGiaCoPhieuMuon = DocGiaCoPhieuMuon(maDG);
 
-                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa đọc giả này không?",
-                                                     "Xác nhận xóa!!",
-                                                     MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                if (docGiaCoPhieuMuon)
                 {
-                    using (var context = new Model1())
-                    {
-                        string deleteTheDocGiaQuery = @"DELETE FROM TheDocGia WHERE MaDocGia = @MaDG";
-
-                        context.Database.ExecuteSqlCommand(deleteTheDocGiaQuery, new SqlParameter("@MaDG", maDG));
-
-                        DocGiaDataAccess.Xoa(docGiaToDelete);
-                    }
-                    MessageBox.Show("Xóa thành công. ", "Thông báo");
-                    LoadDataGrid();
+                    MessageBox.Show("Đọc giả đang mượn sách, không thể xóa.", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Đọc giả không được xóa.", "Thông báo");
+                    DAL.Models.TheDocGia theDocGiaToDelete = TheDocGiaDataAccess.TimSachTheoMa(maDG);
+
+                    var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa đọc giả này không?",
+                                                         "Xác nhận xóa!!",
+                                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        using (var context = new Model1())
+                        {
+                            string deleteTheDocGiaQuery = @"DELETE FROM TheDocGia WHERE MaDocGia = @MaDG";
+
+                            context.Database.ExecuteSqlCommand(deleteTheDocGiaQuery, new SqlParameter("@MaDG", maDG));
+
+                            DocGiaDataAccess.Xoa(docGiaToDelete);
+                        }
+                        MessageBox.Show("Xóa thành công. ", "Thông báo");
+                        LoadDataGrid();
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Không tìm thấy đọc giả có mã " + maDG + " để xóa.", "Thông báo");
+            }
+        }
+
+
+        private bool DocGiaCoPhieuMuon(string maDocGia)
+        {
+            using (Model1 context = new Model1())
+            {
+                var phieuMuon = context.PhieuMuon.FirstOrDefault(pm => pm.TheDocGia.MaDocGia == maDocGia);
+                return phieuMuon != null;
             }
         }
 

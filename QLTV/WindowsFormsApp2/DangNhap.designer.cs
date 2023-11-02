@@ -44,9 +44,9 @@ namespace WindowsFormsApp2
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDangNhap.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,6 +91,7 @@ namespace WindowsFormsApp2
             this.txt_MK.TabIndex = 3;
             this.txt_MK.UseSystemPasswordChar = true;
             this.txt_MK.TextChanged += new System.EventHandler(this.txt_MK_TextChanged);
+            this.txt_MK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MK_KeyPress_1);
             // 
             // label1
             // 
@@ -210,10 +211,21 @@ namespace WindowsFormsApp2
             this.panel2.Controls.Add(this.label4);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(255)))));
             this.panel2.Location = new System.Drawing.Point(3, 42);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(245, 200);
             this.panel2.TabIndex = 15;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.engineering;
+            this.pictureBox2.Location = new System.Drawing.Point(142, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(85, 77);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
             // 
             // label6
             // 
@@ -240,17 +252,6 @@ namespace WindowsFormsApp2
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Phát triển bởi";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WindowsFormsApp2.Properties.Resources.engineering;
-            this.pictureBox2.Location = new System.Drawing.Point(142, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(85, 77);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
