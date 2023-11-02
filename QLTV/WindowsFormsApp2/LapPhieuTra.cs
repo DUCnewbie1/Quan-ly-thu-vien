@@ -134,7 +134,21 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                 return;
             }
+            bool isAnyItemChecked = false;
+            foreach (var item in checkedListBook.Items)
+            {
+                if (checkedListBook.GetItemChecked(checkedListBook.Items.IndexOf(item)))
+                {
+                    isAnyItemChecked = true;
+                    break;
+                }
+            }
 
+            if (!isAnyItemChecked)
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất một cuốn sách trong danh sách.");
+                return;
+            }
             using (Model1 context = new Model1())
             {
                 string maPhieu = txtMaPhieu.Text;

@@ -60,15 +60,6 @@ namespace WindowsFormsApp2
             string maTG = txt_MaTG.Text.Trim();
             string tenTG = txt_TenTG.Text;
 
-            if (!maTG.StartsWith("TG"))
-            {
-                maTG = "TG" + maTG;
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(maTG, @"^TG[1-9]$"))
-            {
-                maTG = "TG0" + maTG.Substring(2);
-            }
-
             using (Model1 context = new Model1())
             {
                 var existingReader = context.TacGia.FirstOrDefault(dg => dg.MaTacGia == maTG);

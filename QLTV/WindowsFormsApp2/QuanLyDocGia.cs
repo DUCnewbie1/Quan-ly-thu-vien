@@ -25,6 +25,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             CenterToScreen();
+            docGiaManager = new Class1<DocGia>();
         }
 
         private void btnExitDG_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace WindowsFormsApp2
                 dgvQLDG.Rows[index].Cells[2].Value = item.DiaChi;
                 dgvQLDG.Rows[index].Cells[3].Value = item.Sdt;
                 dgvQLDG.Rows[index].Cells[4].Value = item.Email;
-                dgvQLDG.Rows[index].Cells[5].Value = docGiaManager.LayNgayLapTuMaDG(item.MaDocGia);
+                dgvQLDG.Rows[index].Cells[5].Value = item.TheDocGias.FirstOrDefault()?.NgayLapThe.ToString("dd/MM/yyyy");
             }
         }
 
@@ -68,7 +69,7 @@ namespace WindowsFormsApp2
                 txtDiaChi.Text = sr.Cells[2].Value.ToString().Trim();
                 txtSDT.Text = sr.Cells[3].Value.ToString().Trim();
                 txtEmail.Text = sr.Cells[4].Value.ToString().Trim();
-                //dtpkNgayLap.Value = DateTime.Parse(sr.Cells[5].Value.ToString().Trim());
+                dtpkNgayLap.Value = DateTime.Parse(sr.Cells[5].Value.ToString().Trim());
             }
         }
 

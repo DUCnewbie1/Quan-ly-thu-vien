@@ -165,7 +165,6 @@ C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyNXB
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuMuon.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LapPhieuTra.resources
 C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.QuanLyTacGia.resources
-C:\Users\Admin\source\QLTV\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ChamCong.resources
 E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 E:\TAILIEUTRUONG\HK5\HK5A\LapTrinhWindow\chua sln winform\nhom 4 nguoi\DoAnMon\Quan-ly-thu-vien\QLTV\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb

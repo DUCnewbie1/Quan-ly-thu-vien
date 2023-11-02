@@ -64,14 +64,6 @@ namespace WindowsFormsApp2
             string diaChi = txt_DiaChi.Text;
             string email = txt_Email.Text;
             string sdt = txt_SDT.Text;
-            if (!maNXB.StartsWith("TG"))
-            {
-                maNXB = "NXB" + maNXB;
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(maNXB, @"^TG[1-9]$"))
-            {
-                maNXB = "NXB0" + maNXB.Substring(2);
-            }
 
             if (txt_SDT.Text.Length != 10)
             {
