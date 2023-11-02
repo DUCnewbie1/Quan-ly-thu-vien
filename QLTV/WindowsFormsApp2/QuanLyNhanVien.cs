@@ -151,13 +151,16 @@ namespace WindowsFormsApp2
             string maNV = txtIdNV.Text.Trim();
             Class1<NhanVien> NhanVienDataAccess = new Class1<NhanVien>();
             NhanVien NhanVienToDelete = NhanVienDataAccess.TimSachTheoMa(maNV);
-
             if (NhanVienToDelete != null)
             {
                 using (Model1 context = new Model1())
                 {
                     bool? dangLamViec = NhanVienToDelete.DangLamViec;
-
+                    if (dangLamViec == false)
+                    {
+                        MessageBox.Show("Nhân viên này đã nghỉ việc. Không cần xóa nữa!");
+                        return;
+                    }
                     if (dangLamViec.HasValue && dangLamViec.Value)
                     {
                         var confirmResult = MessageBox.Show("Nhân viên này đang làm việc. Bạn có chắc chắn muốn xóa nhân viên này không? (Nếu xóa, nhân viên này sẽ ngừng làm việc.)", "Xác nhận xóa!!", MessageBoxButtons.YesNo);
