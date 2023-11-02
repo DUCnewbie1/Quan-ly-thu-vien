@@ -1,0 +1,17 @@
+C:\Users\Admin\source\QLTV\DAL\bin\Release\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\DAL.dll.config
+C:\Users\Admin\source\QLTV\DAL\bin\Release\DAL.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\DAL.pdb
+C:\Users\Admin\source\QLTV\DAL\bin\Release\EntityFramework.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Users\Admin\source\QLTV\DAL\bin\Release\EntityFramework.xml
+C:\Users\Admin\source\QLTV\DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\QLTV\DAL\obj\Release\DAL.csproj.AssemblyReference.cache
+C:\Users\Admin\source\QLTV\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\QLTV\DAL\obj\Release\DAL.csproj.CopyComplete
+C:\Users\Admin\source\QLTV\DAL\obj\Release\DAL.dll
+C:\Users\Admin\source\QLTV\DAL\obj\Release\DAL.pdb

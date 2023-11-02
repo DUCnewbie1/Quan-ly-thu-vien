@@ -97,11 +97,6 @@ namespace WindowsFormsApp2
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Ghi thông tin vào file XML
-            string toTime = DateTime.Now.ToString("HH:mm");
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ChamCong.xml");
-            AppendToTimeToXml(path, toTime);
-
             Application.ExitThread();
         }
 
@@ -141,11 +136,7 @@ namespace WindowsFormsApp2
             tg.ShowDialog();
         }
 
-        private void chấmcôngtoolStripMenuItem(object sender, EventArgs e)
-        {
-            ChamCong cc = new ChamCong();
-            cc.ShowDialog();
-        }
+
 
         private void lậpPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {

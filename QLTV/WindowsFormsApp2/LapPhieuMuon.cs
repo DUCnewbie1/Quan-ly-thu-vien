@@ -192,11 +192,11 @@ namespace WindowsFormsApp2
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPhieuMuon.Rows[e.RowIndex];
-                txtMaPhieu.Text = row.Cells[0].Value.ToString();
+                txtMaPhieu.Text = row.Cells[0].Value.ToString().Trim();
                 dtpkNgayLap.Value = Convert.ToDateTime(row.Cells[1].Value);
                 dtpkNgayTra.Value = Convert.ToDateTime(row.Cells[2].Value);
-                txtGhiChu.Text = row.Cells[3].Value.ToString();
-                string tenDocGia = row.Cells[5].Value.ToString();
+                txtGhiChu.Text = row.Cells[3].Value.ToString().Trim();
+                string tenDocGia = row.Cells[5].Value.ToString().Trim();
                 foreach (var item in cbDocGia.Items)
                 {
                     if (item is DocGia docGia && docGia.TenDocGia == tenDocGia)
@@ -391,5 +391,6 @@ namespace WindowsFormsApp2
                 BindGrid(filteredList);
             }
         }
+
     }
 }

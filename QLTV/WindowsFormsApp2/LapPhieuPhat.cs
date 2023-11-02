@@ -161,11 +161,11 @@ namespace WindowsFormsApp2
             {
                 DataGridViewRow row = dgvPhieuPhat.Rows[e.RowIndex];
 
-                txtMaPhieu.Text = row.Cells[0].Value.ToString();
+                txtMaPhieu.Text = row.Cells[0].Value.ToString().Trim();
                 dtpkNgayTra.Value = Convert.ToDateTime(row.Cells[1].Value);
-                txtNoiDung.Text = row.Cells[2].Value.ToString();
-                txt_TienPhat.Text = row.Cells[3].Value.ToString();
-                string tenDocGia = row.Cells[4].Value.ToString();
+                txtNoiDung.Text = row.Cells[2].Value.ToString().Trim();
+                txt_TienPhat.Text = row.Cells[3].Value.ToString().Trim();
+                string tenDocGia = row.Cells[4].Value.ToString().Trim();
                 foreach (var item in cbDocGia.Items)
                 {
                     if (item is DocGia docGia && docGia.TenDocGia == tenDocGia)

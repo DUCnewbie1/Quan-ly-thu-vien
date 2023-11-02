@@ -56,6 +56,7 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLDG)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +95,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 134);
             this.panel1.TabIndex = 1;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label8
             // 
@@ -104,7 +104,6 @@
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 5;
             this.label8.Text = "Ngày Lập Thẻ";
-            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // dtpkNgayLap
             // 
@@ -112,7 +111,6 @@
             this.dtpkNgayLap.Name = "dtpkNgayLap";
             this.dtpkNgayLap.Size = new System.Drawing.Size(193, 20);
             this.dtpkNgayLap.TabIndex = 17;
-           // this.dtpkNgayLap.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtSDT
             // 
@@ -270,7 +268,8 @@
             this.TenDocGia,
             this.DiaChi,
             this.SDT,
-            this.Email});
+            this.Email,
+            this.NgayLap});
             this.dgvQLDG.Location = new System.Drawing.Point(11, 266);
             this.dgvQLDG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQLDG.Name = "dgvQLDG";
@@ -326,6 +325,12 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Tìm Kiếm Theo Mã ";
             // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "NgayLap";
+            this.NgayLap.Name = "NgayLap";
+            this.NgayLap.Visible = false;
+            // 
             // QuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,5 +385,6 @@
         private System.Windows.Forms.DateTimePicker dtpkNgayLap;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
     }
 }

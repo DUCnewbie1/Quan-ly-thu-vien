@@ -42,8 +42,8 @@ namespace WindowsFormsApp2
             {
                 DataGridViewRow selectedRow = dgvTG.Rows[e.RowIndex];
 
-                string maNXB = selectedRow.Cells["MaTG"].Value.ToString();
-                string tenNXB = selectedRow.Cells["TenTG"].Value.ToString();
+                string maNXB = selectedRow.Cells["MaTG"].Value.ToString().Trim();
+                string tenNXB = selectedRow.Cells["TenTG"].Value.ToString().Trim();
                 txt_MaTG.Text = maNXB;
                 txt_TenTG.Text = tenNXB;
             }

@@ -232,18 +232,18 @@ namespace WindowsFormsApp2
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPhieuTra.Rows[e.RowIndex];
-                string maPT = row.Cells[0].Value.ToString();
-                string maPhieuMuon = row.Cells[6].Value.ToString();
+                string maPT = row.Cells[0].Value.ToString().Trim();
+                string maPhieuMuon = row.Cells[6].Value.ToString().Trim();
                 txtMaPhieur.Text = maPT;
                 dtpkNgayTrar.Value = (DateTime)row.Cells[1].Value;
-                txtGhiChur.Text = row.Cells[2].Value.ToString();
-                txtTinhTrangr.Text = row.Cells[3].Value.ToString();
-                string tenDocGia = row.Cells[4].Value.ToString();
-                string tenNhanVien = row.Cells[5].Value.ToString();
-                string maDocGia = phieuTraManager.GetMaDocGiaTuTenDocGia(tenDocGia);
+                txtGhiChur.Text = row.Cells[2].Value.ToString().Trim();
+                txtTinhTrangr.Text = row.Cells[3].Value.ToString().Trim();
+                string tenDocGia = row.Cells[4].Value.ToString().Trim();
+                string tenNhanVien = row.Cells[5].Value.ToString().Trim();
+                string maDocGia = phieuTraManager.GetMaDocGiaTuTenDocGia(tenDocGia).Trim();
                 txtDocGiar.Text = maDocGia;
                 txtNhanVienr.Text = tenNhanVien;
-                string maPM = phieuTraManager.GetMaPMTuMaPT(maPT);
+                string maPM = phieuTraManager.GetMaPMTuMaPT(maPT).Trim();
                 txtMaPMr.Text = maPhieuMuon;
                 var selectedMaPM = txtMaPMr.Text;
                 if (selectedMaPM != null)

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Entity.SqlServer;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -19,6 +20,7 @@ namespace WindowsFormsApp2
 {
     public partial class QuanLyDocGia : Form
     {
+        private Class1<DocGia> docGiaManager;
         public QuanLyDocGia()
         {
             InitializeComponent();
@@ -52,7 +54,7 @@ namespace WindowsFormsApp2
                 dgvQLDG.Rows[index].Cells[2].Value = item.DiaChi;
                 dgvQLDG.Rows[index].Cells[3].Value = item.Sdt;
                 dgvQLDG.Rows[index].Cells[4].Value = item.Email;
-
+                dgvQLDG.Rows[index].Cells[5].Value = docGiaManager.LayNgayLapTuMaDG(item.MaDocGia);
             }
         }
 
@@ -66,6 +68,7 @@ namespace WindowsFormsApp2
                 txtDiaChi.Text = sr.Cells[2].Value.ToString().Trim();
                 txtSDT.Text = sr.Cells[3].Value.ToString().Trim();
                 txtEmail.Text = sr.Cells[4].Value.ToString().Trim();
+                //dtpkNgayLap.Value = DateTime.Parse(sr.Cells[5].Value.ToString().Trim());
             }
         }
 
@@ -98,7 +101,7 @@ namespace WindowsFormsApp2
             {
                 string newMaThe = GenerateNewMaThe();
                 DateTime ngayLap = dtpkNgayLap.Value;
-                DateTime ngayHetHan = ngayLap.AddYears(10);
+                DateTime ngayHetHan = ngayLap.AddYears(2);
                 var existingReader = context.DocGia.FirstOrDefault(dg => dg.MaDocGia == maDG);
                 if (existingReader != null)
                 {
@@ -147,8 +150,6 @@ namespace WindowsFormsApp2
                 return newMaThe;
             }
         }
-
-
 
 
         private void btnEditDG_Click(object sender, EventArgs e)

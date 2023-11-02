@@ -42,7 +42,6 @@ namespace WindowsFormsApp2
                 dgvNXB.Rows[index].Cells[4].Value = item.Sdt;
             }
         }
-        Class1<NhaXuatBan> dal = new Class1<NhaXuatBan>();
         private void btn_Add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_MaNXB.Text) ||
@@ -201,11 +200,11 @@ namespace WindowsFormsApp2
             {
                 DataGridViewRow selectedRow = dgvNXB.Rows[e.RowIndex];
 
-                string maNXB = selectedRow.Cells["MaNXB"].Value.ToString();
-                string tenNXB = selectedRow.Cells["TenNXB"].Value.ToString();
-                string diaChi = selectedRow.Cells["DiaChi"].Value.ToString();
-                string email = selectedRow.Cells["Email"].Value.ToString();
-                string sdt = selectedRow.Cells["SDT"].Value.ToString();
+                string maNXB = selectedRow.Cells["MaNXB"].Value.ToString().Trim();
+                string tenNXB = selectedRow.Cells["TenNXB"].Value.ToString().Trim();
+                string diaChi = selectedRow.Cells["DiaChi"].Value.ToString().Trim();
+                string email = selectedRow.Cells["Email"].Value.ToString().Trim();
+                string sdt = selectedRow.Cells["SDT"].Value.ToString().Trim();
                 txt_MaNXB.Text = maNXB;
                 txt_TenNXB.Text = tenNXB;
                 txt_DiaChi.Text = diaChi;
