@@ -185,9 +185,6 @@ namespace WindowsFormsApp2
             }
         }
 
-
-
-
         private void btnEditBook_Click(object sender, EventArgs e)
         {
             string maSach = txtIdBook.Text;
@@ -221,26 +218,6 @@ namespace WindowsFormsApp2
             sachDataAccess.Sua(sachToEdit);
             MessageBox.Show("Sửa sách thành công", "Thông báo");
             LoadDataGrid();
-        }
-
-
-
-        private void btnDeleteBook_Click(object sender, EventArgs e)
-        {
-            string maSach = txtIdBook.Text.Trim();
-            Class1<Sach> sachDataAccess = new Class1<Sach>();
-            Sach sachToDelete = sachDataAccess.TimSachTheoMa(maSach);
-
-            if (sachToDelete != null)
-            {
-                sachDataAccess.Xoa(sachToDelete);
-                MessageBox.Show("Xóa thành công. ", "Thông báo");
-                LoadDataGrid();
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy sách có mã " + maSach + "để xóa.", "Thông báo");
-            }
         }
     }
 }

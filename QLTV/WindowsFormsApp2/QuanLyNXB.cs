@@ -113,15 +113,6 @@ namespace WindowsFormsApp2
             string email = txt_Email.Text;
             string sdt = txt_SDT.Text;
 
-            if (!maNXB.StartsWith("NXB"))
-            {
-                maNXB = "NXB" + maNXB;
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(maNXB, @"^TG[1-9]$"))
-            {
-                maNXB = "NXB" + maNXB.Substring(2);
-            }
-
             if (txt_SDT.Text.Length != 10)
             {
                 MessageBox.Show($"Số điện thoại phải có đúng 10 số! (kí tự hiện tại: " +
@@ -155,16 +146,13 @@ namespace WindowsFormsApp2
         {
             string maNXB = txt_MaNXB.Text.Trim();
             Class1<NhaXuatBan> nxbDataAccess = new Class1<NhaXuatBan>();
-
-            if (!maNXB.StartsWith("NXB"))
-            {
-                maNXB = "NXB" + maNXB;
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(maNXB, @"^TG[1-9]$"))
-            {
-                maNXB = "NXB" + maNXB.Substring(2);
-            }
             NhaXuatBan nxbBiXoa = nxbDataAccess.TimSachTheoMa(maNXB);
+
+            if (nxbDataAccess.NXBCoSach(maNXB))
+            {
+                MessageBox.Show("Nhà xuất bản này đã có sách trong thư viện. Không thể xóa!");
+                return;
+            }
             if (nxbBiXoa != null)
             {
                 var confirmResult = MessageBox.Show($"Nhà xuất bản {txt_MaNXB.Text} {txt_TenNXB.Text} sẽ bị xóa!",

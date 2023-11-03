@@ -36,7 +36,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOutQLS = new System.Windows.Forms.Button();
-            this.btnDeleteBook = new System.Windows.Forms.Button();
             this.btnEditBook = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -131,20 +130,9 @@
             this.btnOutQLS.UseVisualStyleBackColor = true;
             this.btnOutQLS.Click += new System.EventHandler(this.btnOutQLS_Click);
             // 
-            // btnDeleteBook
-            // 
-            this.btnDeleteBook.Location = new System.Drawing.Point(714, 97);
-            this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteBook.Name = "btnDeleteBook";
-            this.btnDeleteBook.Size = new System.Drawing.Size(56, 21);
-            this.btnDeleteBook.TabIndex = 10;
-            this.btnDeleteBook.Text = "Xóa";
-            this.btnDeleteBook.UseVisualStyleBackColor = true;
-            this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
-            // 
             // btnEditBook
             // 
-            this.btnEditBook.Location = new System.Drawing.Point(636, 97);
+            this.btnEditBook.Location = new System.Drawing.Point(717, 97);
             this.btnEditBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditBook.Name = "btnEditBook";
             this.btnEditBook.Size = new System.Drawing.Size(56, 21);
@@ -155,7 +143,7 @@
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(558, 97);
+            this.btnAddBook.Location = new System.Drawing.Point(640, 97);
             this.btnAddBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(56, 21);
@@ -402,7 +390,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnOutQLS);
             this.groupBox1.Controls.Add(this.txtCategory);
-            this.groupBox1.Controls.Add(this.btnDeleteBook);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnEditBook);
             this.groupBox1.Controls.Add(this.label5);
@@ -454,7 +441,6 @@
         private System.Windows.Forms.TextBox txtNameBook;
         private System.Windows.Forms.TextBox txtIdBook;
         private System.Windows.Forms.Button btnOutQLS;
-        private System.Windows.Forms.Button btnDeleteBook;
         private System.Windows.Forms.Button btnEditBook;
         private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.DataGridView dgvQLS;

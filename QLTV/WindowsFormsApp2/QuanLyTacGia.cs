@@ -93,15 +93,6 @@ namespace WindowsFormsApp2
             string maTG = txt_MaTG.Text;
             string tenTG = txt_TenTG.Text;
 
-            if (!maTG.StartsWith("TG"))
-            {
-                maTG = "TG" + maTG;
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(maTG, @"^TG[1-9]$"))
-            {
-                maTG = "TG0" + maTG.Substring(2);
-            }
-
             using (Model1 context = new Model1())
             {
 
@@ -121,16 +112,12 @@ namespace WindowsFormsApp2
         {
             string maTG = txt_MaTG.Text.Trim();
             Class1<TacGia> tgDataAccess = new Class1<TacGia>();
-
-            if (!maTG.StartsWith("TG"))
-            {
-                maTG = "TG" + maTG;
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(maTG, @"^TG[1-9]$"))
-            {
-                maTG = "TG0" + maTG.Substring(2);
-            }
             TacGia tgBiXoa = tgDataAccess.TimSachTheoMa(maTG);
+            if (tgDataAccess.TacGiaCoSach(maTG))
+            {
+                MessageBox.Show("Tác giả này có sách trong thư viện. Không thể xóa!");
+                return;
+            }
             if (tgBiXoa != null)
             {
                 var confirmResult = MessageBox.Show($"Tác giả {txt_MaTG.Text} {txt_TenTG.Text} sẽ bị xóa!",

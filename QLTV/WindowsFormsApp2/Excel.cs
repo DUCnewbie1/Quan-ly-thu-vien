@@ -78,9 +78,19 @@ namespace WindowsFormsApp2
                             worksheet.Cells["A" + row].Value = item.MaDocGia;
                             worksheet.Cells["B" + row].Value = item.TenDocGia;
                             worksheet.Cells["C" + row].Value = item.MaPhieuMuon;
-                            if (results.Contains(item.MaPhieuMuon))
+                            var chiTietPhieuMuon = context.ChiTietPhieuMuon
+                            .Where(ctpm => ctpm.MaPM == item.MaPhieuMuon).ToList();
+
+                            bool trangThai = chiTietPhieuMuon.All(ctpm => (bool)ctpm.TrangThaiSach);
+
+
+                            if (trangThai)
                             {
                                 worksheet.Cells["D" + row].Value = "Đã trả sách";
+                            }
+                            else if (chiTietPhieuMuon.Any(ctpm => (bool)ctpm.TrangThaiSach))
+                            {
+                                worksheet.Cells["D" + row].Value = "Trả thiếu sách";
                             }
                             else
                             {

@@ -40,6 +40,7 @@ namespace DAL
         {
             return context.Set<T>().Find(maSach);
         }
+
         //sách chưa trả
         public List<string> GetBookNamesForMaPM(string maPM)
         {
@@ -181,16 +182,27 @@ namespace DAL
                 return bookNames;
             }
         }
-        public void CapNhatTrangThaiSach(string maPhieuMuon, string tenSach)
+        public void CapNhapMaTGTrongSach(string maTacGia, string maTGMoi)
         {
             using (Model1 context = new Model1())
             {
-                string updateQuery = "UPDATE ChiTietPhieuMuon " +
-                                     "SET TrangThaiSach = 1 " +
-                                     "WHERE MaPM = @MaPM AND MaSach = (SELECT MaSach FROM Sach WHERE TenSach = @TenSach)";
+                var sachRecords = context.Sach.Where(s => s.MaTacGia == maTacGia).ToList();
 
-                context.Database.ExecuteSqlCommand(updateQuery, new SqlParameter("@MaPM", maPhieuMuon), new SqlParameter("@TenSach", tenSach));
+                foreach (var sach in sachRecords)
+                {
+                    sach.MaTacGia = maTGMoi;
+                    context.Entry(sach).State = EntityState.Modified;
+                }
+                context.SaveChanges();
             }
+        }
+        public bool TacGiaCoSach(string maTacGia)
+        {
+            return context.Set<Sach>().Any(s => s.MaTacGia == maTacGia);
+        }
+        public bool NXBCoSach(string maNXB)
+        {
+            return context.Set<Sach>().Any(s => s.NhaXuatBan.MaNXB == maNXB);
         }
     }
 }
